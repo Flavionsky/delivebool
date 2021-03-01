@@ -22,7 +22,7 @@ class CreateRestaurantsTable extends Migration
             $table->rememberToken();
             $table->string('address');
             $table->string('city');
-            $table->bigInteger('p_iva');
+            $table->string('p_iva');
             $table->timestamps();
         });
     }
