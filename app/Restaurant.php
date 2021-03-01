@@ -6,8 +6,11 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class Restaurant extends Authenticatable
 {
+
+    protected $table = 'restaurants';
+
     use Notifiable;
 
     /**
@@ -36,4 +39,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function types(){
+        return $this->belongsToMany('App\TypeRestaurant', 'restaurants_to_type_restaurants', 'restaurant_id', 'type_id');
+    }
+
+    public function foods(){
+        return $this->hasMany('App\Food', 'restaurant_id' , 'id'); 
+    }
 }
