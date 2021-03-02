@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 
 use App\Restaurant;
 
-use App\Foood;
+use App\Food;
 
 use Illuminate\Support\Str;
 
