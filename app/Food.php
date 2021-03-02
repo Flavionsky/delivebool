@@ -8,6 +8,10 @@ class Food extends Model
 {
     protected $table = 'foods';
 
+    protected $fillable = [
+        'name', 'price','description', 'image', 'visibility', 'kind_of_food', 'restaurant_id'
+    ];
+
     public function restaurant(){
         return $this->belongsTo('App\Restaurant');
     }

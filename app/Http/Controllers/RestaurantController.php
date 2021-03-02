@@ -29,7 +29,7 @@ class RestaurantController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except('index', 'show', 'create');
+        $this->middleware('auth')->except('index', 'show');
     }
 
     public function index()
@@ -49,7 +49,7 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+        return view('restaurants.create');
     }
 
     /**
@@ -60,7 +60,26 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $restaurant = Auth::user();
+
+        $newFood = new Food;
+
+        $newFood->restaurant_id = $restaurant->id;
+        $newFood->name = $data['name'];
+        $newFood->price = $data['price'];
+        $newFood->description = $data['description'];
+        $newFood->visibility = $data['visibility'];
+        $newFood->kind_of_food = $data['kind_of_food'];
+        
+        if($request->file('image') != null){
+            $newFood->image = $request->file('image')->storePublicly('images');
+        }
+
+        $newFood->save();
+
+        return redirect()->route('restaurants.index');
     }
 
     /**
