@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Restaurant;
+use App\Food;
 
 class FoodController extends Controller
 {
@@ -13,7 +15,9 @@ class FoodController extends Controller
      */
     public function index()
     {
-        //
+        $foods = Food::all();
+
+        return view('foods.index', compact('foods'));
     }
 
     /**
