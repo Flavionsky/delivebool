@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/foot', function () {
+    return view('partials.footer');
+}); /* da togliere */
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
