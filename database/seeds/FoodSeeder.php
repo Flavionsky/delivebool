@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use App\Food;
+
 class FoodSeeder extends Seeder
 {
     /**
@@ -12,6 +14,5 @@ class FoodSeeder extends Seeder
     public function run()
     {
         factory(App\Food::class, 40)->create();
-        $faker->addProvider(new RicLeP\Faker\LoremFlickrFakerProvider($faker));
     }
 }

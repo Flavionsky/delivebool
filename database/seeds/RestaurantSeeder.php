@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use App\Restaurant;
+
 class RestaurantSeeder extends Seeder
 {
     /**

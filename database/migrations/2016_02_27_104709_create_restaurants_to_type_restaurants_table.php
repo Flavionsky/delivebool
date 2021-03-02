@@ -17,7 +17,6 @@ class CreateRestaurantsToTypeRestaurantsTable extends Migration
             $table->foreignId('restaurant_id')->constrained('restaurants');
             $table->foreignId('type_id')->constrained('type_restaurants');
             $table->primary(['restaurant_id', 'type_id']);
-            $table->timestamps();
         });
     }
 

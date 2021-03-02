@@ -26,6 +26,6 @@ $factory->define(Restaurant::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
         'address' => $faker->streetAddress,
         'city' => $faker->city,
-        'p_iva' => $faker->vatId()
+        'p_iva' => $faker->randomNumber
     ];
 });

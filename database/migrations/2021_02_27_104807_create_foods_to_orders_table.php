@@ -17,7 +17,6 @@ class CreateFoodsToOrdersTable extends Migration
             $table->foreignId('food_id')->constrained('foods');
             $table->foreignId('order_id')->constrained('orders');
             $table->primary(['food_id', 'order_id']);
-            $table->timestamps();
         });
     }
 
