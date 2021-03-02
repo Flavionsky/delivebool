@@ -26,7 +26,7 @@ class OrderSeeder extends Seeder
             $neworder->city = $faker->city;
             $neworder->address = $faker->streetAddress;
             $neworder->mobile_phone = $faker->e164PhoneNumber;
-            $neworder->delivery_time =$faker->time();
+            $neworder->delivery_time =$faker->dateTime;
             $neworder->total_price = $faker->randomFloat(2, 1 ,1000);
 
             $neworder->save();

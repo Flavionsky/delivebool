@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->char('city', 50);
             $table->string('address');
             $table->char('mobile_phone', 50);
-            $table->date('delivery_time');
+            $table->dateTime('delivery_time');
             $table->decimal('total_price', 8, 2);
             $table->timestamps();
         });
