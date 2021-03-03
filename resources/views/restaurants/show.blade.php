@@ -1,29 +1,57 @@
-@extends('layouts.app')
-@section('content')
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Delivebool Dashboard - Lista piatti</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- COPIARE SOLO DA QUI -->
+        @extends('layouts.app')
 
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Restaurant Name</th>
-            <th scope="col">Email</th>           
-            <th scope="col">Address</th>
-            <th scope="col">City</th>
-            <th scope="col">P.Iva</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{ $restaurants->name }}</td>
-            <td>{{ $restaurants->email }}</td>
-            <td>{{ $restaurants->address }}</td>
-            <td>{{ $restaurants->city }}</td>
-            <td>{{ $restaurants->p_iva }}</td>
-            <td>
-                <a href="{{ route('restaurants.index') }}">Torna indietro</a>
-            </td>
-            <td><a href="{{ route('restaurants.edit', $restaurants->id) }}">Aggiorna</a></td>
-        </tr>
-    </tbody>
-</table>
+        @section('content')
+        <div class="container dashboard">
+            <h1>Lista piatti di {{ $restaurant->name }}</h1>
+            <h2>In questa pagina puoi visualizzare una lista dei tuoi piatti.<br>Per modificare i dettagli di un piatto, clicca sul pulsante "Modifica" accanto al relativo piatto. Se vuoi eliminarlo dalla lista dei tuoi piatti, clicca su "Elimina".<br>Se invece vuoi aggiungere un nuovo piatto, premi il pulsante "Crea un nuovo piatto".</h2>
+            <div class="dashboard-box">
+                <ul>
+                    <li>
+                        <a href="{{ route('restaurants.create')}}">
+                            <div class="reg-button create">
+                                <h1>Crea un nuovo piatto</h1>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-@endsection
+            <table class="table">
+                @foreach($restaurant->foods as $food)
+                    <tr>
+                        <td><p><strong>ID piatto: </strong>{{ $food->id }}</p></td>
+                        <td><p><strong>{{ $food->name }}</strong></p></td>
+                        <td><img src="{{ asset($food->image) }}" alt="cibo"></td>
+                        <td><p><strong>{{ $food->price }}</strong></p></td>
+                        <td><p><strong>Tipo di cibo: </strong>{{ $food->kind_of_food }}</p><br></td>
+                        <td><p><strong>Descrizione: </strong>{{ $food->description }}</p><br></td>
+                        <td><p><strong>Visibile: </strong>{{ $food->visibility }}</p><br></td>
+                        <td>
+                            <a href="{{ route('restaurants.edit', $food) }}"><button type="submit">Modifica</button></a>
+                        </td>
+                        <td>
+                            <form action="{{route('restaurants.destroy', $restaurant)}}" method="POST">
+                                 @CSRF
+                                 @method('DELETE')
+                                 <button type="submit">Cancella</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </table>
+        </div>
+        @endsection
+        <!-- COPIARE FINO A QUI -->
+    </body>
+</html>

@@ -13,7 +13,7 @@ class FoodFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,10 +24,11 @@ class FoodFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'input_name'=>'required|string',
-            'input_price'=>'required|integer',
-            'input_description'=>'nullable|min: 3',
-            'input_visibility'=>'required|boolean',
+            'name'=>'required|string',
+            'price'=>'required|numeric',
+            'image' => 'mimetypes:image/jpeg,image/png|max:5120',
+            'description'=>'nullable|min: 3',
+            'visibility'=>'required|boolean',
             'kind_of_food'=>'string|min:3',
         ];
     }

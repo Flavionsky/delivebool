@@ -6,7 +6,7 @@ Delivebool - Foods
 
 @section('content')
 <div class="container dashboard">
-    <h1>Lista piatti di $restaurant->name </h1>
+    <h1>Lista piatti di $restaurants->name </h1>
     <h2>In questa pagina puoi visualizzare una lista dei tuoi piatti.<br>Per modificare i dettagli di un piatto, clicca sul pulsante "Modifica" accanto al relativo piatto. Se vuoi eliminarlo dalla lista dei tuoi piatti, clicca su "Elimina".<br>Se invece vuoi aggiungere un nuovo piatto, premi il pulsante "Crea un nuovo piatto".</h2>
     <div class="dashboard-box">
         <ul>

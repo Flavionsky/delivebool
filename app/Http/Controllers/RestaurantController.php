@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use App\Restaurant;
 use App\TypeRestaurant;
 use App\Food;
+use App\Http\Requests\FoodFormRequest;
 
 use Illuminate\Support\Str;
 
@@ -58,9 +59,9 @@ class RestaurantController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FoodFormRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
 
         $restaurant = Auth::user();
 
@@ -79,7 +80,7 @@ class RestaurantController extends Controller
 
         $newFood->save();
 
-        return redirect()->route('restaurants.index');
+        return redirect()->route('restaurants.show', $restaurant);
     }
 
     /**
@@ -88,9 +89,9 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Restaurant $restaurants)
+    public function show(Restaurant $restaurant)
     {
-        return view('restaurants.show', compact('restaurants'));
+        return view('restaurants.show', compact('restaurant'));
     }
 
     /**
@@ -99,12 +100,10 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Restaurant $restaurants)
+    public function edit($id)
     {
-        $restaurants = Restaurant::all();
-        $types = TypeRestaurant::all();
-
-        return view('restaurants.edit', compact('restaurants', 'types'));
+        $food = Food::find($id);
+        return view('restaurants.edit', compact('food'));
     }
 
     /**
@@ -114,9 +113,29 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FoodFormRequest $request, Restaurant $restaurant, $id)
     {
-        //
+
+        dd($restaurant);
+        $userLogged = Auth::user();
+        if ($userLogged->id == $restaurant->id) {
+
+            $data = $request->validated();
+
+            $food = $restaurant->foods->find($id);
+
+            $food->update([
+                'name' => $data['name'],
+                'price' => $data['price'],
+                'image' => $request->file('image')->storePublicly('images'),
+                'description' => $data['description'],
+                'visibility' => $data['visibility'],
+                'kind_of_food' => $data['kind_of_food'],
+            ]);
+
+            return view('restaurants.index', $restaurant);
+
+        }
     }
 
     /**

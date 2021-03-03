@@ -12,6 +12,7 @@
             @auth
             <th scope="col">Modifica</th>
             <th scope="col">Elimina</th>
+            <th scope="col">Visualizza</th>
             @endauth
         </tr>
     </thead>
@@ -23,9 +24,13 @@
             <td>{{ $restaurant->email }}</td>
             <td>{{ $restaurant->address }}</td>
             <td>{{ $restaurant->city }}</td>
-            
             @auth
-            @if($restaurant->restaurant_id == $userLogged->id)
+            @if($restaurant->id == $userLogged->id)
+            <td>
+                <form action="{{route('restaurants.show', $restaurant)}}">
+                    <input class="btn btn-success"   type="submit" value="Visualizza" />
+                </form>
+            </td>
             <td>
                 <form action="{{route('restaurants.edit', $restaurant)}}">
                     <input class="btn btn-success"   type="submit" value="Modifica" />
@@ -42,6 +47,7 @@
             @endauth
         </tr>
         @endforeach
+
     </tbody>
 </table>
 @endsection
