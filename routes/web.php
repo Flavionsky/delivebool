@@ -26,7 +26,7 @@ Route::get('/foot', function () {
 
 Route::get('/main', function () {
     return view('partials.main');
-});
+});/* da togliere */
 
 
 

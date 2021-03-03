@@ -20,7 +20,7 @@
                         <div class="block comfort-food">
                             <div class="top-block">
                                 <div class="img">
-                                    
+                                    <img class="" src="{{'../img/menu-tag-image-1.jpg'}}" alt="">
                                     <h1>Comfort food</h1>
                                 </div>
                             </div>
@@ -32,6 +32,7 @@
                         <div class="block dessert">
                             <div class="top-block">
                                 <div class="img">
+                                    <img class="" src="{{'../img/menu-tag-image-2.jpg'}}" alt="">
                                     <h1>Dolci e dessert</h1>
                                 </div>
                             </div>
@@ -47,6 +48,7 @@
                         <div class="block perfect-share">
                             <div class="top-block">
                                 <div class="img">
+                                    <img class="" src="{{'../img/menu-tag-image-3.jpg'}}" alt="">
                                     <h1>Perfetti da condividere</h1>
                                 </div>
                             </div>
@@ -58,6 +60,7 @@
                         <div class="block exclusive">
                             <div class="top-block">
                                 <div class="img">
+                                    <img class="" src="{{'../img/menu-tag-image-4.jpg'}}" alt="">
                                     <h1>Esclusiva Delivebool</h1>
                                 </div>
                             </div>
