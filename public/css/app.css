@@ -1,7 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
-/* footer */
-
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -11090,6 +11088,7 @@ body {
 h1 {
   font-size: 2.3rem;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 /* MAIN SEZIONE 1 */
@@ -11145,16 +11144,28 @@ h1 {
 
 /* MAIN SEZIONE 2 */
 
+#favorite-food-2 {
+  background-color: #e29f9f;
+}
+
 .blocks.flex-2 {
   display: flex;
   flex-wrap: nowrap;
-  padding-top: 10px;
+}
+
+.top-block-2 h2 {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .top-block-2 img {
   width: 353px;
   margin-right: 5px;
-  height: auto;
+}
+
+p {
+  font-size: 16px;
+  color: black;
 }
 
 /* MAIN SEZIONE 3 */

@@ -183,6 +183,7 @@ body {
 h1 {
     font-size: 2.3rem;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 /* MAIN SEZIONE 1 */
@@ -237,14 +238,21 @@ h1 {
 
 
 /* MAIN SEZIONE 2 */
+
+#favorite-food-2 {
+    background-color: rgb(226, 159, 159);
+}
+
 .blocks.flex-2{
     display: flex;
     flex-wrap: nowrap;
-    padding-top: 10px;;
+    
+    
 }
 
-.top-block-2{
-    height:auto;
+.top-block-2 h2{
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .top-block-2 img{
@@ -253,6 +261,12 @@ h1 {
     
 }
 
+
+p{
+    font-size:16px;
+    
+    color:black;
+}
 
 /* MAIN SEZIONE 3 */
 #something-else-3 {
