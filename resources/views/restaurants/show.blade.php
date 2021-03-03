@@ -38,7 +38,7 @@
                         <td><p><strong>Descrizione: </strong>{{ $food->description }}</p><br></td>
                         <td><p><strong>Visibile: </strong>{{ $food->visibility }}</p><br></td>
                         <td>
-                            <a href="{{ route('restaurants.edit', $food) }}"><button type="submit">Modifica</button></a>
+                            <a href="{{ route('foods.edit', $food) }}"><button type="submit">Modifica</button></a>
                         </td>
                         <td>
                             <form action="{{route('restaurants.destroy', $restaurant)}}" method="POST">

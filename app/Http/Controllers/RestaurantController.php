@@ -116,7 +116,7 @@ class RestaurantController extends Controller
     public function update(FoodFormRequest $request, Restaurant $restaurant, $id)
     {
 
-        dd($restaurant);
+       
         $userLogged = Auth::user();
         if ($userLogged->id == $restaurant->id) {
 

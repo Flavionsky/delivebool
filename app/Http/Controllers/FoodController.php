@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Restaurant;
+use App\TypeRestaurant;
+use App\Food;
+use App\Http\Requests\FoodFormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class FoodController extends Controller
 {
@@ -56,7 +61,8 @@ class FoodController extends Controller
      */
     public function edit($id)
     {
-        //
+        $food = Food::find($id);
+        return view('foods.edit', compact('food'));
     }
 
     /**
@@ -66,9 +72,25 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FoodFormRequest $request, Restaurant $restaurant, $id)
     {
-        //
+        $userLogged = Auth::user();
+        $food = Food::find($id);
+        if ($userLogged->id == $food->restaurant_id) {
+
+            $data = $request->validated();
+
+
+            $food->update([
+                'name' => $data['name'],
+                'price' => $data['price'],
+                'description' => $data['description'],
+                'visibility' => $data['visibility'],
+                'kind_of_food' => $data['kind_of_food'],
+            ]);
+
+            return redirect()->route('restaurants.index');
+        }
     }
 
     /**
