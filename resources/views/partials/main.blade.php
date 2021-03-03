@@ -10,7 +10,7 @@
     </head>
     <body>
         <!-- COPIARE SOLO DA QUI -->
-        @section('content')
+
         <main>
             <section id="selection-1">
                 <div class="container">
@@ -105,7 +105,7 @@
 
 
         </main>
-        @endsection
+
         <!-- COPIARE FINO A QUI -->
     </body>
 </html>
