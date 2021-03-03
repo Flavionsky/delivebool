@@ -23,6 +23,7 @@
             <td>{{ $restaurant->email }}</td>
             <td>{{ $restaurant->address }}</td>
             <td>{{ $restaurant->city }}</td>
+            
             @auth
             @if($restaurant->restaurant_id == $userLogged->id)
             <td>
@@ -41,7 +42,6 @@
             @endauth
         </tr>
         @endforeach
-
     </tbody>
 </table>
 @endsection

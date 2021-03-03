@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 */
 
 use App\Restaurant;
-
+use App\TypeRestaurant;
 use App\Food;
 
 use Illuminate\Support\Str;
@@ -99,9 +99,12 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Restaurant $restaurants)
     {
-        //
+        $restaurants = Restaurant::all();
+        $types = TypeRestaurant::all();
+
+        return view('restaurants.edit', compact('restaurants', 'types'));
     }
 
     /**
