@@ -24,7 +24,11 @@ class FoodFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'input_name'=>'required|string',
+            'input_price'=>'required|integer',
+            'input_description'=>'nullable|min: 3',
+            'input_visibility'=>'required|boolean',
+            'kind_of_food'=>'string|min:3',
         ];
     }
 }
