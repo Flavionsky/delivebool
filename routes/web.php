@@ -23,11 +23,25 @@ Route::get('/foot', function () {
     return view('partials.footer');
 }); /* da togliere */
 
-
 Route::get('/main', function () {
     return view('partials.main');
 });/* da togliere */
 
+Route::get('/main', function () {
+    return view('layouts.main');
+});
+
+Route::get('/dashboard', function () {
+    return view('layouts.dashboard');
+});
+
+Route::get('/orders', function () {
+    return view('layouts.orders');
+});
+
+Route::get('/foods', function () {
+    return view('layouts.foods');
+});
 
 
 Auth::routes();
@@ -35,4 +49,3 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('restaurants', 'RestaurantController');
-
