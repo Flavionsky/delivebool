@@ -1,7 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
-/* footer */
-
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -11089,6 +11087,7 @@ body {
 h1 {
   font-size: 2.3rem;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 /* MAIN SEZIONE 1 */
@@ -11135,6 +11134,7 @@ h1 {
 
 .dessert {
   width: 60%;
+  padding-left: 15px;
 }
 
 .exclusive {
@@ -11142,21 +11142,31 @@ h1 {
   padding-left: 30px;
 }
 
-/* .comfort-food .img {
-    background-image: url("img/menu-tag-image-1.jpg");
+/* MAIN SEZIONE 2 */
+
+#favorite-food-2 {
+  background-color: #e29f9f;
 }
 
-.dessert .img {
-    background-image: url("img/menu-tag-image-2.jpg");
+.blocks.flex-2 {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
-.perfect-share .img {
-    background-image: url("img/menu-tag-image-3.jpg");
+.top-block-2 h2 {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.exclusive .img{
-    background-image: url("img/menu-tag-image-4.jpg");
-} */
+.top-block-2 img {
+  width: 353px;
+  margin-right: 5px;
+}
+
+p {
+  font-size: 16px;
+  color: black;
+}
 
 /* MAIN SEZIONE 3 */
 
