@@ -235,21 +235,24 @@ h1 {
     padding-left: 30px;
 }
 
-/* .comfort-food .img {
-    background-image: url("img/menu-tag-image-1.jpg");
+
+/* MAIN SEZIONE 2 */
+.blocks.flex-2{
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 10px;;
 }
 
-.dessert .img {
-    background-image: url("img/menu-tag-image-2.jpg");
+.top-block-2{
+    height:auto;
 }
 
-.perfect-share .img {
-    background-image: url("img/menu-tag-image-3.jpg");
+.top-block-2 img{
+    width: 353px;
+    margin-right:5px;
+    
 }
 
-.exclusive .img{
-    background-image: url("img/menu-tag-image-4.jpg");
-} */
 
 /* MAIN SEZIONE 3 */
 #something-else-3 {

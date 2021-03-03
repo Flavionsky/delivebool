@@ -72,9 +72,95 @@
                     </div>
                 </div>
             </section>
-                <!-- <section id="favorite-food-2">
 
-                </section> -->
+                 <section id="favorite-food-2">
+                    <div class="container">
+                        <h1>I tuoi piatti preferiti, consegnati da noi.</h1>
+                        <div class="blocks flex-2">
+    
+                            <div class="block comfort-food">
+                                <div class="top-block-2">
+                                    
+                                        <img class="" src="{{'../img/crocerossa.jpg'}}" alt="">
+                                        <h3>Deliveroo per Croce Rossa Italiana</h3>
+                                        <p>Deliveroo sta raccogliendo fondi per fornire cibo gratuito alle famiglie più in difficoltà, attraverso la Croce Rossa Italiana (CRI). Puoi contribuire alla raccolta fondi facendo una donazione qui.</p>
+                                        
+                                </div> 
+                            </div>
+                                        
+                                    
+                                    
+                                    
+                                    
+                                
+                                
+                            
+    
+                            <div class="block comfort-food">
+                                <div class="top-block-2">
+                                    
+                                        <img class="" src="{{'../img/mcdonald.jpg'}}" alt="">
+                                        <h3>Mc Donald's</h3>
+                                </div>
+                            </div>
+
+                                        
+                                    
+                                
+                                
+                            
+
+                            <div class="block comfort-food">
+                                <div class="top-block-2">
+                                    
+                                        <img class="" src="{{'../img/obica.jpg'}}" alt="">
+                                        <h3>Obicà</h3>
+                                        <p>Ordina la tua mozzarella preferita a casa tua da Obicà grazie alla consegna a domicilio di Deliveroo.</p>
+                                        
+                                    
+                                </div>
+                                
+                            </div>
+    
+                        </div>
+    
+                        <div class="blocks flex-2">
+    
+                            <div class="block comfort-food">
+                                <div class="top-block-2">
+                                    <div class="img">
+                                        <img class="" src="{{'../img/crocerossa.jpg'}}" alt="">
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+    
+                            <div class="block comfort-food">
+                                <div class="top-block-2">
+                                    <div class="img">
+                                        <img class="" src="{{'../img/crocerossa.jpg'}}" alt="">
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="block comfort-food">
+                                <div class="top-block-2">
+                                    <div class="img">
+                                        <img class="" src="{{'../img/crocerossa.jpg'}}" alt="">
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+    
+                        </div>
+
+                </section> 
+
+
             <section id="something-else-3">
                 <div class="container">
                     <h1>Di cosa hai voglia oggi?</h1>
@@ -105,7 +191,7 @@
 
 
         </main>
-        @endsection
+        @show
         <!-- COPIARE FINO A QUI -->
     </body>
 </html>
