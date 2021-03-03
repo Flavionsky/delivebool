@@ -23,6 +23,13 @@ Route::get('/foot', function () {
     return view('partials.footer');
 }); /* da togliere */
 
+
+Route::get('/main', function () {
+    return view('partials.main');
+});
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

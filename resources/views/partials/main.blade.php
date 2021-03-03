@@ -5,6 +5,7 @@
         <title>Delivebool - Home</title>
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet"> {{-- da eliminare solo da qui --}}
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -19,6 +20,7 @@
                         <div class="block comfort-food">
                             <div class="top-block">
                                 <div class="img">
+                                    
                                     <h1>Comfort food</h1>
                                 </div>
                             </div>
