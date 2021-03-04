@@ -88,8 +88,9 @@ class FoodController extends Controller
                 'visibility' => $data['visibility'],
                 'kind_of_food' => $data['kind_of_food'],
             ]);
-
-            return redirect()->route('restaurants.index');
+            $message = "Piatto modificato con successo";
+            /* return redirect()->route('restaurants.index'); */
+            return view("message", compact("message"));
         }
     }
 
@@ -101,6 +102,11 @@ class FoodController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $food = Food::find($id);
+        $food->delete();
+        $message = "Piatto eliminato";
+        return view("message", compact("message"));
+
+        /* non viene fuori il messaggio */
     }
 }
