@@ -10,7 +10,7 @@ Deliveboo - Modifica un piatto
     <div class="header dashboard">
         <div class="nav">
             <div class="logo">
-                <img src=".../img/vectorpaint.svg" alt="deliveroo logo">
+                <img src="/img/vectorpaint.svg" alt="deliveroo logo">
             </div>
             <div class="buttons">
                 <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
