@@ -124,10 +124,10 @@ footer .nav-social
 
 /* MAIN.BLADE */
 
-/* body {
+body {
 
     background-image: url("/img/placeholder.svg");
-} */
+}
 
 /* MAIN */
 .container {
@@ -285,6 +285,8 @@ p {
     margin-top: 40px;
     margin-bottom: 40px;
     padding: 50px;
+    position: relative;
+    z-index: 3;
 }
 
 .container.dashboard h2 {
@@ -339,13 +341,18 @@ p {
 }
 
 /* HEADER */
-
 .box-indirizzo h1 {
     font-family: 'Roboto', sans-serif;
 }
 
-.header {
+.header.main {
     height: 500px;
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.header.dashboard {
     width: 1200px;
     margin: 0 auto;
     position: relative;

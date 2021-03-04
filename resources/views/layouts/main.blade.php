@@ -7,7 +7,7 @@ Delivebool - Home
 @section('content')
 
 <div class="bg">
-    <div class="header">
+    <div class="header main">
         <div class="nav">
             <div class="logo">
                 <img src="./img/vectorpaint.svg" alt="deliveroo logo">
