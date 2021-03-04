@@ -1,7 +1,7 @@
 @extends ('layouts.layout')
 
 @section('title')
-Delivebool - Orders
+Deliveboo - Orders
 @endsection
 
 @section('content')

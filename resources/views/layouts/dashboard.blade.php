@@ -1,7 +1,7 @@
 @extends ('layouts.layout')
 
 @section('title')
-Delivebool - Dashboard
+Deliveboo - Dashboard
 @endsection
 
 @section('content')
@@ -37,7 +37,7 @@ Delivebool - Dashboard
             </div>
         </div>
     </div>
-    
+
 
 <!-- DA TOGLIERE FIN QUI -->
 

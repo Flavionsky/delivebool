@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-Delivebool - Inserisci un nuovo piatto
+Deliveboo - Inserisci un nuovo piatto
 @endsection
 
 @section('content')

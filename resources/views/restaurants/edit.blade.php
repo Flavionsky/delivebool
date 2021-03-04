@@ -18,7 +18,7 @@
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
-                
+
             @enderror
         </div>
         <div class="form-group">
@@ -29,7 +29,7 @@
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
-                
+
             @enderror
         </div>
         <div class="form-group">
@@ -40,7 +40,7 @@
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
-                
+
             @enderror
         </div>
         <div class="form-group">
@@ -51,7 +51,7 @@
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
-                
+
             @enderror
         </div>
         <div class="form-group">
@@ -62,7 +62,7 @@
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
-                
+
             @enderror
         </div>
 
@@ -75,7 +75,7 @@
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
-                
+
             @enderror
         </div>
         <div class="form-group">

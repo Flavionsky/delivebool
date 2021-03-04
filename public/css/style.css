@@ -298,7 +298,17 @@ p {
     padding: 10px;
 }
 
+.table {
+    width: 100%;
+}
 
+.table th {
+    text-align: left;
+}
+
+.table tr {
+    height: 50px;
+}
 
 .container.dashboard h2 {
     margin-bottom: 30px;
@@ -337,10 +347,16 @@ p {
 
 /* FOODS.BLADE, ORDERS.BLADE */
 .reg-button.create {
-    width: 500px;
-    height: 100px;
+    width: 400px;
+    height: 80px;
     background-color: #00C2B3;
-    line-height: 100px;
+    line-height: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.reg-button.create h1 {
+    font-size: 1.9rem;
 }
 
 .table button {

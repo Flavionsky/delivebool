@@ -1,7 +1,7 @@
 @extends ('layouts.layout')
 
 @section('title')
-Delivebool - Foods
+Deliveboo - Foods
 @endsection
 
 @section('content')
