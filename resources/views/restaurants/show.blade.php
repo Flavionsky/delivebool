@@ -41,7 +41,7 @@
                             <a href="{{ route('foods.edit', $food) }}"><button type="submit">Modifica</button></a>
                         </td>
                         <td>
-                            <form action="{{route('restaurants.destroy', $restaurant)}}" method="POST">
+                            <form action="{{route('foods.destroy', $food)}}" method="POST">
                                  @CSRF
                                  @method('DELETE')
                                  <button type="submit">Cancella</button>

@@ -37,7 +37,7 @@
                 </form>
             </td>
             <td>
-                <form action="{{route('restaurants.destroy', $restaurant)}}" method="post">
+                <form action="{{route('foods.destroy', $food)}}" method="post">
                     @method('delete')
                     @csrf
                     <input class="btn btn-danger" type="submit" value="Elimina"/>

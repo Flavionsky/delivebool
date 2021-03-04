@@ -103,6 +103,7 @@ class FoodController extends Controller
     public function destroy($id)
     {
         $food = Food::find($id);
+       
         $food->delete();
         $message = "Piatto eliminato";
         return view("message", compact("message"));
