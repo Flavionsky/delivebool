@@ -18,7 +18,7 @@ Deliveboo - Home
                     <span>Collabora con noi</span>
                     <div id="drop-down-1" class="active">
                         <ul>
-                            <li><i class="fas fa-utensils"></i> Ristoranti</li>
+                            <li> <a  href="{{ route('register') }}">  <i class="fas fa-utensils"></i> Ristoranti</li>
                             <li><i class="fas fa-briefcase"></i> Lavora con noi</li>
                             <li><i class="far fa-building"></i> Deliveroo per le Aziende</li>
                         </ul>
@@ -26,7 +26,7 @@ Deliveboo - Home
                 </div>
                 <div class="registrati-o-accedi">
                     <i class="fas fa-home"></i>
-                    <span>Registrati o accedi</span>
+                   <span> <a href="{{ route('login') }}">Registrati o accedi</span></a>
                 </div>
                 <div class="menu">
                     <i class="fas fa-bars"></i>

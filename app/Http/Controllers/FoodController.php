@@ -106,8 +106,8 @@ class FoodController extends Controller
        
         $food->delete();
         $message = "Piatto eliminato";
-        return view("message", compact("message"));
+        return view("message", compact("message")); 
 
-        /* non viene fuori il messaggio */
+        
     }
 }
