@@ -6,9 +6,16 @@
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     </head>
     <body>
+
+
+
+
+
 
         @yield('content')
 
@@ -118,6 +125,12 @@
 
         </footer>
 
+        <script>
+            function dropDown1() {
+                var element = document.getElementById("drop-down-1");
+                element.classList.toggle("active");
+            }
+        </script>
 
     </body>
 </html>
