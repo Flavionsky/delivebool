@@ -11271,6 +11271,10 @@ button {
   color: white;
 }
 
+.btn.btn-primary {
+  height: 40px;
+}
+
 .logo-register img {
   width: 100px;
 }
