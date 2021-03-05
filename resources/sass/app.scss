@@ -245,8 +245,8 @@ h1 {
 .blocks.flex-2{
     display: flex;
     flex-wrap: nowrap;
-    
-    
+
+
 }
 
 .top-block-2 h2{
@@ -257,13 +257,13 @@ h1 {
 .top-block-2 img{
     width: 353px;
     margin-right:5px;
-    
+
 }
 
 
 p{
     font-size:16px;
-    
+
     color:black;
 }
 
@@ -363,6 +363,10 @@ button {
     background-color: #00C2B3;
     line-height: 20px;
     color: white;
+}
+
+.btn.btn-primary {
+    height: 40px;
 }
 
 
