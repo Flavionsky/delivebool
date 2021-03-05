@@ -81,6 +81,10 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        @section('footer')
+         @yield('partials.footer')
+        @endsection
     </div>
 </body>
 </html>

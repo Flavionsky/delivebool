@@ -19,13 +19,14 @@ Route::get('/', function () {
     return view('welcomepage');
 });
 
-Route::get('/foot', function () {
-    return view('partials.footer');
-}); /* da togliere */
+
 
 Route::get('/main', function () {
     return view('partials.main');
 });/* da togliere */
+
+
+
 
 Route::get('/main', function () {
     return view('layouts.main');

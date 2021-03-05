@@ -256,12 +256,97 @@ Deliveboo - Home
             </div>
         </div>
     </section>
-        <!-- <section id="news-4">
 
-        </section>
+    <section id="novità-deliveroo">
+        <div class="container">
+            <h1>Novità dalla nostra cucina</h1>
+            <div class="blocks flex">
+
+                <div class="block comfort-food">
+                    <div class="top-block-3">
+                        <div class="business">
+                            <img class="" src="{{'../img/menu-tag-image-1.jpg'}}" alt="">
+                            
+                        </div>
+                    </div>
+                   
+
+                </div>
+
+                <div class="block dessert">
+                    <div class="top-block-3">
+                        
+                            <div class="aziende">
+                                <h2>Deliveroo per le Aziende</h2>
+                                    <p>Clienti o colleghi affamati? il nostro team Corporate ti può aiutare.</p>
+                                <button type="button" name="button">Contattaci</button>
+                            </div>
+                        
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="blocks flex">
+
+                <div class="block perfect-share">
+                    <div class="top-block">
+                        <div class="apple_google">
+                            <h2>Hai già la nostra app?</h2>
+                                <p>Scaricala ora - disponibile su Apple store e Google Play!</p>
+                            <img src="{{'../img/store.png'}}" alt="">
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="block exclusive">
+                    <div class="top-block-3">
+                        <div class="deliveroo_icon">
+                            <img src="{{'../img/menu-tag-image-2.jpg'}}" alt="">
+                        </div>
+                    </div>
+                   
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
         <section id="work-with-us-5">
+            <div class="container text">
+                <h1>Lavora con deliveroo</h1>
+                <div class="blocks flex-2 ">
+                    <div class="box-work red">
+                        <img src="{{'../img/riders.jpg'}}" alt="">
+                            <h2>Rider</h2>
+                            <p>Diventa un rider: flessibilità, ottimi guadagni e un mondo di vantaggi per te.</p>
+                        <button type="button" name="button">Unisciti a noi</button>
+                    </div>
+                    <div class="box-work orange">
+                        <img src="{{'../img/restaurants.jpg'}}" alt="">
+                            <h2>Ristoranti</h2>
+                            <p>Diventa partner di Deliveroo e raggiungi sempre più clienti. Ci occupiamo noi della consegna, così che la tua unica preoccupazione sia continuare a preparare il miglior cibo.</p>
+                        <button type="button" name="button">Diventa nostro partner</button>
+                    </div>
 
-        </section> -->
+                    
+                        <div class="box-work grey">
+                            <img src="{{'../img/team.jpg'}}" alt="">
+                                <h2>Lavora con noi</h2>
+                                <p>La nostra missione è trasformare il modo in cui le persone mangiano. È un obiettivo ambizioso, come noi, e ci servono persone che ci aiutino a raggiungerlo.</p>
+                            <button type="button" name="button">Scopri di più</button>
+                        </div>
+                    
+
+                </div>
+
+
+            </div>
+
+        </section> 
 
 
 </main>
