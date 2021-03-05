@@ -601,7 +601,7 @@ a{
   }
 
   
-  
+  /* section work-with us */
 .box-work {
 	 height: 600px;
 	 width: 350px;
@@ -645,3 +645,16 @@ a{
     background-color: #ff8100;
 }
 
+.box-work h2{
+    color:white;
+     font-size: 40px;
+	 font-weight: bold;
+	 padding: 5px 25px;
+}
+
+.box-work p{
+    color:white;
+    font-size:16px;
+    line-height: 22px;
+    padding-left: 25px;
+}
