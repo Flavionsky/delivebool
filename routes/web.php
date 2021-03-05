@@ -32,8 +32,6 @@ Route::get('/main', function () {
     return view('layouts.main');
 });
 
-Route::get('/restaurants/{id}', 'RestaurantController@show');
-
 Route::get('/orders', function () {
     return view('layouts.orders');
 });
@@ -48,4 +46,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('restaurants', 'RestaurantController');
+
+Route::get('/dashboard', 'RestaurantController@login');
+
 Route::resource('foods', 'FoodController');

@@ -148,4 +148,10 @@ class RestaurantController extends Controller
     {
         //
     }
+
+    public function login(Restaurant $restaurant)
+    {
+        $restaurant->id = Auth::user()->id;
+        return view('restaurants.show', compact('restaurant'));
+    }
 }
