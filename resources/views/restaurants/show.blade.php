@@ -25,8 +25,8 @@ Deliveboo Dashboard - Lista piatti
                     </div>
                 </div>
                 <div class="registrati-o-accedi">
-                    <i class="fas fa-home"></i>
-                    <span>Registrati o accedi</span>
+                    
+                    <a href="{{ route('login') }}"><span>Gestisci i tuoi ordini</span>
                 </div>
                 <div class="menu">
                     <i class="fas fa-bars"></i>

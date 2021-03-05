@@ -21,9 +21,9 @@ Route::get('/', function () {
 
 
 
-Route::get('/main', function () {
-    return view('partials.main');
-});/* da togliere */
+ Route::get('/order', function () {
+    return view('partials.takeorder');
+}); 
 
 
 
@@ -40,13 +40,22 @@ Route::get('/foods', function () {
     return view('layouts.foods');
 });
 
+Route::get('/ordina', function () {
+    return view('partials.takeorder');
+})->name('ordina');
+
+
+
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::resource('restaurants', 'RestaurantController');
 
 Route::get('/dashboard', 'RestaurantController@login');
 
 Route::resource('foods', 'FoodController');
+

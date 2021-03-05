@@ -25,8 +25,8 @@ Deliveboo - Home
                     </div>
                 </div>
                 <div class="registrati-o-accedi">
-                    <i class="fas fa-home"></i>
-                   <span> <a href="{{ route('login') }}">Registrati o accedi</span></a>
+                    <i class="fas fa-shopping-cart"></i>
+                   <span> <a href="{{ route('ordina') }}">Ordina</span></a>
                 </div>
                 <div class="menu">
                     <i class="fas fa-bars"></i>
