@@ -32,9 +32,7 @@ Route::get('/main', function () {
     return view('layouts.main');
 });
 
-Route::get('/dashboard', function () {
-    return view('layouts.dashboard');
-});
+Route::get('/restaurants/{id}', 'RestaurantController@show');
 
 Route::get('/orders', function () {
     return view('layouts.orders');
