@@ -208,6 +208,7 @@ Delivebool - Crea un nuovo account
                                         <li><input type="checkbox" name="types[]" value="9">Siciliano</li>
                                         <li><input type="checkbox" name="types[]" value="10">Tunisino</li>
                                         <li><input type="checkbox" name="types[]" value="11">Vegan</li>
+                                        <li><input type="checkbox" name="types[]" value="12">Fast Food</li>
                                     </ul>
 
                                     @error('types')

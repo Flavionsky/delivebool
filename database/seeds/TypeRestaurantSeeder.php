@@ -26,7 +26,8 @@ class TypeRestaurantSeeder extends Seeder
             'Indiano',
             'Siciliano',
             'Tunisino',
-            'Vegan'
+            'Vegan',
+            'Fast Food'
 
           ];
 
