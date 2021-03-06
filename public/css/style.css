@@ -518,6 +518,14 @@ tr {
     padding: 50px;
 }
 
+.form-group ul {
+    list-style-type: none;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
 .registercard-box {
     background-color: white;
     width: 700px;

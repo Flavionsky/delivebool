@@ -71,14 +71,15 @@ Delivebool - Crea un nuovo account
                     </div>
                 </div>
 
-@section('content')
-    <div class="container">
-        <div class="row justify-content-center">
+        <main class="py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="registercard-box">
 
-            <div class="col-md-8">
-                <div class="card">
+                <div class="registercard">
                     <div class="card-header">
-                        <h1>Diventa subito partner di Delivebool</h1>
+                        <h2>Diventa subito partner di Delivebool</h2>
                     </div>
 
                     <div class="card-body">
@@ -235,8 +236,6 @@ Delivebool - Crea un nuovo account
     </div>
 </div>
 
-</div>
-</div>
 
 <footer>
 
