@@ -30,6 +30,11 @@
                             <span><a href="{{ route('ordina') }}">Ordina</span></a>
                             @endif
                         </div>
+                        @if(!Auth::check())
+                        <div class="registrati-o-accedi">
+                            <span><a href="{{ route('register') }}">Crea un nuovo account</span></a>
+                        </div>
+                        @endif
                         <div class="registrati-o-accedi">
                             @if(!Auth::check())
                             <span><a href="{{ route('home') }}">Accedi</span></a>
