@@ -496,9 +496,31 @@ tr {
     padding: 50px;
 }
 
-.homecard-box {
+.logincard {
+    margin-top: 80px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 50px;
+}
+
+.logincard-box {
     background-color: white;
     width: 400px;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.registercard {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 50px;
+}
+
+.registercard-box {
+    background-color: white;
+    width: 700px;
     border-radius: 5px;
     margin: 0 auto;
 }

@@ -1,5 +1,5 @@
 @section('title')
-Deliveboo - Registrati o accedi
+Delivebool - Accedi al tuo account
 @endsection
 
 <!DOCTYPE html>
@@ -76,13 +76,13 @@ Deliveboo - Registrati o accedi
             <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="homecard-box">
+            <div class="logincard-box">
 
 
-            <div class="homecard">
+            <div class="logincard">
 
                 <div class="card-header">
-                    <h2>Registrati o accedi</h2>
+                    <h2>Accedi al tuo account</h2>
                 </div>
 
                 <div class="card-body">
