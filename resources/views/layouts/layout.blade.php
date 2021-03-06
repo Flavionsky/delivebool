@@ -11,8 +11,68 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     </head>
     <body>
-
-
+        <div class="bg">
+            @if(Route::is('welcomepage'))
+            <div class="header main">
+            @else
+            <div class="header0height">
+            @endif
+                <div class="nav">
+                    <div class="logo">
+                        <img src="./img/vectorpaint.svg" alt="deliveroo logo">
+                    </div>
+                    <div class="buttons">
+                        <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
+                            <i class="fas fa-chevron-down"></i>
+                            <span>Collabora con noi</span>
+                            <div id="drop-down-1" class="active">
+                                <ul>
+                                    <li><a href="{{ route('register') }}"><i class="fas fa-utensils"></i> Ristoranti</li>
+                                    <li><i class="fas fa-briefcase"></i> Lavora con noi</li>
+                                    <li><i class="far fa-building"></i> Deliveroo per le Aziende</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="registrati-o-accedi">
+                            @if(Auth::check())
+                            <span><a href="{{ route('dashboard') }}">La tua dashboard</span></a>
+                            @else
+                            <i class="fas fa-shopping-cart"></i>
+                            <span><a href="{{ route('ordina') }}">Ordina</span></a>
+                            @endif
+                        </div>
+                        <div class="registrati-o-accedi">
+                            @if(!Auth::check())
+                            <span><a href="{{ route('home') }}">Registrati o accedi</span></a>
+                            @else
+                            <span><a href="">Logout</span></a>
+                            @endif
+                        </div>
+                        <div class="menu">
+                            <i class="fas fa-bars"></i>
+                            <span>Menu</span>
+                        </div>
+                    </div>
+                </div>
+                @if(Route::is('welcomepage'))
+                <div class="box-indirizzo">
+                    <div class="card">
+                        <h1>I piatti che ami, a domicilio.</h1>
+                        <div class="text-box">
+                            <p>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</p>
+                            <input class="search-bar" type="search" placeholder="Inserisci il tuo indirizzo completo">
+                            <button>Cerca</button>
+                            <p><a href="#">Accedi&nbsp;</a>per visualizzare i tuoi indirizzi recenti.</p>
+                        </div>
+                    </div>
+                    <div class="campagna-box">
+                        <img class="campagna" src="./img/campaign.svg" alt="campagna">
+                        <p>#aCasaTuaConDeliveroo</p>
+                    </div>
+                </div>
+                @endif
+            </div>
+        </div>
 
 
 

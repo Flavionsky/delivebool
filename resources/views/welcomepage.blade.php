@@ -6,64 +6,6 @@ Deliveboo - Home
 
 @section('content')
 
-<div class="bg">
-    <div class="header main">
-        <div class="nav">
-            <div class="logo">
-                <img src="./img/vectorpaint.svg" alt="deliveroo logo">
-            </div>
-            <div class="buttons">
-                <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
-                    <i class="fas fa-chevron-down"></i>
-                    <span>Collabora con noi</span>
-                    <div id="drop-down-1" class="active">
-                        <ul>
-                            <li><a href="{{ route('register') }}"><i class="fas fa-utensils"></i> Ristoranti</li>
-                            <li><i class="fas fa-briefcase"></i> Lavora con noi</li>
-                            <li><i class="far fa-building"></i> Deliveroo per le Aziende</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="registrati-o-accedi">
-                    @if(Auth::check())
-                    <span><a href="">La tua dashboard</span></a>
-                    @else
-                    <i class="fas fa-shopping-cart"></i>
-                    <span><a href="{{ route('ordina') }}">Ordina</span></a>
-                    @endif
-                </div>
-                @if(!Auth::check())
-                <div class="registrati-o-accedi">
-                    <span><a href="{{ route('home') }}">Registrati o accedi</span></a>
-                </div>
-                @endif
-                <div class="menu">
-                    <i class="fas fa-bars"></i>
-                    <span>Menu</span>
-                </div>
-            </div>
-        </div>
-        <div class="box-indirizzo">
-            <div class="card">
-                <h1>I piatti che ami, a domicilio.</h1>
-                <div class="text-box">
-                    <p>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</p>
-                    <input class="search-bar" type="search" placeholder="Inserisci il tuo indirizzo completo">
-                    <button>Cerca</button>
-                    <p><a href="#">Accedi&nbsp;</a>per visualizzare i tuoi indirizzi recenti.</p>
-                </div>
-            </div>
-            <div class="campagna-box">
-                <img class="campagna" src="./img/campaign.svg" alt="campagna">
-                <p>#aCasaTuaConDeliveroo</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
 <main>
     <section id="selection-1">
         <div class="container">

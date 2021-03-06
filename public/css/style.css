@@ -5,6 +5,10 @@
     font-family: 'IBM Plex Sans', sans-serif;
 }
 
+body {
+    background-color: #d0eb99;
+}
+
 /* footer */
 
 footer {
@@ -270,6 +274,11 @@ p {
 #something-else-3 ul a li:hover {
     color: white;
 }
+
+#novità-deliveroo,
+#work-with-us-5 {
+    background-color: white;
+}
 /* FINE MAIN.BLADE */
 
 /* DASHBOARD.BLADE */
@@ -377,6 +386,12 @@ tr {
 
 .header.main {
     height: 500px;
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.header0height {
     width: 1200px;
     margin: 0 auto;
     position: relative;

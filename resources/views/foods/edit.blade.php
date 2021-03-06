@@ -6,36 +6,6 @@ Deliveboo - Modifica un piatto
 
 @section('content')
 
-<div class="bg">
-    <div class="header dashboard">
-        <div class="nav">
-            <div class="logo">
-                <img src="/img/vectorpaint.svg" alt="deliveroo logo">
-            </div>
-            <div class="buttons">
-                <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
-                    <i class="fas fa-chevron-down"></i>
-                    <span>Collabora con noi</span>
-                    <div id="drop-down-1" class="active">
-                        <ul>
-                            <li><i class="fas fa-utensils"></i> Ristoranti</li>
-                            <li><i class="fas fa-briefcase"></i> Lavora con noi</li>
-                            <li><i class="far fa-building"></i> Deliveroo per le Aziende</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="registrati-o-accedi">
-                    <i class="fas fa-home"></i>
-                    <span>Registrati o accedi</span>
-                </div>
-                <div class="menu">
-                    <i class="fas fa-bars"></i>
-                    <span>Menu</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
 <div class="container dashboard">
     <div class="row">
         <div class="col-12">

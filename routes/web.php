@@ -17,13 +17,13 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcomepage');
-});
+})->name('welcomepage');
 
 
 
  Route::get('/order', function () {
     return view('partials.takeorder');
-}); 
+});
 
 
 
@@ -57,7 +57,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('restaurants', 'RestaurantController');
 
-Route::get('/dashboard', 'RestaurantController@login');
+Route::get('/dashboard', 'RestaurantController@login')->name('dashboard');
 
 Route::resource('foods', 'FoodController');
-
