@@ -436,8 +436,9 @@ tr {
 }
 
 .buttons {
-    width: 500px;
+
     justify-content: space-between;
+
 }
 
 .buttons i {
@@ -452,11 +453,13 @@ tr {
     background-color: white;
     border-radius: 5px;
     height: 40px;
-    width: 190px;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     position: relative;
+    margin-left: 10px;
+    padding: 10px;
+
 }
 
 .menu {

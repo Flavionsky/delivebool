@@ -19,32 +19,17 @@
                        aria-label="Search through site content">
 
                     <button>Search</button>
-                    
+
                     <div class="registrati-o-accedi">
                         <i class="fas fa-shopping-cart"></i>
                        <span> <a href="{{ route('cart') }}">Vai al carrello</span></a>
                     </div>
-                    
+
             </div>
         </nav>
         <main class="py-4">
             @yield('content')
         </main>
 
-      
+
     </div>
-                    
-                        
-    
-    
-                     
-                    
-                    
-                    
-    
-                
-                
-
-        
-        
-

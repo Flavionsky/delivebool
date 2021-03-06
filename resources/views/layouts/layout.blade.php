@@ -22,17 +22,6 @@
                         <img src="./img/vectorpaint.svg" alt="deliveroo logo">
                     </div>
                     <div class="buttons">
-                        <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
-                            <i class="fas fa-chevron-down"></i>
-                            <span>Collabora con noi</span>
-                            <div id="drop-down-1" class="active">
-                                <ul>
-                                    <li><a href="{{ route('register') }}"><i class="fas fa-utensils"></i> Ristoranti</li>
-                                    <li><i class="fas fa-briefcase"></i> Lavora con noi</li>
-                                    <li><i class="far fa-building"></i> Deliveroo per le Aziende</li>
-                                </ul>
-                            </div>
-                        </div>
                         <div class="registrati-o-accedi">
                             @if(Auth::check())
                             <span><a href="{{ route('dashboard') }}">La tua dashboard</span></a>
@@ -45,13 +34,36 @@
                             @if(!Auth::check())
                             <span><a href="{{ route('home') }}">Registrati o accedi</span></a>
                             @else
-                            <span><a href="">Logout</span></a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
                             @endif
                         </div>
+                        <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
+                            <i class="fas fa-chevron-down"></i>
+                            <span>Collabora con noi</span>
+                            <div id="drop-down-1" class="active">
+                                <ul>
+                                    <li><a href="{{ route('register') }}"></a><i class="fas fa-utensils"></i> Ristoranti</li>
+                                    <li><i class="fas fa-briefcase"></i> Lavora con noi</li>
+                                    <li><i class="far fa-building"></i> Deliveroo per le Aziende</li>
+                                </ul>
+                            </div>
+                        </div>
+                        @if(Auth::check())
                         <div class="menu">
                             <i class="fas fa-bars"></i>
                             <span>Menu</span>
                         </div>
+                        @endif
                     </div>
                 </div>
                 @if(Route::is('welcomepage'))
