@@ -19,7 +19,7 @@
             @endif
                 <div class="nav">
                     <div class="logo">
-                        <img src="./img/vectorpaint.svg" alt="deliveroo logo">
+                        <a href="{{ route('welcomepage') }}"><img src="./img/vectorpaint.svg" alt="deliveroo logo"></a>
                     </div>
                     <div class="buttons">
                         <div class="registrati-o-accedi">

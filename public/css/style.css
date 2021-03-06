@@ -14,6 +14,7 @@ body {
 footer {
     padding: 20px 60px;
     background-color: #313333;
+    height: 289px;
 }
 
 footer .box-container {
@@ -397,6 +398,13 @@ tr {
     position: relative;
 }
 
+.headercalc {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    height: calc(100vh - 289px);
+}
+
 .header.dashboard {
     width: 1200px;
     margin: 0 auto;
@@ -436,9 +444,7 @@ tr {
 }
 
 .buttons {
-
     justify-content: space-between;
-
 }
 
 .buttons i {
@@ -446,6 +452,7 @@ tr {
     padding-right: 10px;
 }
 
+.homebutton,
 .collabora-con-noi,
 .registrati-o-accedi,
 .menu {
@@ -476,6 +483,24 @@ tr {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.card-header h2 {
+    margin-bottom: 20px;
+}
+
+.homecard {
+    margin-top: 80px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 50px;
+}
+
+.homecard-box {
+    background-color: white;
+    width: 400px;
+    border-radius: 5px;
+    margin: 0 auto;
 }
 
 .card h1 {
