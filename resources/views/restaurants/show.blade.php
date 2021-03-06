@@ -36,9 +36,10 @@ Deliveboo Dashboard - Lista piatti
                     </tr>
                 </thead>
                 <tbody>
+                    
                 @foreach($restaurant->foods as $food)
                     <tr>
-                        <th scope="row">{{ $food->id }}</th>
+                        <th scope="row"><ol><li></li></ol></th>
                         <td><p><strong>{{ $food->name }}</strong></p></td>
                         <td><img src="{{ asset($food->image) }}" alt="cibo"></td>
                         <td><p>{{ $food->price }}</strong></p></td>
