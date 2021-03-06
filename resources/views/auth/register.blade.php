@@ -20,7 +20,7 @@ Delivebool - Crea un nuovo account
             <div class="header0height">
                 <div class="nav">
                     <div class="logo">
-                        <a href="{{ route('welcomepage') }}"><img src="./img/vectorpaint.svg" alt="deliveroo logo"></a>
+                        <a href="{{ route('welcomepage') }}"><img src="./img/delivebool-logo-white.png" alt="delivebool logo"></a>
                     </div>
                     <div class="buttons">
                         <div class="registrati-o-accedi">
@@ -58,7 +58,7 @@ Delivebool - Crea un nuovo account
                                 <ul>
                                     <li><a href="{{ route('register') }}"></a><i class="fas fa-utensils"></i> Ristoranti</li>
                                     <li><i class="fas fa-briefcase"></i> Lavora con noi</li>
-                                    <li><i class="far fa-building"></i> Deliveroo per le Aziende</li>
+                                    <li><i class="far fa-building"></i> Delivebool per le Aziende</li>
                                 </ul>
                             </div>
                         </div>
@@ -204,7 +204,7 @@ Delivebool - Crea un nuovo account
     <div class="container">
         <div class="box-container">
             <div class="box-footer">
-                <h5> Scopri Deliveroo</h5>
+                <h5> Scopri Delivebool</h5>
                 <ul>
                     <li>
                         <a href="#">Chi siamo</a>
@@ -264,7 +264,7 @@ Delivebool - Crea un nuovo account
             </div>
 
             <div class="box-footer">
-                <h5>Porta Deliveroo con te</h5>
+                <h5>Porta Delivebool con te</h5>
                 <div class="app-store">
                     <a href="https://apps.apple.com/it/app/deliveroo-piatti-a-domicilio/id1001501844"><i id="icon-apple" class="fab fa-apple"></i> App store</a>
 
@@ -297,7 +297,7 @@ Delivebool - Crea un nuovo account
                 </span>
             </div>
             <div class="copyright">
-                <span>&copy; 2021 Deliveboo</span>
+                <span>&copy; 2021 Delivebool</span>
 
             </div>
         </div>

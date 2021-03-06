@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-Deliveboo - Home
+Delivebool - Home
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@ Deliveboo - Home
 <main>
     <section id="selection-1">
         <div class="container">
-            <h1>La selezione di Deliveroo</h1>
+            <h1>La selezione di Delivebool</h1>
             <div class="blocks flex">
 
                 <div class="block comfort-food">
@@ -55,11 +55,11 @@ Deliveboo - Home
                     <div class="top-block">
                         <div class="img">
                             <img class="" src="{{'../img/menu-tag-image-4.jpg'}}" alt="">
-                            <h1>Esclusiva Deliveroo</h1>
+                            <h1>Esclusiva Delivebool</h1>
                         </div>
                     </div>
                     <div class="bottom-block">
-                        <p>I più famosi, i più buoni, i preferiti. Quelli che trovi solo su Deliveroo.</p>
+                        <p>I più famosi, i più buoni, i preferiti. Quelli che trovi solo su Delivebool.</p>
                     </div>
                 </div>
 
@@ -75,8 +75,8 @@ Deliveboo - Home
                <div class="block comfort-food">
                    <div class="top-block-2">
                        <img class="" src="{{'../img/crocerossa.jpg'}}" alt="">
-                       <h2>Deliveroo per Croce Rossa Italiana</h2>
-                       <p>Deliveroo sta raccogliendo fondi per fornire cibo gratuito alle famiglie più in difficoltà, attraverso la Croce Rossa Italiana (CRI). Puoi contribuire alla raccolta fondi facendo una donazione qui.</p>
+                       <h2>Delivebool per Croce Rossa Italiana</h2>
+                       <p>Delivebool sta raccogliendo fondi per fornire cibo gratuito alle famiglie più in difficoltà, attraverso la Croce Rossa Italiana (CRI). Puoi contribuire alla raccolta fondi facendo una donazione qui.</p>
                    </div>
                </div>
 
@@ -91,7 +91,7 @@ Deliveboo - Home
                    <div class="top-block-2">
                        <img class="" src="{{'../img/obica.jpg'}}" alt="">
                        <h2>Obicà</h2>
-                       <p>Ordina la tua mozzarella preferita a casa tua da Obicà grazie alla consegna a domicilio di Deliveroo.</p>
+                       <p>Ordina la tua mozzarella preferita a casa tua da Obicà grazie alla consegna a domicilio di Delivebool.</p>
                    </div>
                </div>
 
@@ -104,7 +104,7 @@ Deliveboo - Home
                    <div class="top-block-2">
                        <img class="" src="{{'../img/lievita.jpg'}}" alt="">
                        <h2>Lievità</h2>
-                       <p>Ordina la tua pizza preferita a casa tua da Lievità grazie alla consegna a domicilio di Deliveroo.</p>
+                       <p>Ordina la tua pizza preferita a casa tua da Lievità grazie alla consegna a domicilio di Delivebool.</p>
                    </div>
                </div>
 
@@ -120,7 +120,7 @@ Deliveboo - Home
                     <div class="top-block-2">
                         <img class="" src="{{'../img/sushi.jpg'}}" alt="">
                         <h2>Daruma Sushi - Ponte Milvio e Centro</h2>
-                        <p>Ordina il tuo sushi preferito a casa tua da Daruma Sushi grazie alla consegna a domicilio di Deliveroo.</p>
+                        <p>Ordina il tuo sushi preferito a casa tua da Daruma Sushi grazie alla consegna a domicilio di Delivebool.</p>
                     </div>
                 </div>
 
@@ -133,7 +133,7 @@ Deliveboo - Home
                    <div class="top-block-2">
                        <img class="" src="{{'../img/temakinho.jpg'}}" alt="">
                        <h2>Temakinho</h2>
-                       <p>Ordina il tuo sushi preferito a casa tua da Temakinho grazie alla consegna a domicilio di Deliveroo.</p>
+                       <p>Ordina il tuo sushi preferito a casa tua da Temakinho grazie alla consegna a domicilio di Delivebool.</p>
                    </div>
                </div>
 
@@ -170,7 +170,7 @@ Deliveboo - Home
                    <div class="top-block-2">
                        <img class="" src="{{'../img/macha.jpg'}}" alt="">
                        <h2>Macha</h2>
-                       <p>Ordina i tuoi piatti preferiti della cucina giapponese a casa tua da Macha grazie alla consegna a domicilio di Deliveroo.</p>
+                       <p>Ordina i tuoi piatti preferiti della cucina giapponese a casa tua da Macha grazie alla consegna a domicilio di Delivebool.</p>
                    </div>
                </div>
 
@@ -228,7 +228,7 @@ Deliveboo - Home
                     <div class="top-block-3">
 
                             <div class="aziende">
-                                <h2>Deliveroo per le Aziende</h2>
+                                <h2>Delivebool per le Aziende</h2>
                                     <p>Clienti o colleghi affamati? il nostro team Corporate ti può aiutare.</p>
                                 <button type="button" name="button">Contattaci</button>
                             </div>
@@ -268,7 +268,7 @@ Deliveboo - Home
 
         <section id="work-with-us-5">
             <div class="container text">
-                <h1>Lavora con deliveroo</h1>
+                <h1>Lavora con delivebool</h1>
                 <div class="blocks flex-2 ">
                     <div class="box-work red">
                         <img src="{{'../img/riders.jpg'}}" alt="">
@@ -279,7 +279,7 @@ Deliveboo - Home
                     <div class="box-work orange">
                         <img src="{{'../img/restaurants.jpg'}}" alt="">
                             <h2>Ristoranti</h2>
-                            <p>Diventa partner di Deliveroo e raggiungi sempre più clienti. Ci occupiamo noi della consegna, così che la tua unica preoccupazione sia continuare a preparare il miglior cibo.</p>
+                            <p>Diventa partner di Delivebool e raggiungi sempre più clienti. Ci occupiamo noi della consegna, così che la tua unica preoccupazione sia continuare a preparare il miglior cibo.</p>
                         <button type="button" name="button">Diventa nostro partner</button>
                     </div>
 
