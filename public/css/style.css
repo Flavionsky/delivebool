@@ -365,11 +365,10 @@ tr {
 
  .table button {
     width: 100px;
-    height: 100px;
     background-color: #00C2B3;
     line-height: 20px;
     color: white;
-} 
+}
 
 /* HEADER */
 .box-indirizzo h1 {

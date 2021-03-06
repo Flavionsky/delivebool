@@ -25,7 +25,7 @@ Deliveboo Dashboard - Lista piatti
                     </div>
                 </div>
                 <div class="registrati-o-accedi">
-                    
+
                     <a href="{{ route('login') }}"><span>Gestisci i tuoi ordini</span>
                 </div>
                 <div class="menu">
@@ -39,7 +39,7 @@ Deliveboo Dashboard - Lista piatti
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-    
+
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
