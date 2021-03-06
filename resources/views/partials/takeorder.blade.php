@@ -4,7 +4,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+
     <div id="app">
         <div class="container">
             <div class="nav">
@@ -22,10 +22,17 @@
                     
                     <div class="registrati-o-accedi">
                         <i class="fas fa-shopping-cart"></i>
-                       <span> <a href="{{ route('ordina') }}">Vai al carrello</span></a>
+                       <span> <a href="{{ route('cart') }}">Vai al carrello</span></a>
                     </div>
                     
             </div>
+        </nav>
+        <main class="py-4">
+            @yield('content')
+        </main>
+
+      
+    </div>
                     
                         
     
@@ -37,21 +44,7 @@
     
                 
                 
-            </nav>
 
-        </div>
+        
         
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-
-        @section('footer')
-         @yield('partials.footer')
-        @endsection
-    </div>
-</body>
-</html>
-
-</body>
-</html>

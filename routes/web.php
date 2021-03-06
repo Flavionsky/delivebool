@@ -44,7 +44,9 @@ Route::get('/ordina', function () {
     return view('partials.takeorder');
 })->name('ordina');
 
-
+Route::get('/cart', function () {
+    return view('partials.cart');
+})->name('cart');
 
 
 
