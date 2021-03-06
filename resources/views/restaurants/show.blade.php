@@ -25,7 +25,6 @@ Deliveboo Dashboard - Lista piatti
                     </div>
                 </div>
                 <div class="registrati-o-accedi">
-
                     <a href="{{ route('login') }}"><span>Gestisci i tuoi ordini</span>
                 </div>
                 <div class="menu">

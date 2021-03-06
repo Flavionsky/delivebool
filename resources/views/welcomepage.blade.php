@@ -18,16 +18,25 @@ Deliveboo - Home
                     <span>Collabora con noi</span>
                     <div id="drop-down-1" class="active">
                         <ul>
-                            <li> <a  href="{{ route('register') }}">  <i class="fas fa-utensils"></i> Ristoranti</li>
+                            <li><a href="{{ route('register') }}"><i class="fas fa-utensils"></i> Ristoranti</li>
                             <li><i class="fas fa-briefcase"></i> Lavora con noi</li>
                             <li><i class="far fa-building"></i> Deliveroo per le Aziende</li>
                         </ul>
                     </div>
                 </div>
                 <div class="registrati-o-accedi">
+                    @if(Auth::check())
+                    <span><a href="">La tua dashboard</span></a>
+                    @else
                     <i class="fas fa-shopping-cart"></i>
-                   <span> <a href="{{ route('ordina') }}">Ordina</span></a>
+                    <span><a href="{{ route('ordina') }}">Ordina</span></a>
+                    @endif
                 </div>
+                @if(!Auth::check())
+                <div class="registrati-o-accedi">
+                    <span><a href="{{ route('home') }}">Registrati o accedi</span></a>
+                </div>
+                @endif
                 <div class="menu">
                     <i class="fas fa-bars"></i>
                     <span>Menu</span>
@@ -266,24 +275,24 @@ Deliveboo - Home
                     <div class="top-block-3">
                         <div class="business">
                             <img class="" src="{{'../img/menu-tag-image-1.jpg'}}" alt="">
-                            
+
                         </div>
                     </div>
-                   
+
 
                 </div>
 
                 <div class="block dessert">
                     <div class="top-block-3">
-                        
+
                             <div class="aziende">
                                 <h2>Deliveroo per le Aziende</h2>
                                     <p>Clienti o colleghi affamati? il nostro team Corporate ti può aiutare.</p>
                                 <button type="button" name="button">Contattaci</button>
                             </div>
-                        
+
                     </div>
-                    
+
                 </div>
 
             </div>
@@ -298,7 +307,7 @@ Deliveboo - Home
                             <img src="{{'../img/store.png'}}" alt="">
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <div class="block exclusive">
@@ -307,7 +316,7 @@ Deliveboo - Home
                             <img src="{{'../img/menu-tag-image-2.jpg'}}" alt="">
                         </div>
                     </div>
-                   
+
                 </div>
 
             </div>
@@ -332,21 +341,21 @@ Deliveboo - Home
                         <button type="button" name="button">Diventa nostro partner</button>
                     </div>
 
-                    
+
                         <div class="box-work grey">
                             <img src="{{'../img/team.jpg'}}" alt="">
                                 <h2>Lavora con noi</h2>
                                 <p>La nostra missione è trasformare il modo in cui le persone mangiano. È un obiettivo ambizioso, come noi, e ci servono persone che ci aiutino a raggiungerlo.</p>
                             <button type="button" name="button">Scopri di più</button>
                         </div>
-                    
+
 
                 </div>
 
 
             </div>
 
-        </section> 
+        </section>
 
 
 </main>
