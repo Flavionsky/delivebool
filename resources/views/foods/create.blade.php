@@ -12,10 +12,10 @@ Deliveboo - Inserisci un nuovo piatto
             <h1>Inserisci un nuovo piatto</h1>
         </div>
         <div class="col-12">
-            <form action="{{ route('restaurants.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('foods.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('post')
-
+            
             <div class="form-group">
                 <label>{{__('Nome')}}</label>
                 <input class="form-control" name="name" placeholder="Inserisci il nome del Piatto" type="text">

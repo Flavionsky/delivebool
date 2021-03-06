@@ -37,10 +37,8 @@ class RestaurantController extends Controller
     {
         $restaurants = Restaurant::all();
 
-        $userLogged = Auth::user();
 
-
-        return view('restaurants.index', compact('restaurants', 'userLogged'));
+        return view('restaurants.index', compact('restaurants'));
     }
 
     /**
@@ -49,8 +47,8 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('restaurants.create');
+    {   
+
     }
 
     /**
@@ -59,28 +57,9 @@ class RestaurantController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(FoodFormRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->validated();
 
-        $restaurant = Auth::user();
-
-        $newFood = new Food;
-
-        $newFood->restaurant_id = $restaurant->id;
-        $newFood->name = $data['name'];
-        $newFood->price = $data['price'];
-        $newFood->description = $data['description'];
-        $newFood->visibility = $data['visibility'];
-        $newFood->kind_of_food = $data['kind_of_food'];
-        
-        if($request->file('image') != null){
-            $newFood->image = $request->file('image')->storePublicly('images');
-        }
-
-        $newFood->save();
-
-        return redirect()->route('restaurants.show', $restaurant);
     }
 
     /**
@@ -133,7 +112,7 @@ class RestaurantController extends Controller
                 'kind_of_food' => $data['kind_of_food'],
             ]);
 
-            return view('restaurants.index', $restaurant);
+            return view('restaurants.show', $restaurant);
 
         }
     }
@@ -150,8 +129,11 @@ class RestaurantController extends Controller
     }
 
     public function login(Restaurant $restaurant)
-    {
-        $restaurant->id = Auth::user()->id;
+    {   
+        $id = Auth::user()->id;
+
+        $restaurant = Restaurant::find($id);
+
         return view('restaurants.show', compact('restaurant'));
     }
 }

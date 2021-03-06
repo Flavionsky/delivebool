@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Restaurant;
+use App\TypeRestaurant;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -30,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::DASH;
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -57,6 +58,7 @@ class RegisterController extends Controller
             'address' => ['required', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:100'],
             'p_iva' => ['required', 'string','min:11', 'max:13'],
+            'types' => []
         ]);
     }
 
@@ -68,7 +70,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Restaurant::create([
+        $restaurant = Restaurant::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'email_verified_at' => now(),
@@ -78,5 +80,9 @@ class RegisterController extends Controller
             'city' => $data['city'],
             'p_iva' => $data['p_iva']
         ]);
+
+        $restaurant->types()->sync($data['types']);
+
+        return $restaurant;
     }
 }

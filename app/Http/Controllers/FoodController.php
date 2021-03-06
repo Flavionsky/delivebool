@@ -28,7 +28,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        //
+        return view('foods.create');
     }
 
     /**
@@ -37,9 +37,32 @@ class FoodController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FoodFormRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        $id = Auth::user()->id;
+
+        $restaurant = Restaurant::find($id);
+
+        $categories = TypeRestaurant::all();
+
+        $newFood = new Food;
+
+        $newFood->restaurant_id = $restaurant->id;
+        $newFood->name = $data['name'];
+        $newFood->price = $data['price'];
+        $newFood->description = $data['description'];
+        $newFood->visibility = $data['visibility'];
+        $newFood->kind_of_food = $data['kind_of_food'];
+        
+        if($request->file('image') != null){
+            $newFood->image = $request->file('image')->storePublicly('images');
+        }
+
+        $newFood->save();
+
+        return redirect()->route('restaurants.show', compact('restaurant'));
     }
 
     /**

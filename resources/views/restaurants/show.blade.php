@@ -10,11 +10,17 @@ Deliveboo Dashboard - Lista piatti
 
         <div class="container dashboard">
             <h1>Lista piatti di {{ $restaurant->name }}</h1>
+            <h2>Le tue Tipologie: </h2>
+            <ul>
+                @foreach ($restaurant->types as $type)
+                <li>{{$type->name}}</li>
+                @endforeach
+            </ul>
             <h2>In questa pagina puoi visualizzare una lista dei tuoi piatti.<br>Per modificare i dettagli di un piatto, clicca sul pulsante "Modifica" accanto al relativo piatto. Se vuoi eliminarlo dalla lista dei tuoi piatti, clicca su "Elimina".<br>Se invece vuoi aggiungere un nuovo piatto, premi il pulsante "Crea un nuovo piatto".</h2>
             <div class="dashboard-box">
                 <ul>
                     <li>
-                        <a href="{{ route('restaurants.create')}}">
+                        <a href="{{ route('foods.create')}}">
                             <div class="reg-button create">
                                 <h1>Crea un nuovo piatto</h1>
                             </div>
@@ -65,6 +71,5 @@ Deliveboo Dashboard - Lista piatti
 
 
         @endsection
-        <!-- COPIARE FINO A QUI -->
     </body>
 </html>

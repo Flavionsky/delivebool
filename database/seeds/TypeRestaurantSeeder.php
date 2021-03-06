@@ -25,7 +25,6 @@ class TypeRestaurantSeeder extends Seeder
             'Yoghurteria',
             'Indiano',
             'Siciliano',
-            'Romana',
             'Tunisino',
             'Vegan'
 
