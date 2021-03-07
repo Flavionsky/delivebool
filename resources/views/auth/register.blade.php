@@ -79,7 +79,7 @@ Delivebool - Crea un nuovo account
 
                 <div class="registercard">
                     <div class="card-header">
-                        <h2>Diventa subito partner di Delivebool</h2>
+                        <h2>Diventa subito partner di Delivebool </h2>
                     </div>
 
                     <div class="card-body">
