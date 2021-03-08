@@ -263,6 +263,7 @@ p {
     border-radius: 3px;
     padding: 10px;
     cursor: pointer;
+    position: relative;
 }
 
 #something-else-3 ul a li {
@@ -299,7 +300,6 @@ p {
 }
 
 .form-check-label {
-    position: relative;
     cursor: pointer;
 }
 
