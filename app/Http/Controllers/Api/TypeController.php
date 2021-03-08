@@ -14,7 +14,9 @@ class TypeController extends Controller
 {
     public function index(){
 
-        return TypeResource::collection(TypeRestaurant::all());
+        $types = TypeRestaurant::withCount(['restaurants'])->get();
+
+    return TypeResource::collection($types);
     }
 
 }

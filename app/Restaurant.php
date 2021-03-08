@@ -47,4 +47,11 @@ class Restaurant extends Authenticatable
     public function foods(){
         return $this->hasMany('App\Food', 'restaurant_id' , 'id'); 
     }
+
+    public function scopeWithFilters($query, $types)
+    {
+        return $query->when(count($types), function ($query) use ($types) {
+                Restaurant::whereIn('type_id', $types);
+            });
+    }
 }

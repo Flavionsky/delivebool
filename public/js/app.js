@@ -1991,58 +1991,50 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       types: [],
-      foods: [],
       restaurants: [],
-      loading: true
+      loading: true,
+      selected: {
+        typesClick: []
+      }
     };
   },
   mounted: function mounted() {
     this.loadTypes();
-    this.loadFoods();
     this.loadRestaurants();
+  },
+  watch: {
+    selected: {
+      handler: function handler() {
+        this.loadTypes();
+        this.loadRestaurants();
+      },
+      deep: true
+    }
   },
   methods: {
     loadTypes: function loadTypes() {
       var _this = this;
 
-      axios.get('/api/types').then(function (response) {
+      axios.get('/api/types', {
+        params: _.omit(this.selected, 'types')
+      }).then(function (response) {
         _this.types = response.data.data;
       })["catch"](function (error) {
         console.log(error);
       });
     },
-    loadFoods: function loadFoods() {
+    loadRestaurants: function loadRestaurants() {
       var _this2 = this;
 
-      axios.get('/api/foods').then(function (response) {
-        _this2.foods = response.data.data;
+      axios.get('/api/restaurants', {
+        params: this.selected
+      }).then(function (response) {
+        _this2.restaurants = response.data.data;
         _this2.loading = false;
-      })["catch"](function (error) {
-        console.log(error);
-      });
-    },
-    loadRestaurants: function loadRestaurants() {
-      var _this3 = this;
-
-      axios.get('/api/restaurants').then(function (response) {
-        _this3.restaurants = response.data.data;
-        _this3.loading = false;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -37711,25 +37703,66 @@ var render = function() {
       _c("div", { staticClass: "row" }, [
         _c(
           "div",
-          { staticClass: "col-lg-3" },
+          { staticClass: "col-lg-3 mb-4" },
           [
-            _c("h1", { staticClass: "my-4" }, [_vm._v("Shop Catalog")]),
+            _c("h1", { staticClass: "mt-4" }, [_vm._v("Filters")]),
             _vm._v(" "),
-            _c("h3", { staticClass: "mt-2" }, [_vm._v("Categories")]),
+            _c("h3", { staticClass: "mt-2" }, [_vm._v("Categorie")]),
             _vm._v(" "),
             _vm._l(_vm.types, function(type) {
-              return _c("div", { staticClass: "form-check" }, [
+              return _c("div", { key: type.id, staticClass: "form-check" }, [
                 _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.selected.typesClick,
+                      expression: "selected.typesClick"
+                    }
+                  ],
                   staticClass: "form-check-input",
-                  attrs: { type: "checkbox", id: type },
-                  domProps: { value: type.id }
+                  attrs: { type: "checkbox", id: "type" + _vm.index },
+                  domProps: {
+                    value: type.id,
+                    checked: Array.isArray(_vm.selected.typesClick)
+                      ? _vm._i(_vm.selected.typesClick, type.id) > -1
+                      : _vm.selected.typesClick
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.selected.typesClick,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = type.id,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(
+                              _vm.selected,
+                              "typesClick",
+                              $$a.concat([$$v])
+                            )
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.selected,
+                              "typesClick",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.selected, "typesClick", $$c)
+                      }
+                    }
+                  }
                 }),
                 _vm._v(" "),
                 _c(
                   "label",
                   {
                     staticClass: "form-check-label",
-                    attrs: { for: "category" + _vm.index }
+                    attrs: { for: "type" + _vm.index }
                   },
                   [
                     _vm._v(
@@ -37749,35 +37782,47 @@ var render = function() {
           _c(
             "div",
             { staticClass: "row mt-4" },
-            [
-              _c("h2", [_vm._v("Ristoranti")]),
-              _vm._v(" "),
-              _vm._l(_vm.restaurants, function(restaurant) {
-                return _c(
-                  "div",
-                  { key: restaurant.id, staticClass: "col-lg-4 col-md-6 mb-4" },
-                  [
-                    _c("div", { staticClass: "card h-100" }, [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("h4", { staticClass: "card-title" }, [
-                          _c("a", { attrs: { href: "#" } }, [
-                            _vm._v(_vm._s(restaurant.name))
-                          ])
+            _vm._l(_vm.restaurants, function(restaurant) {
+              return _c(
+                "div",
+                { key: restaurant.id, staticClass: "col-lg-4 col-md-6 mb-4" },
+                [
+                  _c("div", { staticClass: "card h-100" }, [
+                    _vm._m(0, true),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("h4", { staticClass: "card-title" }, [
+                        _c("p", [_vm._v(_vm._s(restaurant.id))]),
+                        _vm._v(" "),
+                        _c("a", { attrs: { href: "#" } }, [
+                          _vm._v(_vm._s(restaurant.name))
                         ])
                       ])
                     ])
-                  ]
-                )
-              })
-            ],
-            2
+                  ])
+                ]
+              )
+            }),
+            0
           )
         ])
       ])
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "#" } }, [
+      _c("img", {
+        staticClass: "card-img-top",
+        attrs: { src: "http://placehold.it/700x400", alt: "" }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 
