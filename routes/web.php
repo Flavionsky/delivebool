@@ -61,4 +61,4 @@ Route::get('/dashboard', 'RestaurantController@login')->name('home');
 
 Route::resource('foods', 'FoodController');
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
