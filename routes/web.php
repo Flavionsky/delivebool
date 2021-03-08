@@ -48,6 +48,11 @@ Route::get('/cart', function () {
     return view('partials.cart');
 })->name('cart');
 
+Route::get('/nuovo', function () {
+    return view('partials.order2');
+})->name('cart');
+
+
 Auth::routes();
 
 Route::resource('restaurants', 'RestaurantController');
