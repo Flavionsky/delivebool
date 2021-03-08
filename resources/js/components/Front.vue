@@ -3,16 +3,19 @@
         <div class="row">
             <div class="col-lg-3">
                 <h1 class="my-4">Shop Catalog</h1>
-                <div class="list-group">
-                    <a class="list-group-item" v-for="type in types">
+
+                <h3 class="mt-2">Categories</h3>
+                <div class="form-check" v-for="type in types">
+                    <input class="form-check-input" type="checkbox" :value="type.id" :id="type">
+                    <label class="form-check-label" :for="'category' + index">
                         {{ type.name }}
-                    </a>
+                    </label>
                 </div>
 
             </div>
             <div class="col-lg-9">
                 <div class="row mt-4">
-                    <div class="col-lg-4 col-md-6 mb-4" v-for="food in foods">
+                    <!-- <div class="col-lg-4 col-md-6 mb-4" v-bind:key="food.id" v-for="food in foods">
                         <div class="card h-100">
                             <a href="#">
                                 <img class="card-img-top" v-bind:src="food.image" alt="Food">
@@ -25,7 +28,18 @@
                                 <p class="card-text">{{ food.description }}</p>
                             </div>
                         </div>
+                    </div> -->
+                    <h2>Ristoranti</h2>
+                    <div class="col-lg-4 col-md-6 mb-4" v-bind:key="restaurant.id" v-for="restaurant in restaurants">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">{{ restaurant.name }}</a>
+                                </h4>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -38,12 +52,14 @@
             return {
                 types: [],
                 foods: [],
+                restaurants:[],
                 loading: true
             }
         },
         mounted() {
             this.loadTypes();
             this.loadFoods();
+            this.loadRestaurants();
         },
         methods: {
             loadTypes: function () {
@@ -59,6 +75,16 @@
                 axios.get('/api/foods')
                     .then((response) => {
                         this.foods = response.data.data;
+                        this.loading = false;
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            },
+            loadRestaurants: function () {
+                axios.get('/api/restaurants')
+                    .then((response) => {
+                        this.restaurants = response.data.data;
                         this.loading = false;
                     })
                     .catch(function (error) {
