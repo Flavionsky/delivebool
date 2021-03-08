@@ -243,6 +243,8 @@ p {
 #something-else-3 {
     background-color: #FFEAE4;
     padding-bottom: 20px;
+    position: relative;
+    z-index: 11;
 }
 
 #something-else-3 .categories {

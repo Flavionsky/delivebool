@@ -7,6 +7,29 @@ Delivebool - Home
 @section('content')
 
 <main>
+
+    <section id="something-else-3">
+        <div class="container">
+            <h1>Di cosa hai voglia oggi?</h1>
+            <div class="categories">
+                <ul>
+                    <a href="#"><li>Cinese</li></a>
+                    <a href="#"><li>Giapponese</li></a>
+                    <a href="#"><li>Romano</li></a>
+                    <a href="#"><li>Pizzeria</li></a>
+                    <a href="#"><li>Cucina di pesce</li></a>
+                    <a href="#"><li>Gelateria</li></a>
+                    <a href="#"><li>Yoghurteria</li></a>
+                    <a href="#"><li>Indiano</li></a>
+                    <a href="#"><li>Siciliano</li></a>
+                    <a href="#"><li>Tunisino</li></a>
+                    <a href="#"><li>Vegan</li></a>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
     <section id="selection-1">
         <div class="container">
             <h1>La selezione di Delivebool</h1>
@@ -186,27 +209,7 @@ Delivebool - Home
            </div>
 
         </section>
-    <section id="something-else-3">
-        <div class="container">
-            <h1>Di cosa hai voglia oggi?</h1>
-            <div class="categories">
-                <ul>
-                    <a href="#"><li>Cinese</li></a>
-                    <a href="#"><li>Giapponese</li></a>
-                    <a href="#"><li>Romano</li></a>
-                    <a href="#"><li>Pizzeria</li></a>
-                    <a href="#"><li>Cucina di pesce</li></a>
-                    <a href="#"><li>Gelateria</li></a>
-                    <a href="#"><li>Yoghurteria</li></a>
-                    <a href="#"><li>Indiano</li></a>
-                    <a href="#"><li>Siciliano</li></a>
-                    <a href="#"><li>Romano</li></a>
-                    <a href="#"><li>Tunisino</li></a>
-                    <a href="#"><li>Vegan</li></a>
-                </ul>
-            </div>
-        </div>
-    </section>
+
 
     <section id="novità-deliveroo">
         <div class="container">
