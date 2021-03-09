@@ -1991,6 +1991,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37706,68 +37710,75 @@ var render = function() {
             "ul",
             _vm._l(_vm.types, function(type) {
               return _c("span", { key: type.id, staticClass: "form-check" }, [
-                _c("li", [
-                  _c(
-                    "label",
-                    {
-                      staticClass: "form-check-label",
-                      attrs: { for: "type" + _vm.index }
-                    },
-                    [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.selected.typesClick,
-                            expression: "selected.typesClick"
-                          }
-                        ],
-                        staticClass: "form-check-input",
-                        attrs: { type: "checkbox", id: "type" + _vm.index },
-                        domProps: {
-                          value: type.id,
-                          checked: Array.isArray(_vm.selected.typesClick)
-                            ? _vm._i(_vm.selected.typesClick, type.id) > -1
-                            : _vm.selected.typesClick
-                        },
-                        on: {
-                          change: function($event) {
-                            var $$a = _vm.selected.typesClick,
-                              $$el = $event.target,
-                              $$c = $$el.checked ? true : false
-                            if (Array.isArray($$a)) {
-                              var $$v = type.id,
-                                $$i = _vm._i($$a, $$v)
-                              if ($$el.checked) {
-                                $$i < 0 &&
-                                  _vm.$set(
-                                    _vm.selected,
-                                    "typesClick",
-                                    $$a.concat([$$v])
-                                  )
+                _c(
+                  "li",
+                  {
+                    class: {
+                      backgroundColor: _vm.selected.typesClick.includes(type.id)
+                    }
+                  },
+                  [
+                    _c(
+                      "label",
+                      { staticClass: "form-check-label", attrs: { for: type } },
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.selected.typesClick,
+                              expression: "selected.typesClick"
+                            }
+                          ],
+                          staticClass: "form-check-input",
+                          attrs: { type: "checkbox" },
+                          domProps: {
+                            value: type.id,
+                            checked: Array.isArray(_vm.selected.typesClick)
+                              ? _vm._i(_vm.selected.typesClick, type.id) > -1
+                              : _vm.selected.typesClick
+                          },
+                          on: {
+                            change: function($event) {
+                              var $$a = _vm.selected.typesClick,
+                                $$el = $event.target,
+                                $$c = $$el.checked ? true : false
+                              if (Array.isArray($$a)) {
+                                var $$v = type.id,
+                                  $$i = _vm._i($$a, $$v)
+                                if ($$el.checked) {
+                                  $$i < 0 &&
+                                    _vm.$set(
+                                      _vm.selected,
+                                      "typesClick",
+                                      $$a.concat([$$v])
+                                    )
+                                } else {
+                                  $$i > -1 &&
+                                    _vm.$set(
+                                      _vm.selected,
+                                      "typesClick",
+                                      $$a
+                                        .slice(0, $$i)
+                                        .concat($$a.slice($$i + 1))
+                                    )
+                                }
                               } else {
-                                $$i > -1 &&
-                                  _vm.$set(
-                                    _vm.selected,
-                                    "typesClick",
-                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                                  )
+                                _vm.$set(_vm.selected, "typesClick", $$c)
                               }
-                            } else {
-                              _vm.$set(_vm.selected, "typesClick", $$c)
                             }
                           }
-                        }
-                      }),
-                      _vm._v(
-                        "\n                            " +
-                          _vm._s(type.name) +
-                          "\n                        "
-                      )
-                    ]
-                  )
-                ])
+                        }),
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(type.name) +
+                            "\n                        "
+                        )
+                      ]
+                    )
+                  ]
+                )
               ])
             }),
             0
@@ -37775,32 +37786,38 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "col-lg-9" }, [
-          _c(
-            "div",
-            { staticClass: "categorie-box-main" },
-            _vm._l(_vm.restaurants, function(restaurant) {
-              return _c(
-                "div",
-                { key: restaurant.id, staticClass: "col-lg-4 col-md-6 mb-4" },
-                [
-                  _c("div", { staticClass: "card h-100" }, [
-                    _vm._m(0, true),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("h4", { staticClass: "card-title" }, [
-                        _c("h1", [_vm._v(_vm._s(restaurant.id))]),
-                        _vm._v(" "),
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v(_vm._s(restaurant.name))
+          _c("div", { staticClass: "categorie-box-main" }, [
+            !_vm.selected.typesClick.length
+              ? _c("div")
+              : _c(
+                  "div",
+                  _vm._l(_vm.restaurants, function(restaurant) {
+                    return _c(
+                      "div",
+                      {
+                        key: restaurant.id,
+                        staticClass: "col-lg-4 col-md-6 mb-4"
+                      },
+                      [
+                        _c("div", { staticClass: "card h-100" }, [
+                          _vm._m(0, true),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "card-body" }, [
+                            _c("h4", { staticClass: "card-title" }, [
+                              _c("h1", [_vm._v(_vm._s(restaurant.id))]),
+                              _vm._v(" "),
+                              _c("a", { attrs: { href: "#" } }, [
+                                _vm._v(_vm._s(restaurant.name))
+                              ])
+                            ])
+                          ])
                         ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
+                      ]
+                    )
+                  }),
+                  0
+                )
+          ])
         ])
       ])
     ]
@@ -50136,8 +50153,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\Giuseppe\Desktop\delivebool\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\delivebool\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! F:\Boolean php\delivebool\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! F:\Boolean php\delivebool\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> main
 
 
 /***/ })

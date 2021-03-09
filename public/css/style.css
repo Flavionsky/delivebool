@@ -240,24 +240,24 @@ p {
 }
 
 /* MAIN SEZIONE 3 */
-#something-else-3 {
+.something-else-3 {
     background-color: #FFEAE4;
     padding-bottom: 20px;
     position: relative;
     z-index: 11;
 }
 
-#something-else-3 .categories {
+.something-else-3 .categories {
     text-align: center;
 }
 
-#something-else-3 li {
+.something-else-3 li {
     display: inline-block;
     margin-right: 10px;
     margin-bottom: 30px;
 }
 
-#something-else-3 ul li {
+.something-else-3 ul li {
     list-style-type: none;
     background-color: #e8d2cc;
     border-radius: 3px;
@@ -266,22 +266,18 @@ p {
     position: relative;
 }
 
-#something-else-3 ul a li {
+.something-else-3 ul a li {
     text-decoration: none;
     color: black;
     font-size: 1.1rem;
 }
 
-#something-else-3 ul li:hover {
-    background-color: hotpink;
+
+.something-else-3 ul a li:hover {
     color: white;
 }
 
-#something-else-3 ul a li:hover {
-    color: white;
-}
-
-#something-else-3 input[type="checkbox"] {
+.something-else-3 input[type="checkbox"] {
     position: absolute;
     left: 0;
     top: 0;
@@ -292,7 +288,7 @@ p {
   display: inline-block;
 }
 
-#something-else-3 input ~ label {
+.something-else-3 input ~ label {
     background-color: #e8d2cc;
     border-radius: 3px;
     padding: 10px;
@@ -303,14 +299,13 @@ p {
     cursor: pointer;
 }
 
-#something-else-3 input:checked ~ label {
-    background-color: hotpink;
+.something-else-3 input:checked ~ label {
     border-radius: 3px;
     padding: 10px;
     color: white;
 }
 
-#something-else-3 .card {
+.something-else-3 .card {
     background-color: white;
     border-radius: 5px;
     width: 300px;
@@ -702,6 +697,7 @@ input[type="checkbox"] {
 }
 
 
+
 a{
     text-decoration: none;
     color:black;
@@ -716,7 +712,7 @@ a{
     margin-top: 15px;
     font-size: 20px;
     border-radius: 5px;
-    border: none;
+    border: none; 
     font-size: 15px;
 }
 .aziende button:hover {
@@ -842,6 +838,7 @@ div.nav-cart-border-bottom {
 #cart-button button:hover {
     background-color: #00bbad;
 }
+<<<<<<< HEAD
 
 
 
@@ -850,3 +847,9 @@ div.nav-cart-border-bottom {
 
 
 
+=======
+#app .backgroundColor{
+    background-color: hotpink;
+    color: white;
+}
+>>>>>>> main

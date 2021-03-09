@@ -8,7 +8,7 @@ Delivebool - Home
 
 <main>
 
-    <section id="something-else-3">
+    <section class="something-else-3">
         <div class="container">
             <h1>Di cosa hai voglia oggi?</h1>
             <div class="categories">
