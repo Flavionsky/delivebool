@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Type;
+
+use App\Food;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -22,7 +26,11 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
+    {   
+        $categories = Type::all();
+
+        $foods = Food::all();
+
+        return view('home', compact('categories', 'foods'));
     }
 }

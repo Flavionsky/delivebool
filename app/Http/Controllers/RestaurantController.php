@@ -12,8 +12,9 @@ use Illuminate\Http\Request;
 */
 
 use App\Restaurant;
-
+use App\Type;
 use App\Food;
+use App\Http\Requests\FoodFormRequest;
 
 use Illuminate\Support\Str;
 
@@ -36,10 +37,8 @@ class RestaurantController extends Controller
     {
         $restaurants = Restaurant::all();
 
-        $userLogged = Auth::user();
 
-
-        return view('restaurants.index', compact('restaurants', 'userLogged'));
+        return view('restaurants.index', compact('restaurants'));
     }
 
     /**
@@ -48,8 +47,8 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+
     }
 
     /**
@@ -60,7 +59,7 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -69,9 +68,9 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Restaurant $restaurant)
     {
-        //
+        return view('restaurants.show', compact('restaurant'));
     }
 
     /**
@@ -82,7 +81,8 @@ class RestaurantController extends Controller
      */
     public function edit($id)
     {
-        //
+        $food = Food::find($id);
+        return view('restaurants.edit', compact('food'));
     }
 
     /**
@@ -92,9 +92,29 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FoodFormRequest $request, Restaurant $restaurant, $id)
     {
-        //
+
+       
+        $userLogged = Auth::user();
+        if ($userLogged->id == $restaurant->id) {
+
+            $data = $request->validated();
+
+            $food = $restaurant->foods->find($id);
+
+            $food->update([
+                'name' => $data['name'],
+                'price' => $data['price'],
+                'image' => $request->file('image')->storePublicly('images'),
+                'description' => $data['description'],
+                'visibility' => $data['visibility'],
+                'kind_of_food' => $data['kind_of_food'],
+            ]);
+
+            return view('restaurants.show', $restaurant);
+
+        }
     }
 
     /**
@@ -106,5 +126,14 @@ class RestaurantController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function login(Restaurant $restaurant)
+    {   
+        $id = Auth::user()->id;
+
+        $restaurant = Restaurant::find($id);
+
+        return view('restaurants.show', compact('restaurant'));
     }
 }

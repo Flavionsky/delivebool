@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Restaurant;
+use App\Type;
 use App\Food;
+use App\Http\Requests\FoodFormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class FoodController extends Controller
 {
@@ -15,9 +18,7 @@ class FoodController extends Controller
      */
     public function index()
     {
-        $foods = Food::all();
-
-        return view('foods.index', compact('foods'));
+        //
     }
 
     /**
@@ -27,7 +28,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        //
+        return view('foods.create');
     }
 
     /**
@@ -36,9 +37,32 @@ class FoodController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FoodFormRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        $id = Auth::user()->id;
+
+        $restaurant = Restaurant::find($id);
+
+        $categories = Type::all();
+
+        $newFood = new Food;
+
+        $newFood->restaurant_id = $restaurant->id;
+        $newFood->name = $data['name'];
+        $newFood->price = $data['price'];
+        $newFood->description = $data['description'];
+        $newFood->visibility = $data['visibility'];
+        $newFood->kind_of_food = $data['kind_of_food'];
+        
+        if($request->file('image') != null){
+            $newFood->image = $request->file('image')->storePublicly('images');
+        }
+
+        $newFood->save();
+
+        return redirect()->route('restaurants.show', compact('restaurant'));
     }
 
     /**
@@ -60,7 +84,8 @@ class FoodController extends Controller
      */
     public function edit($id)
     {
-        //
+        $food = Food::find($id);
+        return view('foods.edit', compact('food'));
     }
 
     /**
@@ -70,9 +95,26 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FoodFormRequest $request, Restaurant $restaurant, $id)
     {
-        //
+        $userLogged = Auth::user();
+        $food = Food::find($id);
+        if ($userLogged->id == $food->restaurant_id) {
+
+            $data = $request->validated();
+
+
+            $food->update([
+                'name' => $data['name'],
+                'price' => $data['price'],
+                'description' => $data['description'],
+                'visibility' => $data['visibility'],
+                'kind_of_food' => $data['kind_of_food'],
+            ]);
+            $message = "Piatto modificato con successo";
+            /* return redirect()->route('restaurants.index'); */
+            return view("message", compact("message"));
+        }
     }
 
     /**
@@ -83,6 +125,12 @@ class FoodController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $food = Food::find($id);
+       
+        $food->delete();
+        $message = "Piatto eliminato";
+        return view("message", compact("message")); 
+
+        
     }
 }

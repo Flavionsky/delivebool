@@ -19,7 +19,7 @@ class Restaurant extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email','email_verified_at', 'password', 'remember_token', 'address', 'city' , 'p_iva' , 'types'
     ];
 
     /**
@@ -41,7 +41,7 @@ class Restaurant extends Authenticatable
     ];
 
     public function types(){
-        return $this->belongsToMany('App\TypeRestaurant', 'restaurants_to_type_restaurants', 'restaurant_id', 'type_id');
+        return $this->belongsToMany('App\Type', 'type_restaurant', 'restaurant_id', 'type_id');
     }
 
     public function foods(){

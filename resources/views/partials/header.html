@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliveboo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg">
+        <div class="header">
+            <div class="nav">
+                <div class="logo">
+                    <img src="./img/vectorpaint.svg" alt="deliveroo logo">
+                </div>
+                <div class="buttons">
+                    <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
+                        <i class="fas fa-chevron-down"></i>
+                        <span>Collabora con noi</span>
+                        <div id="drop-down-1" class="active">
+                            <ul>
+                                <li><i class="fas fa-utensils"></i> Ristoranti</li>
+                                <li><i class="fas fa-briefcase"></i> Lavora con noi</li>
+                                <li><i class="far fa-building"></i> Deliveroo per le Aziende</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="registrati-o-accedi">
+                        <i class="fas fa-home"></i>
+                        <span>Registrati o accedi</span>
+                    </div>
+                    <div class="menu">
+                        <i class="fas fa-bars"></i>
+                        <span>Menu</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box-indirizzo">
+                <div class="card">
+                    <h1>I piatti che ami, a domicilio.</h1>
+                    <div class="text-box">
+                        <p>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</p>
+                        <input class="search-bar" type="search" placeholder="Inserisci il tuo indirizzo completo">
+                        <button>Cerca</button>
+                        <p><a href="#">Accedi&nbsp;</a>per visualizzare i tuoi indirizzi recenti.</p>
+                    </div>
+                </div>
+                <div class="campagna-box">
+                    <img class="campagna" src="./img/campaign.svg" alt="campagna">
+                    <p>#aCasaTuaConDeliveroo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function dropDown1() {
+            var element = document.getElementById("drop-down-1");
+            element.classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>
