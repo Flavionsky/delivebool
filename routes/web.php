@@ -50,7 +50,7 @@ Route::get('/cart', function () {
 
 Route::get('/nuovo', function () {
     return view('partials.order2');
-})->name('cart');
+});
 
 
 Auth::routes();

@@ -53,8 +53,9 @@ class FoodController extends Controller
         $newFood->name = $data['name'];
         $newFood->price = $data['price'];
         $newFood->description = $data['description'];
-        $newFood->visibility = $data['visibility'];
+        $newFood->visibility = $data["visibility"];
         $newFood->kind_of_food = $data['kind_of_food'];
+        
         
         if($request->file('image') != null){
             $newFood->image = $request->file('image')->storePublicly('images');
@@ -113,6 +114,9 @@ class FoodController extends Controller
             ]);
             $message = "Piatto modificato con successo";
             /* return redirect()->route('restaurants.index'); */
+            if($request->file('image') != null){
+                $newFood->image = $request->file('image')->storePublicly('images');
+            }
             return view("message", compact("message"));
         }
     }
