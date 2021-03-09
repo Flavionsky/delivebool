@@ -11,9 +11,9 @@ Deliveboo Dashboard - Lista piatti
         <div class="container dashboard">
             <h1>Lista piatti di {{ $restaurant->name }}</h1>
             <h2>Le tue Tipologie: </h2>
-            <ul>
+            <ul class="dashboard types">
                 @foreach ($restaurant->types as $type)
-                <li>{{$type->name}}</li>
+                <li><h3>{{$type->name}}<h3></li>
                 @endforeach
             </ul>
             <h2>In questa pagina puoi visualizzare una lista dei tuoi piatti.<br>Per modificare i dettagli di un piatto, clicca sul pulsante "Modifica" accanto al relativo piatto. Se vuoi eliminarlo dalla lista dei tuoi piatti, clicca su "Elimina".<br>Se invece vuoi aggiungere un nuovo piatto, premi il pulsante "Crea un nuovo piatto".</h2>
@@ -42,16 +42,20 @@ Deliveboo Dashboard - Lista piatti
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                 @foreach($restaurant->foods as $food)
                     <tr>
-                        <th scope="row"><ol><li></li></ol></th>
+                        <th scope="row">{{ $food->id }}</th>
                         <td><p><strong>{{ $food->name }}</strong></p></td>
                         <td><img src="{{ asset($food->image) }}" alt="cibo"></td>
                         <td><p>{{ $food->price }}</strong></p></td>
                         <td><p>{{ $food->kind_of_food }}</p></td>
                         <td><p>{{ $food->description }}</p></td>
-                        <td><p>{{ $food->visibility }}</p></td>
+                        @if ($food->visibility == 1)
+                        <td><p>{{ $food->visibility = "Sì"}}</p></td>
+                        @else
+                        <td><p>{{ $food->visibility = "No"}}</p></td>
+                        @endif
                         <td>
                             <a href="{{ route('foods.edit', $food) }}"><button type="submit">Modifica</button></a>
                         </td>

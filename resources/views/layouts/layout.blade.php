@@ -19,7 +19,7 @@
             @endif
                 <div class="nav">
                     <div class="logo">
-                        <a href="{{ route('welcomepage') }}"><img src="./img/delivebool-logo-white.png" alt="delivebool logo"></a>
+                        <a href="{{ route('welcomepage') }}"><img src="/img/delivebool-logo-white.png" alt="delivebool logo"></a>
                     </div>
                     <div class="buttons">
                         <div class="registrati-o-accedi">

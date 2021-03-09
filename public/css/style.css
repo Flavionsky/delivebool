@@ -371,6 +371,12 @@ tr {
 
 .table th {
     text-align: left;
+    padding-left: 15px;
+}
+
+.table td {
+    width: 700px;
+    padding-left: 15px;
 }
 
 .table tr {
@@ -379,6 +385,10 @@ tr {
 
 .container.dashboard h2 {
     margin-bottom: 30px;
+}
+
+.container.dashboard h3 {
+    margin-bottom: 20px;
 }
 
 .reg-button {
@@ -408,6 +418,10 @@ tr {
     color: white;
     font-size: 2rem;
     text-decoration: none;
+}
+
+.dashboard.types li {
+    list-style-type: none;
 }
 
 /* FINE DASHBOARD.BLADE */
