@@ -12,6 +12,7 @@ Delivebool - Home
         <div class="container">
             <h1>Di cosa hai voglia oggi?</h1>
             <div class="categories">
+                
                 <div id="app">
                     <front-page></front-page>
                 </div>

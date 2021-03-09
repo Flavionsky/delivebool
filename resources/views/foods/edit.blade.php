@@ -72,17 +72,19 @@ Deliveboo - Modifica un piatto
                 @enderror
             </div>
 
-            <div class="form-group">
-                <label>{{__('Visibilità del piatto al pubblico')}}</label>
-                <i>Inserire 1 se si vuole mostrare, altrimenti mettere 0</i>
-                <input name="visibility" class="form-control @error('visibility') is-invalid @enderror" type="number" value="{{ $food->visibility}}"></input>
-                @error('visibility')
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="visibility" value="0" id="visibility">
 
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
+                <label class="form-check-label" for="visibility">
+                    Non Disponibile
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="visibility" value="1" id="visibility">
 
-                @enderror
+                <label class="form-check-label" for="visibility">
+                    Disponibile
+                </label>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Modifica"/>

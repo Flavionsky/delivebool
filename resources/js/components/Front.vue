@@ -50,6 +50,8 @@
                 }
             }
         },
+
+        
         mounted() {
             this.loadTypes();
             this.loadRestaurants();

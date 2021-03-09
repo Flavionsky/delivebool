@@ -58,7 +58,7 @@ Route::get('/cart', function () {
 
 Route::get('/nuovo', function () {
     return view('partials.order2');
-})->name('cart');
+});
 
 Route::get('/payment', function () {
     $gateway = new Braintree\Gateway([
