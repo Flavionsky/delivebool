@@ -12,7 +12,7 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: #202020;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -41,7 +41,7 @@
                 font-size: 84px;
             }
             .links > a {
-                color: #636b6f;
+                color: #1d1d1d;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;

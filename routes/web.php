@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
+use App\Restaurant;
+use App\Food;
+use App\Order;
+
 
 
 /*
