@@ -1,5 +1,5 @@
 @section('title')
-Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
+Delivebool - Accedi al tuo account
 @endsection
 
 <!DOCTYPE html>
@@ -7,22 +7,23 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
     <head>
         <meta charset="utf-8">
         <title>@yield('title')</title>
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     </head>
     <body>
-
         <div class="bg">
-            <div class="header-cart">
+            <div class="headercalc">
                 <div class="nav">
                     <div class="logo">
                         <a href="{{ route('welcomepage') }}"><img src="./img/delivebool-logo-white.png" alt="delivebool logo"></a>
                     </div>
                     <div class="buttons">
+
                         @if(!Auth::check())
                         <div class="registrati-o-accedi">
                             <span><a href="{{ route('register') }}">Crea un nuovo account</span></a>
@@ -54,6 +55,10 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
                                 </ul>
                             </div>
                         </div>
+                        <div class="registrati-o-accedi">
+                            <i class="fas fa-shopping-cart"></i>
+                           <span> <a href="{{ route('cart') }}">Vai al carrello</span></a>
+                        </div>
                         @if(Auth::check())
                         <div class="menu">
                             <i class="fas fa-bars"></i>
@@ -63,65 +68,42 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
                     </div>
                 </div>
 
-            <div class="rest-dashboard">
-                <div class="rest-dashboard-header">
-                    <div class="left-rest">
-                        <h1>restaurant->name</h1>
-                        <h2>tipologie ristorante</h2>
-                        <h3>restaurant->address</h3>
-                        <h3>restaurant->city</h3>
-                    </div>
-                    <div class="right-rest">
-                        <img src="restaurant->image" alt="immagine ristorante">
-                        <h3>restaurant->email</h3>
-                        <h3>restaurant->p_iva</h3>
+                <div class="container dashboard">
+                    <h1>NOME RISTORANTE</h1>
 
+
+
+                    <h2>$restaurant->city</h2>
+                    <div class="dashboard-box">
+                        <ul>
+                            <li>
+                                <a href="{{ route('foods.create')}}">
+                                    <div class="reg-button create">
+                                        <h1>Crea un nuovo piatto</h1>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID Piatto</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Immagine</th>
+                                <th scope="col">Prezzo</th>
+                                <th scope="col">Tipo di cibo</th>
+                                <th scope="col">Descrizione</th>
+                                <th scope="col">Visibile</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                        </tbody>
+                    </table>
                 </div>
-                <hr>
-                <div class="rest-dashboard-main">
-                    <h2>Piatti del ristorante</h2>
-
-                    <div id="app">
-                      <div id="product">
-                        <item v-for="item in items" v-bind:item_data="item"></item>
-                      </div>
-                      <div id="cart">
-                        <div id="head">
-                          <span id="quantity">Quantità</span>
-                          <span id="total">Prezzo</span>
-                        </div>
-                        <buyitem v-for="buyitem in buyitems" v-bind:buy_data="buyitem"></buyitem>
-                        <h5 v-if="total()">Totale carrello: € @{{total()}}</h5>
-                        <h5 v-if="total()"><a href="{{ route('cart') }}">Vai al checkout</a></h5>
-                      </div>
-                    </div>
-
-
-                <template id="product-box">
-                  <div class="box">
-                    <img :src="item_data.img"/>
-                    <i class="fa fa-plus" v-on:click="addItem(item_data)"></i>
-                    <h3>@{{item_data.title}}</h3>
-                    <p>€ @{{item_data.price}}</p>
-                  </div>
-                </template>
-
-                <template id="buy-box">
-                  <div class="row">
-                    <h4>@{{buy_data.title}}</h4>
-
-                    <div class="qty-minus" v-on:click="minusQty(buy_data)">-</div>
-                    <div class="qty">@{{buy_data.qty}}</div>
-                    <div class="qty-plus" v-on:click="plusQty(buy_data)">+</div>
-                    <div class="del" v-on:click="removeItem(buy_data)">Rimuovi</div>
-                    <div class="totalprice">@{{buy_data.total}}</div>
-                  </div>
-                </template>
-                </div>
-            </div>
-        </div>
-    </div>
 
         <footer>
 
@@ -229,15 +211,12 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
 
         </footer>
 
-        <script src="{{ asset('js/script.js') }}" charset="utf-8"></script>
-
         <script>
             function dropDown1() {
                 var element = document.getElementById("drop-down-1");
                 element.classList.toggle("active");
             }
         </script>
-
 
     </body>
 </html>
