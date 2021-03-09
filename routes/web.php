@@ -57,7 +57,7 @@ Auth::routes();
 
 Route::resource('restaurants', 'RestaurantController');
 
-Route::get('/dashboard', 'RestaurantController@login')->name('home');
+Route::get('/dashboard', 'RestaurantController@login')->name('dashboard');
 
 Route::resource('foods', 'FoodController');
 
