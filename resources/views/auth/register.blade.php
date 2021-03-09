@@ -25,7 +25,7 @@ Delivebool - Crea un nuovo account
                     <div class="buttons">
                         <div class="registrati-o-accedi">
                             @if(Auth::check())
-                            <span><a href="{{ route('dashboard') }}">La tua dashboard</span></a>
+                            <span><a href="{{ route('home') }}">La tua dashboard</span></a>
                             @else
                             <i class="fas fa-shopping-cart"></i>
                             <span><a href="{{ route('ordina') }}">Ordina</span></a>

@@ -12,9 +12,8 @@ use Illuminate\Http\Request;
 */
 
 use App\Restaurant;
-use App\Type;
-use App\Food;
-use App\Http\Requests\FoodFormRequest;
+
+use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Support\Str;
 
@@ -57,7 +56,7 @@ class RestaurantController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
 
     }
@@ -81,8 +80,8 @@ class RestaurantController extends Controller
      */
     public function edit($id)
     {
-        $food = Food::find($id);
-        return view('restaurants.edit', compact('food'));
+        $restaurant = Restaurant::find($id);
+        return view('restaurants.edit', compact('restaurant'));
     }
 
     /**
@@ -92,29 +91,27 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(FoodFormRequest $request, Restaurant $restaurant, $id)
+    public function update(Request $request, Restaurant $restaurant, $id)
     {
+        $data = $request->all();
 
+       $restaurant = Restaurant::find($id);
+
+        $restaurant->update([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'email_verified_at' => now(),
+            'password' => Hash::make($data['password']),
+            'remember_token' => Str::random(10),
+            'address' => $data['address'],
+            'city' => $data['city'],
+            'p_iva' => $data['p_iva']
+        ]);
+
+        $restaurant->types()->sync($data['types']);
+
+        return redirect()->route('restaurants.show', $restaurant);
        
-        $userLogged = Auth::user();
-        if ($userLogged->id == $restaurant->id) {
-
-            $data = $request->validated();
-
-            $food = $restaurant->foods->find($id);
-
-            $food->update([
-                'name' => $data['name'],
-                'price' => $data['price'],
-                'image' => $request->file('image')->storePublicly('images'),
-                'description' => $data['description'],
-                'visibility' => $data['visibility'],
-                'kind_of_food' => $data['kind_of_food'],
-            ]);
-
-            return view('restaurants.show', $restaurant);
-
-        }
     }
 
     /**

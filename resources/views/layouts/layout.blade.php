@@ -52,6 +52,7 @@
                             </div>
                             @endif
                         </div>
+                        @guest
                         <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
                             <i class="fas fa-chevron-down"></i>
                             <span>Collabora con noi</span>
@@ -63,6 +64,7 @@
                                 </ul>
                             </div>
                         </div>
+                        @endguest
                         @if(Auth::check())
                         <div class="menu">
                             <i class="fas fa-bars"></i>

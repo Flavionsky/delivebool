@@ -98,26 +98,26 @@ class FoodController extends Controller
      */
     public function update(FoodFormRequest $request, Restaurant $restaurant, $id)
     {
+
+       
         $userLogged = Auth::user();
-        $food = Food::find($id);
-        if ($userLogged->id == $food->restaurant_id) {
+        if ($userLogged->id == $restaurant->id) {
 
             $data = $request->validated();
 
+            $food = $restaurant->foods->find($id);
 
             $food->update([
                 'name' => $data['name'],
                 'price' => $data['price'],
+                'image' => $request->file('image')->storePublicly('images'),
                 'description' => $data['description'],
                 'visibility' => $data['visibility'],
                 'kind_of_food' => $data['kind_of_food'],
             ]);
-            $message = "Piatto modificato con successo";
-            /* return redirect()->route('restaurants.index'); */
-            if($request->file('image') != null){
-                $newFood->image = $request->file('image')->storePublicly('images');
-            }
-            return view("message", compact("message"));
+
+            return view('restaurants.show', $restaurant);
+
         }
     }
 
