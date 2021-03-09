@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +43,7 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{ url('/checkout') }}" method="POST" id="payment-form">
+                <form action="{{ url('/checkout') }}" method="post" id="payment-form">
                     @csrf
                     <div class="form-group">
                         <label for="email">Email Address</label>
@@ -114,27 +114,24 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="cc_number">Credit Card Number</label>
-                                <input type="text" class="form-control" id="cc_number" name="cc_number">
+                            <div class="form-group" id="card-number">
+
                             </div>
                         </div>
 
                         <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="expiry">Expiry</label>
+                            <div class="form-group" id="expiration-date">
+
                                 <input type="text" class="form-control" id="expiry" name="expiry">
                             </div>
                         </div>
 
                         <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="cvc">CVC</label>
-                                <input type="text" class="form-control" id="cvc" name="cvc">
-                            </div>
-                        </div>
+                            <div class="form-group" id="cvv">
 
+                            </div>
                     </div>
+                  </div>
 
                     <div class="row">
                         <div class="col-md-6">
@@ -146,7 +143,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label for="expiry">Expiry</label>
+                            <label for="expiry">Expiration date</label>
 
                             <div class="form-group" id="expiration-date">
 
@@ -227,7 +224,7 @@
             console.error(hostedFieldsErr);
             return;
           }
-          // submit.removeAttribute('disabled');
+
           form.addEventListener('submit', function (event) {
             event.preventDefault();
             hostedFieldsInstance.tokenize(function (tokenizeErr, payload) {
@@ -237,7 +234,6 @@
               }
               // If this was a real integration, this is where you would
               // send the nonce to your server.
-              // console.log('Got a nonce: ' + payload.nonce);
               document.querySelector('#nonce').value = payload.nonce;
               form.submit();
             });
