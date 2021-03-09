@@ -14,9 +14,12 @@ class RestaurantController extends Controller
 {
     public function restaurants()
     {
-        $restaurants = Restaurant::whereHas('types', function($query){
-            return $query->where('type_id', request()->input('typesClick'));
-        })->get();
+        $attributes = request()->input('typesClick');
+
+        $restaurants = Restaurant::whereHas('types', function ($query)
+        use ($attributes) {
+            $query->whereIn('type_id', $attributes);
+        }, "=", count($attributes))->get();
 
         return RestaurantResource::collection($restaurants);
     }

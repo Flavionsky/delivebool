@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 
-use App\TypeRestaurant;
+use App\Type;
 
 use App\Http\Resources\TypeResource;
 
@@ -14,7 +14,7 @@ class TypeController extends Controller
 {
     public function index(){
 
-        $types = TypeRestaurant::withCount(['restaurants'])->get();
+        $types = Type::withCount(['restaurants'])->get();
 
     return TypeResource::collection($types);
     }

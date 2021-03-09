@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Restaurant;
-use App\TypeRestaurant;
+use App\Type;
 use App\Food;
 use App\Http\Requests\FoodFormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -45,7 +45,7 @@ class FoodController extends Controller
 
         $restaurant = Restaurant::find($id);
 
-        $categories = TypeRestaurant::all();
+        $categories = Type::all();
 
         $newFood = new Food;
 

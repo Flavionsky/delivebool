@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\TypeRestaurant;
+use App\Type;
 
 use App\Food;
 
@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        $categories = TypeRestaurant::all();
+        $categories = Type::all();
 
         $foods = Food::all();
 

@@ -41,17 +41,10 @@ class Restaurant extends Authenticatable
     ];
 
     public function types(){
-        return $this->belongsToMany('App\TypeRestaurant', 'restaurants_to_type_restaurants', 'restaurant_id', 'type_id');
+        return $this->belongsToMany('App\Type', 'type_restaurant', 'restaurant_id', 'type_id');
     }
 
     public function foods(){
         return $this->hasMany('App\Food', 'restaurant_id' , 'id'); 
-    }
-
-    public function scopeWithFilters($query, $types)
-    {
-        return $query->when(count($types), function ($query) use ($types) {
-                Restaurant::whereIn('type_id', $types);
-            });
     }
 }

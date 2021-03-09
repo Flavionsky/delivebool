@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 */
 
 use App\Restaurant;
-use App\TypeRestaurant;
+use App\Type;
 use App\Food;
 use App\Http\Requests\FoodFormRequest;
 

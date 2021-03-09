@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\TypeRestaurant;
+use App\Type;
 
 use App\Restaurant;
 
@@ -15,7 +15,7 @@ class TypeRestaurantSeeder extends Seeder
      */
     public function run()
     {
-        $type_restaurants= [
+        $type_restaurant= [
             'Cinese',
             'Giapponese',
             'Romano',
@@ -32,9 +32,9 @@ class TypeRestaurantSeeder extends Seeder
           ];
 
 
-          foreach ($type_restaurants as $type) {
+          foreach ($type_restaurant as $type) {
 
-            $newtype = new TypeRestaurant();
+            $newtype = new Type();
 
             $newtype->name = $type;
 

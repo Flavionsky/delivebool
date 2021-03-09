@@ -2,20 +2,19 @@
     <div class="container" :class="{'loading': loading}">
         <div class="row">
             <div class="col-lg-3 mb-4">
-                <ul>
-                    <span class="form-check" :key="type.id" v-for="type in types">
-                        <li>
-                            <label class="form-check-label" :for="'type' + index">
-                            <input class="form-check-input hidden" type="checkbox" :value="type.id" :id="'type'+index" v-model="selected.typesClick">
-                                {{ type.name }}
-                            </label>
-                        </li>
-                    </span>
-                </ul>
+                <h1 class="mt-4">Filters</h1>
 
+                <h3 class="mt-2">Categorie</h3>
+
+                <div class="form-check" :key="type.id" v-for="type in types">
+                    <input class="form-check-input" type="checkbox" :value="type.id" :id="'type'+index" v-model="selected.typesClick">
+                    <label class="form-check-label" :for="'type' + index">
+                        {{ type.name }}
+                    </label>
+                </div>
             </div>
             <div class="col-lg-9">
-                <div class="categorie-box-main">
+                <div class="row mt-4">
                     <div class="col-lg-4 col-md-6 mb-4" :key="restaurant.id" v-for="restaurant in restaurants">
                         <div class="card h-100">
                             <a href="#">
@@ -23,7 +22,7 @@
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <p>{{restaurant.id}}</p>
+                                    <h1>{{restaurant.id}}</h1>
                                     <a href="#">{{ restaurant.name }}</a>
                                 </h4>
                             </div>
@@ -83,7 +82,7 @@
                     .catch(function (error) {
                         console.log(error);
                     });
-            }
+            } 
         }
     }
 </script>
