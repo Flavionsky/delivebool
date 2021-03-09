@@ -60,7 +60,7 @@ Route::get('/nuovo', function () {
     return view('partials.order2');
 });
 
-Route::get('/payment', function () {
+Route::get('/hosted', function () {
     $gateway = new Braintree\Gateway([
         'environment' => config('services.braintree.environment'),
         'merchantId' => config('services.braintree.merchantId'),
@@ -70,7 +70,7 @@ Route::get('/payment', function () {
 
     $token = $gateway->ClientToken()->generate();
 
-    return view('payment', [
+    return view('hosted', [
         'token' => $token
     ]);
 });
