@@ -11068,7 +11068,7 @@ footer .nav-social .copyright span {
 /* MAIN.BLADE */
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif !important;
   /* background-image: url("img/placeholder.svg"); */
 }
 

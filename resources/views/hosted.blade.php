@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +43,7 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{ url('/checkout') }}" method="post" id="payment-form">
+                <form action="{{ url('/checkout') }}" method="POST" id="payment-form">
                     @csrf
                     <div class="form-group">
                         <label for="email">Email Address</label>
@@ -107,31 +107,12 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="amount">Amount</label>
-                                <input type="text" class="form-control" id="amount" name="amount" value="11">
+                                <input type="text" class="form-control" id="amount" name="amount" value="{{total()}}">
                             </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group" id="card-number">
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group" id="expiration-date">
-
-                                <input type="text" class="form-control" id="expiry" name="expiry">
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group" id="cvv">
-
-                            </div>
-                    </div>
-                  </div>
+                    
 
                     <div class="row">
                         <div class="col-md-6">
@@ -143,7 +124,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label for="expiry">Expiration date</label>
+                            <label for="expiry">Expiry</label>
 
                             <div class="form-group" id="expiration-date">
 
@@ -173,6 +154,7 @@
         </div>
     <script src="https://js.braintreegateway.com/web/3.38.1/js/client.min.js"></script>
     <script src="https://js.braintreegateway.com/web/3.38.1/js/hosted-fields.min.js"></script>
+    <script src="{{ asset('js/script.js') }}" charset="utf-8"></script>
 
     <!-- Load PayPal's checkout.js Library. -->
     <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4 log-level="warn"></script>
@@ -189,9 +171,6 @@
           console.error(clientErr);
           return;
         }
-        // This example shows Hosted Fields, but you can also use this
-        // client instance to create additional components here, such as
-        // PayPal or Data Collector.
         braintree.hostedFields.create({
           client: clientInstance,
           styles: {
@@ -216,7 +195,7 @@
             },
             expirationDate: {
               selector: '#expiration-date',
-              placeholder: '10/2019'
+              placeholder: '03/22'
             }
           }
         }, function (hostedFieldsErr, hostedFieldsInstance) {
@@ -224,7 +203,7 @@
             console.error(hostedFieldsErr);
             return;
           }
-
+          // submit.removeAttribute('disabled');
           form.addEventListener('submit', function (event) {
             event.preventDefault();
             hostedFieldsInstance.tokenize(function (tokenizeErr, payload) {
@@ -232,25 +211,20 @@
                 console.error(tokenizeErr);
                 return;
               }
-              // If this was a real integration, this is where you would
-              // send the nonce to your server.
+
               document.querySelector('#nonce').value = payload.nonce;
               form.submit();
             });
           }, false);
         });
-        // Create a PayPal Checkout component.
+
         braintree.paypalCheckout.create({
             client: clientInstance
         }, function (paypalCheckoutErr, paypalCheckoutInstance) {
-        // Stop if there was a problem creating PayPal Checkout.
-        // This could happen if there was a network error or if it's incorrectly
-        // configured.
         if (paypalCheckoutErr) {
           console.error('Error creating PayPal Checkout:', paypalCheckoutErr);
           return;
         }
-        // Set up PayPal with the checkout.js library
         paypal.Button.render({
           env: 'sandbox', // or 'production'
           commit: true,
@@ -265,7 +239,6 @@
           },
           onAuthorize: function (data, actions) {
             return paypalCheckoutInstance.tokenizePayment(data, function (err, payload) {
-              // Submit `payload.nonce` to your server.
               document.querySelector('#nonce').value = payload.nonce;
               form.submit();
             });
@@ -277,12 +250,9 @@
             console.error('checkout.js error', err);
           }
         }, '#paypal-button').then(function () {
-          // The PayPal button will be rendered in an html element with the id
-          // `paypal-button`. This function will be called when the PayPal button
-          // is set up and ready to be used.
-        });
         });
       });
+    });
     </script>
     </body>
 </html>

@@ -65,7 +65,7 @@ Route::get('/hosted', function () {
     return view('hosted', [
         'token' => $token
     ]);
-});
+})->name('checkout');
 
 Route::post('/checkout', function (Request $request){
     $gateway = new Braintree\Gateway([

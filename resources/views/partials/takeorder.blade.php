@@ -95,7 +95,7 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
                         </div>
                         <buyitem v-for="buyitem in buyitems" v-bind:buy_data="buyitem"></buyitem>
                         <h5 v-if="total()">Totale carrello: € @{{total()}}</h5>
-                        <h5 v-if="total()"><a href="{{ route('cart') }}">Vai al checkout</a></h5>
+                        <h5 v-if="total()"><a href="{{ route('checkout') }}">Vai al checkout</a></h5>
                       </div>
                     </div>
 
