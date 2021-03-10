@@ -75,14 +75,14 @@ Vue.component("buyitem", {
     },
     plusQty: function(buy_data){
       buy_data.qty += 1;
-      buy_data.total = buy_data.qty*buy_data.price;
+      buy_data.total = (buy_data.qty*buy_data.price).toFixed(2);
     },
     minusQty: function(buy_data){
       buy_data.qty -= 1;
       if (buy_data.qty < 0){
         buy_data.qty = 0;
       }
-      buy_data.total = buy_data.qty*buy_data.price;
+      buy_data.total = (buy_data.qty*buy_data.price).toFixed(2);
     }
 
   }
@@ -95,13 +95,13 @@ var app = new Vue({
       {
         img: "https://chenyiya.com/codepen/product-1.jpg",
         title: "Beer Bottle",
-        price: "25",
+        price: "25.50",
         id: "beer"
       },
       {
         img: "https://chenyiya.com/codepen/product-2.jpg",
         title: "Eco Bag",
-        price: "73",
+        price: "73.50",
         id: "eco-bag"
       },
       {
@@ -113,7 +113,7 @@ var app = new Vue({
       {
         img: "https://chenyiya.com/codepen/product-3.jpg",
         title: "Prova molto lunga",
-        price: "5,50",
+        price: "5.50",
         id: "prova",
       }
     ],
@@ -123,7 +123,7 @@ var app = new Vue({
     total: function(){
       var sum = 0;
       this.buyitems.forEach(function(buyitem){
-            sum += parseInt(buyitem.total);
+            sum += parseFloat(buyitem.total);
       });
       return sum;
     }
