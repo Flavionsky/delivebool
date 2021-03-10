@@ -1,14 +1,10 @@
-@extends('layouts.layout')
+{{-- @extends('layouts.layout')
 
-@section('title')
-Deliveboo Dashboard - Lista piatti
-@endsection
-
-@section('content')
+@section('content') --}}
 
 
 
-        <div class="container dashboard">
+        {{-- <div class="container dashboard">
             <h1>Lista piatti di {{ $restaurant->name }}</h1>
             <h2>Le tue Tipologie: </h2>
             <ul class="dashboard types">
@@ -76,4 +72,63 @@ Deliveboo Dashboard - Lista piatti
 
         @endsection
     </body>
+</html> --}}
+
+<!-- Nav -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="stylesheet" href="{{asset('css/cart.css')}}">
+  <title>Add to Cart Interaction | CodyHouse</title>
+</head>
+<body>
+<main class="cd-main container margin-top-xxl">
+  <div class="text-component text-center">
+    <h1>Add to Cart Interaction</h1>
+    <p class="flex flex-wrap flex-center flex-gap-xxs">
+      <a class="cd-article-link" href="https://codyhouse.co/gem/add-to-cart-interaction">📝 View Tutorial</a>
+      <a href="#0" class="cd-add-to-cart js-cd-add-to-cart" data-price="25.99">Add To Cart</a>
+    </p>
+  </div>
+</main>
+
+<div class="cd-cart cd-cart--empty js-cd-cart">
+	<a href="#0" class="cd-cart__trigger text-replace">
+		Cart
+		<ul class="cd-cart__count"> <!-- cart items count -->
+			<li>1</li>
+			<li>2</li>
+		</ul> <!-- .cd-cart__count -->
+	</a>
+
+	<div class="cd-cart__content">
+		<div class="cd-cart__layout">
+			<header class="cd-cart__header">
+				<h2>Cart</h2>
+				<span class="cd-cart__undo">Item removed. <a href="#0">Undo</a></span>
+			</header>
+			
+			<div class="cd-cart__body">
+				<ul>
+					<!-- products added to the cart will be inserted here using JavaScript -->
+				</ul>
+			</div>
+
+			<footer class="cd-cart__footer">
+				<a href="#0" class="cd-cart__checkout">
+          <em>Checkout - $<span>0</span>
+            <svg class="icon icon--sm" viewBox="0 0 24 24"><g fill="none" stroke="currentColor"><line stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="3" y1="12" x2="21" y2="12"/><polyline stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="15,6 21,12 15,18 "/></g>
+            </svg>
+          </em>
+        </a>
+			</footer>
+		</div>
+	</div> <!-- .cd-cart__content -->
+</div> <!-- cd-cart -->
+<script src="{{ asset('js/main.js') }}"></script> <!-- util functions included in the CodyHouse framework -->
+<script src="{{ asset('js/util.js') }}"></script> 
+</body>
 </html>
