@@ -114,7 +114,7 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
                     <h4>@{{buy_data.title}}</h4>
 
                     <div class="qty-minus" v-on:click="minusQty(buy_data)">-</div>
-                    <div class="qty" v-if="buy_data.qty === 0 ? removeItem(buy_data) : 'buy_data.qty'" >@{{buy_data.qty}}</div>
+                    <div class="qty" v-if="buy_data.qty === 0 ? removeItem(buy_data) : 'buy_data.qty'">@{{buy_data.qty}}</div>
                     <div class="qty-plus" v-on:click="plusQty(buy_data)">+</div>
                     <div class="del" v-on:click="removeItem(buy_data)">Rimuovi</div>
                     <div class="totalprice">@{{buy_data.total}}</div>
