@@ -64,9 +64,10 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
                 </div>
 
             <div class="rest-dashboard">
+                @foreach ($restaurants as $restaurant)
                 <div class="rest-dashboard-header">
                     <div class="left-rest">
-                        <h1>restaurant->name</h1>
+                        <h1>{{$restaurant->name}}</h1>
                         <h2>tipologie ristorante</h2>
                         <h3>restaurant->address</h3>
                         <h3>restaurant->city</h3>
@@ -78,6 +79,7 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
 
                     </div>
                 </div>
+                @endforeach
                 <hr>
                 <div class="rest-dashboard-main">
                     <h2>Piatti del ristorante</h2>

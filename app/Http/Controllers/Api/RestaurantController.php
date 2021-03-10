@@ -12,7 +12,7 @@ use App\Http\Resources\RestaurantResource;
 
 class RestaurantController extends Controller
 {
-    public function restaurants()
+    public function filter()
     {
         $attributes = request()->input('typesClick');
 
@@ -22,5 +22,12 @@ class RestaurantController extends Controller
         }, "=", count($attributes))->get();
 
         return RestaurantResource::collection($restaurants);
+    }
+    public function restaurants(){
+
+       $Myrestaurants=  Restaurant::all();
+
+       $restaurants = RestaurantResource::collection($Myrestaurants);
+       return view('partials.takeorder', compact('restaurants'));
     }
 }
