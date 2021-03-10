@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +25,7 @@
     <body>
         <div class="container">
             <div class="col-md-6 offset-md-3">
-                <h1>Payment Form</h1>
+                <h1>Pagamento ordine</h1>
                 <div class="spacer"></div>
 
                 @if (session()->has('success_message'))
@@ -46,77 +46,66 @@
                 <form action="{{ url('/checkout') }}" method="POST" id="payment-form">
                     @csrf
                     <div class="form-group">
-                        <label for="email">Email Address</label>
+                        <label for="email">Email</label>
                         <input type="email" class="form-control" id="email">
                     </div>
 
                     <div class="form-group">
-                        <label for="name_on_card">Name on Card</label>
+                        <label for="name_on_card">Nome</label>
                         <input type="text" class="form-control" id="name_on_card" name="name_on_card">
                     </div>
-
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="address">Address</label>
+                                <label for="address">Indirizzo</label>
                                 <input type="text" class="form-control" id="address" name="address">
                             </div>
                         </div>
-
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="city">City</label>
+                                <label for="city">Città</label>
                                 <input type="text" class="form-control" id="city" name="city">
                             </div>
                         </div>
-
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="province">Province</label>
+                                <label for="province">Provincia</label>
                                 <input type="text" class="form-control" id="province" name="province">
                             </div>
                         </div>
-
                     </div>
-
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="postalcode">Postal Code</label>
+                                <label for="postalcode">Codice Postale</label>
                                 <input type="text" class="form-control" id="postalcode" name="postalcode">
                             </div>
                         </div>
-
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="country">Country</label>
+                                <label for="country">Nazione</label>
                                 <input type="text" class="form-control" id="country" name="country">
                             </div>
                         </div>
-
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="phone">Phone</label>
+                                <label for="phone">Cellulare</label>
                                 <input type="text" class="form-control" id="phone" name="phone">
                             </div>
                         </div>
-
                     </div>
-
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="amount">Amount</label>
-                                <input type="text" class="form-control" id="amount" name="amount" value="{{total()}}">
+                                <input type="text" class="form-control" id="amount" name="amount" value="20">
+                                <p>@{{total()}}</p>
                             </div>
                         </div>
                     </div>
-
-                    
-
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="cc_number">Credit Card Number</label>
+                            <label for="cc_number">Carta di Credito</label>
 
                             <div class="form-group" id="card-number">
 
@@ -124,7 +113,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label for="expiry">Expiry</label>
+                            <label for="expiry">Scadenza</label>
 
                             <div class="form-group" id="expiration-date">
 
@@ -148,7 +137,7 @@
                     <div class="spacer"></div>
 
                     <input id="nonce" name="payment_method_nonce" type="hidden" />
-                    <button type="submit" class="btn btn-success">Submit Payment</button>
+                    <button type="submit" class="btn btn-success">Paga ora</button>
                 </form>
             </div>
         </div>

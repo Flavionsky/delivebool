@@ -88,7 +88,7 @@ Route::post('/checkout', function (Request $request){
 
     if ($result->success) {
         $transaction = $result->transaction;
-        return back()->with('success_message', 'Transaction succesful. The ID is:'. $transaction->id);
+        return back()->with('success_message', 'Pagamento completato.Il tuo ID ordine è:'. $transaction->id);
     } else {
         $errorString = "";
 
