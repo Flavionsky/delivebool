@@ -55,20 +55,25 @@
                         @guest
                         <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
                             <i class="fas fa-chevron-down"></i>
-                            <span>Collabora con noi</span>
-                            <div id="drop-down-1" class="active">
-                                <ul>
-                                    <li><a href="{{ route('register') }}"></a><i class="fas fa-utensils"></i> Ristoranti</li>
-                                    <li><i class="fas fa-briefcase"></i> Lavora con noi</li>
-                                    <li><i class="far fa-building"></i> Delivebool per le Aziende</li>
+                            <span class="unselectable">Collabora con noi</span>
+                            <div id="drop-down-1" class="active unselectable">
+                                <ul class="unselectable">
+                                    <li class="unselectable"><a href="{{ route('register') }}"></a><i class="fas fa-utensils"></i> Ristoranti</li>
+                                    <li class="unselectable"><i class="fas fa-briefcase"></i> Lavora con noi</li>
+                                    <li class="unselectable"><i class="far fa-building"></i> Delivebool per le Aziende</li>
                                 </ul>
                             </div>
                         </div>
                         @endguest
                         @if(Auth::check())
-                        <div class="menu">
-                            <i class="fas fa-bars"></i>
-                            <span>Menu</span>
+                        <div class="menu unselectable" onclick="dropDown2()">
+                            <i class="fas fa-bars unselectable"></i>
+                            <span class="unselectable">Menu</span>
+                            <div id="drop-down-2" class="active">
+                                <ul class="unselectable">
+                                    <li><a href=""></a><i class="fas fa-utensils"></i>Modifica Ristorante</li>
+                                </ul>
+                            </div>
                         </div>
                         @endif
                     </div>
@@ -79,7 +84,7 @@
                         <h1>I piatti che ami, a domicilio.</h1>
                         <div class="text-box">
                             <p>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</p>
-                            <input class="search-bar" type="search" placeholder="Inserisci il tuo indirizzo completo">
+                            <input class="search-bar" type="text" placeholder="Inserisci il tuo indirizzo completo">
                             <button>Cerca</button>
                             <p><a href="#">Accedi&nbsp;</a>per visualizzare i tuoi indirizzi recenti.</p>
                         </div>
@@ -207,6 +212,10 @@
         <script>
             function dropDown1() {
                 var element = document.getElementById("drop-down-1");
+                element.classList.toggle("active");
+            }
+            function dropDown2() {
+                var element = document.getElementById("drop-down-2");
                 element.classList.toggle("active");
             }
         </script>

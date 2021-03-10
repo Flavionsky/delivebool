@@ -44,6 +44,15 @@
     align-items: center;
 }
 
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 .logo img {
     width: 120px;
 }
@@ -166,7 +175,8 @@
     font-family: 'Roboto', sans-serif;
 }
 
-#drop-down-1 {
+#drop-down-1,
+#drop-down-2 {
     background-color: white;
     position: absolute;
     top: 3rem;
@@ -176,12 +186,14 @@
     z-index: 20;
 }
 
-#drop-down-1 ul {
+#drop-down-1 ul,
+#drop-down-2 ul {
     list-style: none;
     padding: 10px 10px;
 }
 
-#drop-down-1 ul>li {
+#drop-down-1 ul>li,
+#drop-down-2 ul>li {
     padding: 5px 5px;
 }
 

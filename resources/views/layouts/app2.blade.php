@@ -60,7 +60,7 @@ Deliveboo - Registrati o accedi
                             <i class="fas fa-chevron-down"></i>
                             <span>Collabora con noi</span>
                             <div id="drop-down-1" class="active">
-                                <ul>
+                                <ul class="unselectable">
                                     <li><a href="{{ route('register') }}"></a><i class="fas fa-utensils"></i> Ristoranti</li>
                                     <li><i class="fas fa-briefcase"></i> Lavora con noi</li>
                                     <li><i class="far fa-building"></i> Deliveroo per le Aziende</li>
@@ -248,6 +248,10 @@ Deliveboo - Registrati o accedi
         <script>
             function dropDown1() {
                 var element = document.getElementById("drop-down-1");
+                element.classList.toggle("active");
+            }
+            function dropDown2() {
+                var element = document.getElementById("drop-down-2");
                 element.classList.toggle("active");
             }
         </script>

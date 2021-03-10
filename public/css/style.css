@@ -9,6 +9,7 @@ body {
     background-color: #d0eb99;
 }
 
+
 /* footer */
 
 footer {
@@ -23,7 +24,7 @@ footer .box-container {
     flex-wrap: wrap;
 }
 
- .box-footer {
+.box-footer {
     background-color: #414242;
     width: 250px;
     height: auto;
@@ -33,34 +34,33 @@ footer .box-container {
     padding-left: 20px;
 }
 
- .box-footer h5 {
+.box-footer h5 {
     margin-top: 5px;
     font-weight: bold;
 }
 
- .box-footer ul {
+.box-footer ul {
     list-style-type: none;
     padding-left: 0;
 }
 
- .box-footer ul li a {
+.box-footer ul li a {
     text-decoration: none;
     color: #fff;
 }
 
-
- .box-footer ul li a:hover {
+.box-footer ul li a:hover {
     color: #00a396;
 }
 
-.box-container .app-store, .google-store {
+.box-container .app-store,
+.google-store {
     display: block;
     background-color: black;
     border: 1px solid #fff;
     border-radius: 5px;
     margin: 8px;
     text-align: left;
-
 }
 
 .app-store a,
@@ -72,10 +72,10 @@ footer .box-container {
     display: block;
 }
 
- .app-store a #icon-apple,
- .google-store a #icon-apple,
- .app-store a #icon-google,
- .google-store a #icon-google {
+.app-store a #icon-apple,
+.google-store a #icon-apple,
+.app-store a #icon-google,
+.google-store a #icon-google {
     font-size: 30px;
     margin-right: 5px;
 }
@@ -96,7 +96,7 @@ footer .box-container {
     color: #fff;
 }
 
- .nav-social .social-box span #icon-fb:hover {
+.nav-social .social-box span #icon-fb:hover {
     color: #331df0;
     cursor: pointer;
 }
@@ -106,7 +106,7 @@ footer .box-container {
     color: #fff;
 }
 
- .nav-social .social-box span #icon-tw:hover {
+.nav-social .social-box span #icon-tw:hover {
     color: #3eabf3;
     cursor: pointer;
 }
@@ -121,15 +121,17 @@ footer .nav-social .social-box span #icon-ig {
     cursor: pointer;
 }
 
-footer .nav-social
-.copyright span {
+footer .nav-social .copyright span {
     font-size: 16px;
     color: #6c8585;
 }
 
+
 /* MAIN.BLADE */
 
+
 /* MAIN */
+
 .container {
     max-width: 1120px;
     margin: 0 auto;
@@ -145,7 +147,9 @@ h1 {
     margin-bottom: 20px;
 }
 
+
 /* MAIN SEZIONE 1 */
+
 #selection-1 {
     background-color: white;
     z-index: 13;
@@ -198,6 +202,7 @@ h1 {
     padding-left: 15px;
 }
 
+
 /* .comfort-food .img {
     background-image: url("img/menu-tag-image-1.jpg");
 }
@@ -214,32 +219,36 @@ h1 {
     background-image: url("img/menu-tag-image-4.jpg");
 } */
 
+
 /* MAIN SEZIONE 2 */
+
 #favorite-food-2 {
-  background-color: #e29f9f;
+    background-color: #e29f9f;
 }
 
 .blocks.flex-2 {
-  display: flex;
-  flex-wrap: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .top-block-2 h2 {
-  font-size: 20px;
-  font-weight: bold;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .top-block-2 img {
-  width: 353px;
-  margin-right: 5px;
+    width: 353px;
+    margin-right: 5px;
 }
 
 p {
-  font-size: 16px;
-  color: black;
+    font-size: 16px;
+    color: black;
 }
 
+
 /* MAIN SEZIONE 3 */
+
 .something-else-3 {
     background-color: #FFEAE4;
     padding-bottom: 20px;
@@ -272,7 +281,6 @@ p {
     font-size: 1.1rem;
 }
 
-
 .something-else-3 ul a li:hover {
     color: white;
 }
@@ -284,11 +292,11 @@ p {
     opacity: 0;
     cursor: pointer;
     width: 100%;
-  height: 100%;
-  display: inline-block;
+    height: 100%;
+    display: inline-block;
 }
 
-.something-else-3 input ~ label {
+.something-else-3 input~label {
     background-color: #e8d2cc;
     border-radius: 3px;
     padding: 10px;
@@ -299,7 +307,7 @@ p {
     cursor: pointer;
 }
 
-.something-else-3 input:checked ~ label {
+.something-else-3 input:checked~label {
     border-radius: 3px;
     padding: 10px;
     color: white;
@@ -328,9 +336,13 @@ p {
 #work-with-us-5 {
     background-color: white;
 }
+
+
 /* FINE MAIN.BLADE */
 
+
 /* DASHBOARD.BLADE */
+
 .container.dashboard {
     text-align: center;
     background-color: white;
@@ -382,7 +394,7 @@ p {
 }
 
 tr {
-  border: 1px solid blue;
+    border: 1px solid blue;
 }
 
 .table th {
@@ -415,7 +427,8 @@ tr {
     border-radius: 8px;
 }
 
-.reg-button:hover, .reg-button.create:hover {
+.reg-button:hover,
+.reg-button.create:hover {
     background-color: #14ccbe;
 }
 
@@ -430,7 +443,7 @@ tr {
     background-color: #00C2B3;
 }
 
-.dashboard-box ul li a{
+.dashboard-box ul li a {
     color: white;
     font-size: 2rem;
     text-decoration: none;
@@ -440,9 +453,12 @@ tr {
     list-style-type: none;
 }
 
+
 /* FINE DASHBOARD.BLADE */
 
+
 /* FOODS.BLADE, ORDERS.BLADE */
+
 .reg-button.create {
     width: 400px;
     height: 80px;
@@ -456,14 +472,16 @@ tr {
     font-size: 1.9rem;
 }
 
- .table button {
+.table button {
     width: 100px;
     background-color: #00C2B3;
     line-height: 20px;
     color: white;
 }
 
+
 /* HEADER */
+
 .box-indirizzo h1 {
     font-family: 'Roboto', sans-serif;
 }
@@ -555,7 +573,6 @@ tr {
     position: relative;
     margin-left: 10px;
     padding: 10px;
-
 }
 
 .menu {
@@ -723,18 +740,15 @@ input[type="checkbox"] {
     display: none;
 }
 
-
-
-a{
+a {
     text-decoration: none;
-    color:black;
+    color: black;
 }
 
-
-
 .aziende button {
-    color:white;
-    background-color: #00ccbc;;
+    color: white;
+    background-color: #00ccbc;
+    ;
     padding: 12px 24px;
     margin-top: 15px;
     font-size: 20px;
@@ -742,40 +756,36 @@ a{
     border: none;
     font-size: 15px;
 }
+
 .aziende button:hover {
     background-color: #00bbad;
 }
-
-
-
 
 .apple_google {
     padding-left: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
 .apple_google img {
     width: 46%;
 }
-
 
 .top-block-3 img {
     width: 353px;
     margin-right: 30px;
     height: 100%;
+}
 
-  }
 
+/* section work-with us */
 
-  /* section work-with us */
 .box-work {
-	 height: 600px;
-	 width: 350px;
-	 margin-bottom: 50px;
-	 margin-right: 25px;
-     color:white,
-
-
+    height: 600px;
+    width: 350px;
+    margin-bottom: 50px;
+    margin-right: 25px;
+    color: white,
 }
 
 .box-work img {
@@ -784,7 +794,8 @@ a{
 }
 
 .box-work button {
-    background-color: #00ccbc;;
+    background-color: #00ccbc;
+    ;
     padding: 12px 24px;
     margin-top: 15px;
     font-size: 20px;
@@ -793,8 +804,6 @@ a{
     font-size: 15px;
     margin: 20px 20px;
 }
-
-
 
 .box-work button:hover {
     background-color: #00bbad;
@@ -807,31 +816,39 @@ a{
 .red {
     background-color: #ff483b;
 }
+
 .orange {
     background-color: #ff8100;
 }
 
-.box-work h2{
-    color:white;
-     font-size: 40px;
-	 font-weight: bold;
-	 padding: 5px 25px;
+.box-work h2 {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 5px 25px;
 }
 
-.box-work p{
-    color:white;
-    font-size:16px;
+.box-work p {
+    color: white;
+    font-size: 16px;
     line-height: 22px;
     padding-left: 25px;
 }
 
+<<<<<<< HEAD
 .navorder-flex{
+=======
+.navorder-flex {
+>>>>>>> Luca
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     list-style: none;
 }
 
+<<<<<<< HEAD
 /* CART */
+=======
+>>>>>>> Luca
 table#cart {
     min-height: 80vh;
 }
@@ -851,8 +868,9 @@ div.nav-cart-border-bottom {
 }
 
 #cart-button button {
-    color:white;
-    background-color: #00ccbc;;
+    color: white;
+    background-color: #00ccbc;
+    ;
     padding: 12px 24px;
     margin-top: 15px;
     font-size: 20px;
@@ -865,11 +883,16 @@ div.nav-cart-border-bottom {
     background-color: #00bbad;
 }
 
+<<<<<<< HEAD
 #app .backgroundColor{
+=======
+#app .backgroundColor {
+>>>>>>> Luca
     background-color: hotpink;
     color: white;
 }
 
+<<<<<<< HEAD
 #app {
   display: flex;
   justify-content: space-between;
@@ -1029,3 +1052,35 @@ div.nav-cart-border-bottom {
     color: #00ccbc;
     text-decoration: underline;
 }
+=======
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#drop-down-1,
+#drop-down-2 {
+    background-color: white;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    width: 240px;
+    border-radius: 5px;
+    z-index: 20;
+}
+
+#drop-down-1 ul,
+#drop-down-2 ul {
+    list-style: none;
+    padding: 10px 10px;
+}
+
+#drop-down-1 ul>li,
+#drop-down-2 ul>li {
+    padding: 5px 5px;
+}
+>>>>>>> Luca
