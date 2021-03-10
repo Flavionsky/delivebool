@@ -20,7 +20,7 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
             <div class="header-cart">
                 <div class="nav">
                     <div class="logo">
-                        <a href="{{ route('welcomepage') }}"><img src="./img/delivebool-logo-white.png" alt="delivebool logo"></a>
+                        <a href="{{ route('welcomepage') }}"><img src="../img/delivebool-logo-white.png" alt="delivebool logo"></a>
                     </div>
                     <div class="buttons">
                         @if(!Auth::check())
