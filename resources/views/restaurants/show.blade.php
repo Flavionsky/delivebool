@@ -86,9 +86,7 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
 
                     <div id="app">
                       <div id="product">
-
-                        <item v-for="item in items" v-bind:item_data="item"></item>
-
+                          <item v-for="item in items" v-bind:item_data="item"></item>
                       </div>
                       <div id="cart">
                         <div id="head">
@@ -100,8 +98,6 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
                         <h5 v-if="total()"><a href="{{ route('cart') }}">Vai al checkout</a></h5>
                       </div>
                     </div>
-
-
                 <template id="product-box">
                   <div class="box">
                     <img :src="item_data.img"/>
@@ -234,7 +230,6 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
         </footer>
 
         <script type="text/javascript">
-
         Vue.component("item", {
           template: "#product-box",
           props: ["item_data", "buyitems"],
@@ -249,7 +244,7 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
                 price: this.item_data.price,
                 qty: 1,
                 total: this.item_data.price,
-                id: this.item_data.id
+                id: this.item_data.id,
               });
             },
             findIndex: function(array, attr, value) {
@@ -265,7 +260,7 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
         });
         Vue.component("buyitem", {
           template: "#buy-box",
-          props: ["buy_data", "buyitems"],
+          props: ["buy_data", "buyitems",],
           methods: {
             removeItem: function(buy_data) {
               var index = this.$parent.buyitems.indexOf(buy_data);
@@ -290,7 +285,7 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
           el: "#app",
           data: {
             items: [],
-            buyitems: []
+            buyitems: [],
           },
           mounted() {
               this.loadFoods();
@@ -301,7 +296,7 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
               this.buyitems.forEach(function(buyitem){
                     sum += parseFloat(buyitem.total);
               });
-              return sum;
+              return sum.toFixed(2);
           },
           loadFoods: function () {
               axios.get('/api/foods')
@@ -311,12 +306,9 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
                   .catch(function (error) {
                       console.log(error);
                   });
-                }
+                },
             }
         });
-
-
-
         </script>
 
         <script>

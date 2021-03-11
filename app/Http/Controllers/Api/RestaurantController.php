@@ -25,9 +25,7 @@ class RestaurantController extends Controller
     }
     public function restaurants(){
 
-       $Myrestaurants=  Restaurant::all();
 
-       $restaurants = RestaurantResource::collection($Myrestaurants);
-       return view('partials.takeorder', compact('restaurants'));
+       return RestaurantResource::collection(Restaurant::all());
     }
 }
