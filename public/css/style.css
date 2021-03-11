@@ -31,7 +31,7 @@ footer .box-container {
     margin: 10px;
     color: #fff;
     border-radius: 5px;
-    padding-left: 20px;
+    padding: 10px 20px;
 }
 
 .box-footer h5 {
@@ -186,6 +186,7 @@ h1 {
 .comfort-food {
     width: 40%;
     padding-right: 30px;
+    cursor: pointer;
 }
 
 .perfect-share {
@@ -199,7 +200,7 @@ h1 {
 
 .exclusive {
     width: 40%;
-    padding-left: 15px;
+    padding-left: 20px;
 }
 
 
@@ -595,6 +596,7 @@ tr {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    z-index: 20;
 }
 
 .card-header h2 {
@@ -666,6 +668,7 @@ input[type="checkbox"] {
     font-weight: 700;
     font-size: 16px;
     color: white;
+    cursor: pointer;
 }
 
 .search-bar {
@@ -678,6 +681,12 @@ input[type="checkbox"] {
     font-size: 16px;
     margin-top: 10px;
     margin-bottom: 10px;
+    outline: none;
+    transition: all 0.1s ease;
+}
+
+.search-bar:focus  {
+    box-shadow: 1px 1px 10px 2px #00ccbc;
 }
 
 .text-box p:last-child {
@@ -791,7 +800,7 @@ a {
     width: 350px;
     margin-bottom: 50px;
     margin-right: 25px;
-    color: white,
+    color: white;
 }
 
 .box-work img {
@@ -809,6 +818,8 @@ a {
     border: none;
     font-size: 15px;
     margin: 20px 20px;
+    cursor: pointer;
+    color: white;
 }
 
 .box-work button:hover {
@@ -839,6 +850,7 @@ a {
     font-size: 16px;
     line-height: 22px;
     padding-left: 25px;
+    padding-right: 25px;
 }
 
 .navorder-flex{

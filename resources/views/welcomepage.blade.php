@@ -12,7 +12,7 @@ Delivebool - Home
         <div class="container">
             <h1>Di cosa hai voglia oggi?</h1>
             <div class="categories">
-                
+
                 <div id="app">
                     <front-page></front-page>
                 </div>
@@ -265,7 +265,7 @@ Delivebool - Home
 
         <section id="work-with-us-5">
             <div class="container text">
-                <h1>Lavora con delivebool</h1>
+                <h1>Lavora con Delivebool</h1>
                 <div class="blocks flex-2 ">
                     <div class="box-work red">
                         <img src="{{'../img/riders.jpg'}}" alt="">
