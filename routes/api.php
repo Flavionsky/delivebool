@@ -21,4 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('types', 'Api\TypeController@index');
 Route::get('foods', 'Api\FoodController@index');
 Route::get('restaurants', 'Api\RestaurantController@filter');
-Route::get('ordina', 'Api\RestaurantController@restaurants')->name('ordina');
+Route::get('ordina', 'Api\RestaurantController@restaurants');

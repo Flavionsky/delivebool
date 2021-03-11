@@ -20,7 +20,7 @@
                     <div v-else class="categorie-box-main-2">
                         <div class="col-lg-4 col-md-6 mb-4" :key="restaurant.id" v-for="restaurant in restaurants">
                             <div class="card h-100">
-                                <a href="#">
+                                <a :href="'/restaurants/'+ restaurant.id">
                                     <img class="card-img-top" src="http://placehold.it/700x400" alt="">
                                 </a>
                                 <div class="card-body">
@@ -44,6 +44,8 @@
             return {
                 types: [],
                 restaurants: [],
+                query: '',
+                restaurant: [],
                 loading: true,
                 selected: {
                     typesClick: []
@@ -88,7 +90,12 @@
                     .catch(function (error) {
                         console.log(error);
                     });
-            }
+            },
+            // loadRestaurant(query = this.query){
+            //     this.restaurant = [];
+
+            //     axios.get('api/ordina', {params: {query: this.}})
+            // }
         }
     }
 </script>

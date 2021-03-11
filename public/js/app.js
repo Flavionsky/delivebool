@@ -2000,6 +2000,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       types: [],
       restaurants: [],
+      query: '',
+      restaurant: [],
       loading: true,
       selected: {
         typesClick: []
@@ -2042,7 +2044,11 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
-    }
+    } // loadRestaurant(query = this.query){
+    //     this.restaurant = [];
+    //     axios.get('api/ordina', {params: {query: this.}})
+    // }
+
   }
 });
 
@@ -37801,7 +37807,21 @@ var render = function() {
                       },
                       [
                         _c("div", { staticClass: "card h-100" }, [
-                          _vm._m(0, true),
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "/restaurants/" + restaurant.id }
+                            },
+                            [
+                              _c("img", {
+                                staticClass: "card-img-top",
+                                attrs: {
+                                  src: "http://placehold.it/700x400",
+                                  alt: ""
+                                }
+                              })
+                            ]
+                          ),
                           _vm._v(" "),
                           _c("div", { staticClass: "card-body" }, [
                             _c("h4", { staticClass: "card-title" }, [
@@ -37824,19 +37844,7 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#" } }, [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: { src: "http://placehold.it/700x400", alt: "" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -50154,8 +50162,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Martina\Desktop\Boolean Careers\Esercizi\delivebool\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Martina\Desktop\Boolean Careers\Esercizi\delivebool\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! F:\Boolean php\delivebool\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! F:\Boolean php\delivebool\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
