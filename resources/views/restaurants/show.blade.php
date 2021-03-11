@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @section('title')
 Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
 @endsection
@@ -13,6 +12,7 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -37,34 +37,6 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
                                                  document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-=======
-{{-- @extends('layouts.layout')
-
-@section('content') --}}
-
-
-
-        {{-- <div class="container dashboard">
-            <h1>Lista piatti di {{ $restaurant->name }}</h1>
-            <h2>Le tue Tipologie: </h2>
-            <ul class="dashboard types">
-                @foreach ($restaurant->types as $type)
-                <li><h3>{{$type->name}}<h3></li>
-                @endforeach
-            </ul>
-            <h2>In questa pagina puoi visualizzare una lista dei tuoi piatti.<br>Per modificare i dettagli di un piatto, clicca sul pulsante "Modifica" accanto al relativo piatto. Se vuoi eliminarlo dalla lista dei tuoi piatti, clicca su "Elimina".<br>Se invece vuoi aggiungere un nuovo piatto, premi il pulsante "Crea un nuovo piatto".</h2>
-            <div class="dashboard-box">
-                <ul>
-                    <li>
-                        <a href="{{ route('foods.create')}}">
-                            <div class="reg-button create">
-                                <h1>Crea un nuovo piatto</h1>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
->>>>>>> Luca
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
@@ -96,26 +68,27 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
 
                 <div class="rest-dashboard-header">
                     <div class="left-rest">
-                        <h1>$restaurant->name</h1>
-                        <h2>tipologie ristorante</h2>
-                        <h3>restaurant->address</h3>
-                        <h3>restaurant->city</h3>
+                        <h1>{{$restaurant->name}}</h1>
+                        <h3>{{$restaurant->address}}</h3>
+                        <h3>{{$restaurant->city}}</h3>
                     </div>
                     <div class="right-rest">
                         <img src="restaurant->image" alt="immagine ristorante">
-                        <h3>restaurant->email</h3>
-                        <h3>restaurant->p_iva</h3>
+                        <h3>{{$restaurant->email}}</h3>
+                        <h3>{{$restaurant->p_iva}}</h3>
 
                     </div>
                 </div>
-            
+
                 <hr>
                 <div class="rest-dashboard-main">
                     <h2>Piatti del ristorante</h2>
 
                     <div id="app">
                       <div id="product">
+
                         <item v-for="item in items" v-bind:item_data="item"></item>
+
                       </div>
                       <div id="cart">
                         <div id="head">
@@ -133,14 +106,14 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
                   <div class="box">
                     <img :src="item_data.img"/>
                     <i class="fa fa-plus" v-on:click="addItem(item_data)"></i>
-                    <h3>@{{item_data.title}}</h3>
+                    <h3>@{{item_data.name}}</h3>
                     <p>€ @{{item_data.price}}</p>
                   </div>
                 </template>
 
                 <template id="buy-box">
                   <div class="row">
-                    <h4>@{{buy_data.title}}</h4>
+                    <h4>@{{buy_data.name}}</h4>
 
                     <div class="qty-minus" v-on:click="minusQty(buy_data)">-</div>
                     <div class="qty" v-if="buy_data.qty === 0 ? removeItem(buy_data) : 'buy_data.qty'">@{{buy_data.qty}}</div>
@@ -260,7 +233,91 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
 
         </footer>
 
-        <script src="{{ asset('js/script.js') }}" charset="utf-8"></script>
+        <script type="text/javascript">
+
+        Vue.component("item", {
+          template: "#product-box",
+          props: ["item_data", "buyitems"],
+          methods: {
+            addItem: function(item_data) {
+                  this.pushData();
+              },
+            pushData: function() {
+              this.$parent.buyitems.push({
+                img: this.item_data.img,
+                title: this.item_data.title,
+                price: this.item_data.price,
+                qty: 1,
+                total: this.item_data.price,
+                id: this.item_data.id
+              });
+            },
+            findIndex: function(array, attr, value) {
+              for (var i = 0; i < array.length; i += 1) {
+                if (array[i][attr] === value) {
+                  return i;
+                }
+              }
+              return -1;
+            },
+          }
+
+        });
+        Vue.component("buyitem", {
+          template: "#buy-box",
+          props: ["buy_data", "buyitems"],
+          methods: {
+            removeItem: function(buy_data) {
+              var index = this.$parent.buyitems.indexOf(buy_data);
+              this.$parent.buyitems.splice(index, 1);
+            },
+            plusQty: function(buy_data){
+              buy_data.qty += 1;
+              buy_data.total = (buy_data.qty*buy_data.price).toFixed(2);
+            },
+            minusQty: function(buy_data){
+              buy_data.qty -= 1;
+              if (buy_data.qty < 0){
+                buy_data.qty = 0;
+              }
+              buy_data.total = (buy_data.qty*buy_data.price).toFixed(2);
+            }
+
+          }
+        });
+
+        var app = new Vue({
+          el: "#app",
+          data: {
+            items: [],
+            buyitems: []
+          },
+          mounted() {
+              this.loadFoods();
+          },
+          methods: {
+            total: function(){
+              var sum = 0;
+              this.buyitems.forEach(function(buyitem){
+                    sum += parseFloat(buyitem.total);
+              });
+              return sum;
+          },
+          loadFoods: function () {
+              axios.get('/api/foods')
+                  .then((response) => {
+                      this.items = response.data.data;
+                  })
+                  .catch(function (error) {
+                      console.log(error);
+                  });
+                }
+            }
+        });
+
+
+
+        </script>
 
         <script>
             function dropDown1() {
@@ -271,63 +328,4 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
 
 
     </body>
-</html> --}}
-
-<!-- Nav -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>document.getElementsByTagName("html")[0].className += " js";</script>
-  <link rel="stylesheet" href="{{asset('css/cart.css')}}">
-  <title>Add to Cart Interaction | CodyHouse</title>
-</head>
-<body>
-<main class="cd-main container margin-top-xxl">
-  <div class="text-component text-center">
-    <h1>Add to Cart Interaction</h1>
-    <p class="flex flex-wrap flex-center flex-gap-xxs">
-      <a class="cd-article-link" href="https://codyhouse.co/gem/add-to-cart-interaction">📝 View Tutorial</a>
-      <a href="#0" class="cd-add-to-cart js-cd-add-to-cart" data-price="25.99">Add To Cart</a>
-    </p>
-  </div>
-</main>
-
-<div class="cd-cart cd-cart--empty js-cd-cart">
-	<a href="#0" class="cd-cart__trigger text-replace">
-		Cart
-		<ul class="cd-cart__count"> <!-- cart items count -->
-			<li>1</li>
-			<li>2</li>
-		</ul> <!-- .cd-cart__count -->
-	</a>
-
-	<div class="cd-cart__content">
-		<div class="cd-cart__layout">
-			<header class="cd-cart__header">
-				<h2>Cart</h2>
-				<span class="cd-cart__undo">Item removed. <a href="#0">Undo</a></span>
-			</header>
-			
-			<div class="cd-cart__body">
-				<ul>
-					<!-- products added to the cart will be inserted here using JavaScript -->
-				</ul>
-			</div>
-
-			<footer class="cd-cart__footer">
-				<a href="#0" class="cd-cart__checkout">
-          <em>Checkout - $<span>0</span>
-            <svg class="icon icon--sm" viewBox="0 0 24 24"><g fill="none" stroke="currentColor"><line stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="3" y1="12" x2="21" y2="12"/><polyline stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="15,6 21,12 15,18 "/></g>
-            </svg>
-          </em>
-        </a>
-			</footer>
-		</div>
-	</div> <!-- .cd-cart__content -->
-</div> <!-- cd-cart -->
-<script src="{{ asset('js/main.js') }}"></script> <!-- util functions included in the CodyHouse framework -->
-<script src="{{ asset('js/util.js') }}"></script> 
-</body>
 </html>
