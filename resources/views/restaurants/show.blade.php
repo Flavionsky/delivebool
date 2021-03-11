@@ -244,7 +244,7 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
             pushData: function() {
               this.$parent.buyitems.push({
                 img: this.item_data.img,
-                title: this.item_data.title,
+                name: this.item_data.name,
                 price: this.item_data.price,
                 qty: 1,
                 total: this.item_data.price,
