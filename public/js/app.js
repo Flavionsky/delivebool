@@ -37791,6 +37791,7 @@ var render = function() {
               ? _c("div")
               : _c(
                   "div",
+                  { staticClass: "categorie-box-main-2" },
                   _vm._l(_vm.restaurants, function(restaurant) {
                     return _c(
                       "div",

@@ -327,6 +327,12 @@ p {
     flex-wrap: wrap;
 }
 
+.categorie-box-main-2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .card-img-top {
     width: 300px;
     border-radius: 5px;
