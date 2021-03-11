@@ -19,6 +19,8 @@ use Illuminate\Support\Str;
 
 use Illuminate\Support\Facades\Auth;
 
+use App\Food;
+
 class RestaurantController extends Controller
 {
     /**
@@ -46,7 +48,7 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {
 
     }
 
@@ -69,7 +71,11 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
-        return view('restaurants.show', compact('restaurant'));
+
+        $foods = Food::all();
+
+
+        return view('restaurants.show', compact('foods', 'restaurant'));
     }
 
     /**
@@ -111,7 +117,7 @@ class RestaurantController extends Controller
         $restaurant->types()->sync($data['types']);
 
         return redirect()->route('restaurants.show', $restaurant);
-       
+
     }
 
     /**
@@ -126,7 +132,7 @@ class RestaurantController extends Controller
     }
 
     public function login(Restaurant $restaurant)
-    {   
+    {
         $id = Auth::user()->id;
 
         $restaurant = Restaurant::find($id);

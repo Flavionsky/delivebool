@@ -853,8 +853,7 @@ a {
     padding-right: 25px;
 }
 
-.navorder-flex{
-
+.navorder-flex {
     display: flex;
     justify-content: space-between;
     list-style: none;

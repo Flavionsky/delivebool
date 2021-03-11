@@ -86,7 +86,9 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
 
                     <div id="app">
                       <div id="product">
-                          <item v-for="item in items" v-bind:item_data="item"></item>
+                          @foreach($restaurant->foods as $food)
+                          <item v-for="item in 1" v-bind:item_data="{{$food}}"></item>
+                          @endforeach
                       </div>
                       <div id="cart">
                         <div id="head">
@@ -99,12 +101,14 @@ Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
                       </div>
                     </div>
                 <template id="product-box">
+
                   <div class="box">
                     <img :src="item_data.img"/>
                     <i class="fa fa-plus" v-on:click="addItem(item_data)"></i>
                     <h3>@{{item_data.name}}</h3>
                     <p>€ @{{item_data.price}}</p>
                   </div>
+
                 </template>
 
                 <template id="buy-box">

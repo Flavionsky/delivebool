@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Collection;
+
 use App\Food;
+
+use App\Restaurant;
 
 use App\Http\Resources\FoodResource;
 
@@ -14,7 +18,12 @@ class FoodController extends Controller
 {
     public function index(){
 
-        return FoodResource::collection(Food::all());
+        $food = FoodResource::collection(Food::all());
+
+
+        return $food;
+
+
 
     }
 }

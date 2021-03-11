@@ -2,7 +2,7 @@
 
 @section('content')
 @foreach ($restaurants as $restaurant)
-    
+
 @endforeach
 <div>
     <h2>Ristoranti che consegnano a {{$restaurant->city}}</h2>
