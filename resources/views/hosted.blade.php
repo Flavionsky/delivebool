@@ -98,8 +98,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="amount">Amount</label>
-                                <input type="text" class="form-control" id="amount" name="amount" value="20">
-                                <p>@{{total()}}</p>
+                                <input type="text" class="form-control" id="amount" name="amount" value="">
+                                <p>{{$req->amount}}</p>
                             </div>
                         </div>
                     </div>
