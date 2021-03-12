@@ -82,7 +82,6 @@
 
                 </div>
             </div>
-
             <hr>
             <div class="rest-dashboard-main">
                 <h2>Piatti del ristorante</h2>
@@ -100,7 +99,8 @@
                         </div>
                         <buyitem v-for="buyitem in buyitems" v-bind:buy_data="buyitem"></buyitem>
                         <h5 v-if="total()">Totale carrello: € @{{ total() }}</h5>
-                        <h5 v-if="total()"><a v-on:click="finalTotal = total()" href="{{ route('checkout')->with('finalTotal') }}">Vai al checkout</a></h5>
+                        <h5 v-if="total()"><a v-on:click="finalTotal = total()" href="{{ route('checkout') }}">Vai al checkout</a></h5>
+
                     </div>
                 </div>
                 <template id="product-box">
