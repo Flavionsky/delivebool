@@ -2044,11 +2044,7 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
-    } // loadRestaurant(query = this.query){
-    //     this.restaurant = [];
-    //     axios.get('api/ordina', {params: {query: this.}})
-    // }
-
+    }
   }
 });
 

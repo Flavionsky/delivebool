@@ -91,11 +91,7 @@
                         console.log(error);
                     });
             },
-            // loadRestaurant(query = this.query){
-            //     this.restaurant = [];
-
-            //     axios.get('api/ordina', {params: {query: this.}})
-            // }
+            
         }
     }
 </script>

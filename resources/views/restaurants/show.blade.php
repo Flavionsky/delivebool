@@ -100,7 +100,7 @@
                         </div>
                         <buyitem v-for="buyitem in buyitems" v-bind:buy_data="buyitem"></buyitem>
                         <h5 v-if="total()">Totale carrello: € @{{ total() }}</h5>
-                        <h5 v-if="total()"><a href="{{ route('cart') }}">Vai al checkout</a></h5>
+                        <h5 v-if="total()"><a v-on:click="finalTotal = total()" href="#">Vai al checkout</a></h5>
                     </div>
                 </div>
                 <template id="product-box">
@@ -307,6 +307,7 @@
             data: {
                 items: [],
                 buyitems: [],
+                finalTotal: 0
             },
             mounted() {
                 this.loadFoods();
@@ -328,7 +329,6 @@
                             console.log(error);
                         });
                 },
-            }
         });
 
     </script>
