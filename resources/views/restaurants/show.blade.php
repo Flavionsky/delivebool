@@ -100,7 +100,7 @@
                         </div>
                         <buyitem v-for="buyitem in buyitems" v-bind:buy_data="buyitem"></buyitem>
                         <h5 v-if="total()">Totale carrello: € @{{ total() }}</h5>
-                        <h5 v-if="total()"><a v-on:click="finalTotal = total()" href="#">Vai al checkout</a></h5>
+                        <h5 v-if="total()"><a v-on:click="finalTotal = total()" href="{{ route('checkout')->with('finalTotal') }}">Vai al checkout</a></h5>
                     </div>
                 </div>
                 <template id="product-box">
@@ -306,8 +306,8 @@
             el: "#app",
             data: {
                 items: [],
-                buyitems: [],
-                finalTotal: 0
+                finalTotal: 0,
+                buyitems: []
             },
             mounted() {
                 this.loadFoods();
@@ -329,11 +329,9 @@
                             console.log(error);
                         });
                 },
+            }
         });
 
-    </script>
-
-    <script>
         function dropDown1() {
             var element = document.getElementById("drop-down-1");
             element.classList.toggle("active");
