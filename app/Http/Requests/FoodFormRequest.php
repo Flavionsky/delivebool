@@ -26,7 +26,7 @@ class FoodFormRequest extends FormRequest
         return [
             'name'=>'required|string',
             'price'=>'required|numeric',
-            'image' => 'mimetypes:image/jpeg,image/png',
+            'image' => 'nullable|sometimes|mimes:jpeg,jpg,png,gif|max:10000',
             'description'=>'nullable|min: 3',
             'visibility'=>'required|boolean',
             'kind_of_food'=>'string|min:3',

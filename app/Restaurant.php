@@ -19,7 +19,7 @@ class Restaurant extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email','email_verified_at', 'password', 'remember_token', 'address', 'city' , 'p_iva' , 'types'
+        'name', 'email','email_verified_at', 'image', 'password', 'remember_token', 'address', 'city' , 'p_iva' , 'types'
     ];
 
     /**

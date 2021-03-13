@@ -55,15 +55,15 @@ class FoodController extends Controller
         $newFood->description = $data['description'];
         $newFood->visibility = $data["visibility"];
         $newFood->kind_of_food = $data['kind_of_food'];
-        
-        
-        if($request->file('image') != null){
+
+
+        if ($request->file('image') != null) {
             $newFood->image = $request->file('image')->storePublicly('images');
         }
 
         $newFood->save();
 
-        return redirect()->route('restaurants.show', compact('restaurant'));
+        return redirect()->route('home');
     }
 
     /**
@@ -85,8 +85,20 @@ class FoodController extends Controller
      */
     public function edit($id)
     {
+        $userLogged = Auth::user();
+
         $food = Food::find($id);
-        return view('foods.edit', compact('food'));
+
+        $restaurant = $food->restaurant;
+
+        if ($userLogged->id == $restaurant->id) {
+            return view('foods.edit', compact('food'));
+        } else {
+
+            $errormessage = "L'Utente non è abilitato a modificare questo Cibo!";
+
+            return view('error', compact('errormessage'));
+        }
     }
 
     /**
@@ -96,28 +108,36 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(FoodFormRequest $request, Restaurant $restaurant, $id)
+    public function update(FoodFormRequest $request,Food $food)
     {
 
-       
+
         $userLogged = Auth::user();
+
+        $restaurant = Restaurant::find($food->restaurant->id);
+
         if ($userLogged->id == $restaurant->id) {
 
             $data = $request->validated();
+            $food->name = $data['name'];
+            $food->price = $data['price'];
+            if ($request->file('image') != null) {
+                $food->image = $request->file('image')->storePublicly('images');
+            }
+            $food->description = $data['description'];
+            $food->visibility = $data["visibility"];
+            $food->kind_of_food = $data['kind_of_food'];
 
-            $food = $restaurant->foods->find($id);
 
-            $food->update([
-                'name' => $data['name'],
-                'price' => $data['price'],
-                'image' => $request->file('image')->storePublicly('images'),
-                'description' => $data['description'],
-                'visibility' => $data['visibility'],
-                'kind_of_food' => $data['kind_of_food'],
-            ]);
+            $food->save();
 
-            return view('restaurants.show', $restaurant);
+            return redirect()->route('home');
 
+        } else {
+
+            $errormessage = "L'Utente non è abilitato a modificare questo Cibo!";
+
+            return view('error', compact('errormessage'));
         }
     }
 
@@ -130,11 +150,9 @@ class FoodController extends Controller
     public function destroy($id)
     {
         $food = Food::find($id);
-       
+
         $food->delete();
         $message = "Piatto eliminato";
-        return view("message", compact("message")); 
-
-        
+        return view("message", compact("message"));
     }
 }

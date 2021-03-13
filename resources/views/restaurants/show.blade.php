@@ -88,6 +88,7 @@
                 <div id="app">
                     <div id="product">
                         @foreach ($restaurant->foods as $food)
+                        <img src="{{ asset($food->image) }}" alt="">
                             <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
                         @endforeach
                     </div>

@@ -15,7 +15,7 @@ Delivebool - Modifica il tuo account
                     </div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('restaurants.update', $restaurant) }}">
+                        <form method="POST" action="{{ route('restaurants.update', $restaurant) }}" enctype='multipart\form-data'>
                             @csrf
                             @method('patch')
 
@@ -48,6 +48,19 @@ Delivebool - Modifica il tuo account
                                         </span>
                                     @enderror
                                 </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>{{__('Immagine')}}</label>
+                                <input class="form-control @error('image') is-invalid @enderror" name="image" placeholder="Inserisci un Immagine" type="file" value="{{$restaurant->image}}">
+                                <img src="{{asset($restaurant->image)}}" alt="immagine ristorante">
+                                @error('image')
+                
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                
+                                @enderror
                             </div>
 
                             <div class="form-group row">

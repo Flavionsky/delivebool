@@ -40,7 +40,7 @@ Deliveboo - Inserisci un nuovo piatto
             </div>
             <div class="form-group">
                 <label>{{__('Immagine')}}</label>
-                <input class="form-control @error('image') is-invalid @enderror" name="image" placeholder="Inserisci un Immagine" type="file">
+                <input class="form-control @error('image') is-invalid @enderror" name="image" type="file">
                 @error('image')
 
                 <span class="invalid-feedback" role="alert">

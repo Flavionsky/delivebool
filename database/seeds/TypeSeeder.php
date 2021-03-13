@@ -6,7 +6,7 @@ use App\Type;
 
 use App\Restaurant;
 
-class TypeRestaurantSeeder extends Seeder
+class TypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -39,9 +39,6 @@ class TypeRestaurantSeeder extends Seeder
             $newtype->name = $type;
 
             $newtype->save();
-
-            $restaurants = Restaurant::inRandomOrder()->limit(rand(1,5))->get();
-            $newtype->restaurants()->attach($restaurants);
 
         }
     }

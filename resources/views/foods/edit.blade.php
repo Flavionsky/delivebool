@@ -40,7 +40,8 @@ Deliveboo - Modifica un piatto
             </div>
             <div class="form-group">
                 <label>{{__('Immagine')}}</label>
-                <input class="form-control @error('image') is-invalid @enderror" name="image" placeholder="Inserisci un Immagine" type="file" value="{{ $food->image}}">
+                <input class="form-control @error('image') is-invalid @enderror" name="image" type="file">
+                <img src="{{asset($food->image)}}" alt="immagine cibo">
                 @error('image')
 
                 <span class="invalid-feedback" role="alert">
@@ -73,14 +74,14 @@ Deliveboo - Modifica un piatto
             </div>
 
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="visibility" value="0" id="visibility">
+                <input class="form-check-input" type="radio" name="visibility" {{ $food->visibility == 0 ? 'checked' : '' }} value="0" id="visibility">
 
                 <label class="form-check-label" for="visibility">
                     Non Disponibile
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="visibility" value="1" id="visibility">
+                <input class="form-check-input" type="radio" name="visibility" {{ $food->visibility == 1 ? 'checked' : '' }} value="1" id="visibility">
 
                 <label class="form-check-label" for="visibility">
                     Disponibile
