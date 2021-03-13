@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Braintree;
 /*
 
 *da definire le validazioni per il ristorante
@@ -31,7 +33,6 @@ class RestaurantController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except('index', 'show');
     }
 
     public function index()
@@ -71,11 +72,7 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
-
-        $foods = Food::all();
-
-
-        return view('restaurants.show', compact('foods', 'restaurant'));
+        return view('restaurants.show', compact('restaurant'));
     }
 
     /**
@@ -138,5 +135,21 @@ class RestaurantController extends Controller
         $restaurant = Restaurant::find($id);
 
         return view('restaurants.show', compact('restaurant'));
+    }
+    public function checkout(Restaurant $restaurant, Request $request){
+
+        $gateway = new Braintree\Gateway([
+            'environment' => config('services.braintree.environment'),
+            'merchantId' => config('services.braintree.merchantId'),
+            'publicKey' => config('services.braintree.publicKey'),
+            'privateKey' => config('services.braintree.privateKey')
+        ]);
+
+        $token = $gateway->ClientToken()->generate();
+
+        return view('hosted', [
+            'token' => $token,
+            'total' => $request->input('total')
+        ]);
     }
 }

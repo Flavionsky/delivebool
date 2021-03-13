@@ -52,20 +52,7 @@ Route::get('/nuovo', function () {
     return view('partials.order2');
 });
 
-Route::get('/hosted', function () {
-    $gateway = new Braintree\Gateway([
-        'environment' => config('services.braintree.environment'),
-        'merchantId' => config('services.braintree.merchantId'),
-        'publicKey' => config('services.braintree.publicKey'),
-        'privateKey' => config('services.braintree.privateKey')
-    ]);
-
-    $token = $gateway->ClientToken()->generate();
-
-    return view('hosted', [
-        'token' => $token
-    ]);
-})->name('checkout');
+Route::get('/hosted', 'RestaurantController@checkout')->name('checkout');
 
 Route::post('/checkout', function (Request $request){
     $gateway = new Braintree\Gateway([

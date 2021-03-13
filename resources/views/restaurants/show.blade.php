@@ -79,7 +79,6 @@
                     <img src="restaurant->image" alt="immagine ristorante">
                     <h3>{{ $restaurant->email }}</h3>
                     <h3>{{ $restaurant->p_iva }}</h3>
-
                 </div>
             </div>
             <hr>
@@ -99,7 +98,12 @@
                         </div>
                         <buyitem v-for="buyitem in buyitems" v-bind:buy_data="buyitem"></buyitem>
                         <h5 v-if="total()">Totale carrello: € @{{ total() }}</h5>
-                        <h5 v-if="total()"><a v-on:click="finalTotal = total()" href="{{ route('checkout') }}">Vai al checkout</a></h5>
+                        <form method="GET" ACTION="{{ route('checkout') }}">
+                            @csrf
+                            <input type="hidden" name="total" v-model="finalTotal">
+                        <h3 v-if="total()"><input type="submit" v-on:click="finalTotal = total()">Vai al checkout</input></h3>
+                        </form>
+
 
                     </div>
                 </div>
@@ -266,15 +270,6 @@
                         id: this.item_data.id,
                     });
                 },
-
-                findIndex: function(array, attr, value) {
-                    for (var i = 0; i < array.length; i += 1) {
-                        if (array[i][attr] === value) {
-                            return i;
-                        }
-                    }
-                    return -1;
-                },
             }
 
         });
@@ -289,14 +284,14 @@
                 plusQty: function(buy_data) {
                     console.log(this.$parent.buyitems);
                     buy_data.qty += 1;
-                    buy_data.total = (buy_data.qty * buy_data.price);
+                    buy_data.total = (buy_data.qty * buy_data.price).toFixed(2);
                 },
                 minusQty: function(buy_data) {
                     buy_data.qty -= 1;
                     if (buy_data.qty < 0) {
                         buy_data.qty = 0;
                     }
-                    buy_data.total = (buy_data.qty * buy_data.price);
+                    buy_data.total = (buy_data.qty * buy_data.price).toFixed(2);
                 }
 
             }
