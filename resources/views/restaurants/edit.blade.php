@@ -15,15 +15,16 @@ Delivebool - Modifica il tuo account
                     </div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('restaurants.update', $restaurant) }}">
                             @csrf
+                            @method('patch')
 
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome Ristorante') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        name="name" value="{{ $restaurant->name }}" required autocomplete="name" autofocus>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -39,7 +40,7 @@ Delivebool - Modifica il tuo account
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                        name="email" value="{{ old('email') }}" required autocomplete="email">
+                                        name="email" value="{{ $restaurant->email  }}" required autocomplete="email">
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -50,40 +51,13 @@ Delivebool - Modifica il tuo account
                             </div>
 
                             <div class="form-group row">
-                                <label for="password"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="new-password">
-
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" required autocomplete="new-password">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
                                 <label for="address"
                                     class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="address" type="text"
                                         class="form-control @error('address') is-invalid @enderror" name="address"
-                                        value="{{ old('address') }}" required autocomplete="address">
+                                        value="{{ $restaurant->address  }}" required autocomplete="address">
 
                                     @error('address')
                                         <span class="invalid-feedback" role="alert">
@@ -98,7 +72,7 @@ Delivebool - Modifica il tuo account
 
                                 <div class="col-md-6">
                                     <input id="city" type="text" class="form-control @error('city') is-invalid @enderror"
-                                        name="city" value="{{ old('city') }}" required autocomplete="city">
+                                        name="city" value="{{ $restaurant->city  }}" required autocomplete="city">
 
                                     @error('city')
                                         <span class="invalid-feedback" role="alert">
@@ -114,7 +88,7 @@ Delivebool - Modifica il tuo account
 
                                 <div class="col-md-6">
                                     <input id="p_iva" type="text" class="form-control @error('p_iva') is-invalid @enderror"
-                                        name="p_iva" value="{{ old('p_iva') }}" required autocomplete="p_iva">
+                                        name="p_iva" value="{{ $restaurant->p_iva  }}" required autocomplete="p_iva">
 
                                     @error('p_iva')
                                         <span class="invalid-feedback" role="alert">
@@ -129,19 +103,11 @@ Delivebool - Modifica il tuo account
                                     class="col-md-4 col-form-label text-md-right">{{ __('Selezionare le tipologie del tuo Ristorante') }}</label>
 
                                 <div class="col-md-6">
+
                                     <ul>
-                                        <li><input type="checkbox" name="types[]" value="1">Cinese</li>
-                                        <li><input type="checkbox" name="types[]" value="2">Giapponese</li>
-                                        <li><input type="checkbox" name="types[]" value="3">Romano</li>
-                                        <li><input type="checkbox" name="types[]" value="4">Pizzeria</li>
-                                        <li><input type="checkbox" name="types[]" value="5">Pesce</li>
-                                        <li><input type="checkbox" name="types[]" value="6">Gelateria</li>
-                                        <li><input type="checkbox" name="types[]" value="7">Yoghurteria</li>
-                                        <li><input type="checkbox" name="types[]" value="8">Indiano</li>
-                                        <li><input type="checkbox" name="types[]" value="9">Siciliano</li>
-                                        <li><input type="checkbox" name="types[]" value="10">Tunisino</li>
-                                        <li><input type="checkbox" name="types[]" value="11">Vegan</li>
-                                        <li><input type="checkbox" name="types[]" value="12">Fast Food</li>
+                                        @foreach ($types as $type)
+                                        <li><input type="checkbox" name="types[]" value="{{$type->id}}" {{ $restaurant->types->contains($type) ? 'checked' : '' }}>{{$type->name}}</li>
+                                        @endforeach
                                     </ul>
 
                                     @error('types')
@@ -155,7 +121,7 @@ Delivebool - Modifica il tuo account
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
+                                        {{ __('Modifica') }}
                                     </button>
                                 </div>
                             </div>

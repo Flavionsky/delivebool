@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="891cadc8-003e-4670-9f4e-6ca8294f53d5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RestaurantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RestaurantController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/hosted.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hosted.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/restaurants/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/restaurants/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/restaurants/showDASHBOARD-DA-RIMETTERE.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +167,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615638739638</updated>
-      <workItem from="1615638742109" duration="4162000" />
+      <workItem from="1615638742109" duration="5858000" />
     </task>
     <servers />
   </component>

@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ route('restaurants.edit', $restaurant) }}">
                         <div class="reg-button create">
                             <h1>Modifica profilo</h1>
                         </div>

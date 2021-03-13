@@ -23,6 +23,8 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Food;
 
+use App\Type;
+
 class RestaurantController extends Controller
 {
     /**
@@ -33,6 +35,8 @@ class RestaurantController extends Controller
 
     public function __construct()
     {
+
+        $this->middleware('auth')->except('index', 'show', 'checkout');
     }
 
     public function index()
@@ -84,7 +88,21 @@ class RestaurantController extends Controller
     public function edit($id)
     {
         $restaurant = Restaurant::find($id);
-        return view('restaurants.edit', compact('restaurant'));
+
+        $userLogged = Auth::user();
+
+        if ($userLogged->id == $restaurant->id) {
+
+        $types = Type::all();
+
+        return view('restaurants.edit', compact('restaurant', 'types'));
+
+        }else {
+            $errormessage = "L'Utente non è abilitato a modificare questo Ristorante!";
+
+            return view('error', compact('errormessage'));
+        
+        }
     }
 
     /**
@@ -94,18 +112,18 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Restaurant $restaurant, $id)
+    public function update(Request $request, $id)
     {
         $data = $request->all();
+        $userLogged = Auth::user();
+        $restaurant = Restaurant::find($id);
 
-       $restaurant = Restaurant::find($id);
+        if ($userLogged->id == $restaurant->id) {
 
         $restaurant->update([
             'name' => $data['name'],
             'email' => $data['email'],
             'email_verified_at' => now(),
-            'password' => Hash::make($data['password']),
-            'remember_token' => Str::random(10),
             'address' => $data['address'],
             'city' => $data['city'],
             'p_iva' => $data['p_iva']
@@ -113,7 +131,13 @@ class RestaurantController extends Controller
 
         $restaurant->types()->sync($data['types']);
 
-        return redirect()->route('restaurants.show', $restaurant);
+        return redirect()->route('home', $restaurant);
+        }else {
+            $errormessage = "L'Utente non è abilitato a modificare questo Ristorante!";
+
+            return view('error', compact('errormessage'));
+        
+        }
 
     }
 
@@ -134,7 +158,7 @@ class RestaurantController extends Controller
 
         $restaurant = Restaurant::find($id);
 
-        return view('restaurants.show', compact('restaurant'));
+        return view('restaurants.dashboard', compact('restaurant'));
     }
     public function checkout(Restaurant $restaurant, Request $request){
 

@@ -101,10 +101,8 @@
                         <form method="GET" ACTION="{{ route('checkout') }}">
                             @csrf
                             <input type="hidden" name="total" v-model="finalTotal">
-                        <h3 v-if="total()"><input type="submit" v-on:click="finalTotal = total()">Vai al checkout</input></h3>
+                        <h3 v-if="total()"><input type="submit" value="Vai al checkout" v-on:click="finalTotal = total()"></input></h3>
                         </form>
-
-
                     </div>
                 </div>
                 <template id="product-box">
