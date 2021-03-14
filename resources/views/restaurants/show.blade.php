@@ -99,13 +99,16 @@
                             <span id="quantity">Quantità</span>
                             <span id="total">Prezzo</span>
                         </div>
-                        <buyitem v-for="buyitem in buyitems" v-bind:buy_data="buyitem"></buyitem>
-                        <h5 v-if="total()">Totale carrello: € @{{ total() }}</h5>
                         <form method="GET" ACTION="{{ route('checkout') }}">
                             @csrf
+                            <buyitem v-for="buyitem in buyitems" v-bind:buy_data="buyitem"></buyitem>
+                            <div v-for="buyitem in buyitems">
+                                <input type="hidden" id="pippobaudo" value="" name="orderData" v-model="orderData">
+                            </div>
+                            <h5 v-if="total()">Totale carrello: € @{{ total() }}</h5>
                             <input type="hidden" name="total" v-model="finalTotal">
                             <h3 v-if="total()"><input type="submit" value="Vai al checkout"
-                                    v-on:click="finalTotal = total()"></input></h3>
+                                    v-on:click="finalTotal = total(), loadBuyItems()"></h3>
                         </form>
                     </div>
                 </div>
@@ -305,7 +308,8 @@
             data: {
                 items: [],
                 finalTotal: 0,
-                buyitems: []
+                buyitems: [],
+                orderData: '',
             },
             mounted() {
                 this.loadFoods();
@@ -327,6 +331,13 @@
                             console.log(error);
                         });
                 },
+                loadBuyItems:function (){
+
+                   this.orderData = JSON.stringify(this.buyitems);
+
+
+                    console.log(this.orderData);
+                }
             }
         });
 

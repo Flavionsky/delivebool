@@ -88,7 +88,7 @@
                             <form action="{{ route('foods.destroy', $food) }}" method="POST">
                                 @CSRF
                                 @method('DELETE')
-                                <button type="submit">Cancella</button>
+                                <button onclick="return confirm('Sei sicuro di voler cancellare definitavemente questo cibo?')" type="submit">Cancella</button>
                             </form>
                         </td>
                     </tr>

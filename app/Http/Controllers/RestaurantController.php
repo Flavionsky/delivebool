@@ -160,7 +160,8 @@ class RestaurantController extends Controller
 
         return view('restaurants.dashboard', compact('restaurant'));
     }
-    public function checkout(Restaurant $restaurant, Request $request){
+    public function checkout(Request $request){
+
 
         $gateway = new Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
@@ -173,7 +174,8 @@ class RestaurantController extends Controller
 
         return view('hosted', [
             'token' => $token,
-            'total' => $request->input('total')
+            'total' => $request->input('total'),
+            'buyitems' => json_decode($request->input('orderData'))
         ]);
     }
 }
