@@ -39,6 +39,7 @@ class FoodController extends Controller
      */
     public function store(FoodFormRequest $request)
     {
+
         $data = $request->validated();
 
         $id = Auth::user()->id;
@@ -110,35 +111,38 @@ class FoodController extends Controller
      */
     public function update(FoodFormRequest $request,Food $food)
     {
-
-
+        
         $userLogged = Auth::user();
-
+        
         $restaurant = Restaurant::find($food->restaurant->id);
-
-        if ($userLogged->id == $restaurant->id) {
-
-            $data = $request->validated();
-            $food->name = $data['name'];
-            $food->price = $data['price'];
-            if ($request->file('image') != null) {
-                $food->image = $request->file('image')->storePublicly('images');
+        if($food->deleted == '0'){
+            if ($userLogged->id == $restaurant->id) {
+    
+                $data = $request->validated();
+                $food->name = $data['name'];
+                $food->price = $data['price'];
+                if ($request->file('image') != null) {
+                    $food->image = $request->file('image')->storePublicly('images');
+                }
+                $food->description = $data['description'];
+                $food->visibility = $data["visibility"];
+                $food->kind_of_food = $data['kind_of_food'];
+    
+    
+                $food->save();
+    
+                return redirect()->route('home');
+    
+            } else {
+    
+                $errormessage = "L'Utente non è abilitato a modificare questo Cibo!";
+    
+                return view('error', compact('errormessage'));
             }
-            $food->description = $data['description'];
-            $food->visibility = $data["visibility"];
-            $food->kind_of_food = $data['kind_of_food'];
-
-
-            $food->save();
-
-            return redirect()->route('home');
-
         } else {
 
-            $errormessage = "L'Utente non è abilitato a modificare questo Cibo!";
-
-            return view('error', compact('errormessage'));
         }
+        
     }
 
     /**
@@ -151,8 +155,12 @@ class FoodController extends Controller
     {
         $food = Food::find($id);
 
-        $food->delete();
+        $food->deleted = '1';
+
+        $food->save();
+
         $message = "Piatto eliminato";
+
         return view("message", compact("message"));
     }
 }

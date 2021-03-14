@@ -21,11 +21,10 @@
                         <div class="col-lg-4 col-md-6 mb-4" :key="restaurant.id" v-for="restaurant in restaurants">
                             <a :href="'/restaurants/'+ restaurant.id">
                                 <div class="card h-100">
-                                        <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+                                        <img class="card-img-top" :src="'http://127.0.0.1:8000/' + restaurant.image" alt="ristorante">
                                     <div class="card-body">
                                         <h4 class="card-title">
-                                            <h1>{{restaurant.id}}</h1>
-                                            <a :href="'/restaurants/'+ restaurant.id">{{ restaurant.name }}</a>
+                                            <h1>{{ restaurant.name }}</h1>
                                         </h4>
                                     </div>
                                 </div>

@@ -53,11 +53,13 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:restaurants'],
+            'image' => ['nullable', 'sometimes', 'mimes:jpeg,jpg,png,gif', 'max:10000'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'address' => ['required', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:100'],
             'p_iva' => ['required', 'string','min:11', 'max:13'],
-            'types' => []
+            'types' => [],
+
         ]);
     }
 
@@ -68,17 +70,26 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
+    {   
+
+        if (request()->file('image') != null) {
+            $image = request()->file('image')->storePublicly('images');
+        } else{
+            $image = '';
+        }
+
         $restaurant = Restaurant::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'email_verified_at' => now(),
+            'image' => $image,
             'password' => Hash::make($data['password']),
             'remember_token' => Str::random(10),
             'address' => $data['address'],
             'city' => $data['city'],
             'p_iva' => $data['p_iva']
         ]);
+
 
         $restaurant->types()->sync($data['types']);
 

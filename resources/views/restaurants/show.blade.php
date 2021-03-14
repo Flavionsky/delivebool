@@ -76,7 +76,7 @@
                     <h3>{{ $restaurant->city }}</h3>
                 </div>
                 <div class="right-rest">
-                    <img src="restaurant->image" alt="immagine ristorante">
+                    <img src="{{ asset($restaurant->image) }}" alt="immagine ristorante">
                     <h3>{{ $restaurant->email }}</h3>
                     <h3>{{ $restaurant->p_iva }}</h3>
                 </div>
@@ -88,8 +88,10 @@
                 <div id="app">
                     <div id="product">
                         @foreach ($restaurant->foods as $food)
-                        <img src="{{ asset($food->image) }}" alt="">
-                            <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
+                            @if ($food->deleted == 0)
+                                <img src="{{ asset($food->image) }}" alt="">
+                                <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
+                            @endif
                         @endforeach
                     </div>
                     <div id="cart">
@@ -102,7 +104,8 @@
                         <form method="GET" ACTION="{{ route('checkout') }}">
                             @csrf
                             <input type="hidden" name="total" v-model="finalTotal">
-                        <h3 v-if="total()"><input type="submit" value="Vai al checkout" v-on:click="finalTotal = total()"></input></h3>
+                            <h3 v-if="total()"><input type="submit" value="Vai al checkout"
+                                    v-on:click="finalTotal = total()"></input></h3>
                         </form>
                     </div>
                 </div>
@@ -250,13 +253,14 @@
                 addItem: function(item_data) {
                     if (this.$parent.buyitems.length < 1) {
                         this.pushData();
-                    }else{
-                       var isInArray = this.$parent.buyitems.find(e => e.id === item_data.id);
-                       if(isInArray){
-                        this.$parent.buyitems.some(e => e.id === item_data.id ? (e.qty += 1 , e.total = (e.qty * e.price).toFixed(2)) : '');
-                       }else{
-                           this.pushData();
-                       }
+                    } else {
+                        var isInArray = this.$parent.buyitems.find(e => e.id === item_data.id);
+                        if (isInArray) {
+                            this.$parent.buyitems.some(e => e.id === item_data.id ? (e.qty += 1, e.total = (
+                                e.qty * e.price).toFixed(2)) : '');
+                        } else {
+                            this.pushData();
+                        }
                     }
                 },
                 pushData: function() {

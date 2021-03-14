@@ -20,6 +20,7 @@ class CreateFoodsTable extends Migration
             $table->string('image');
             $table->mediumText('description');
             $table->boolean('visibility');
+            $table->boolean('deleted')->default('0');
             $table->string('kind_of_food');
             $table->foreignId('restaurant_id')->constrained('restaurants');
             $table->timestamps();
