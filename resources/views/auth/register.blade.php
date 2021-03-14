@@ -87,7 +87,7 @@ Delivebool - Crea un nuovo account
                             @csrf
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome Ristorante') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome ristorante') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
@@ -103,7 +103,7 @@ Delivebool - Crea un nuovo account
 
                             <div class="form-group row">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo e-mail') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
@@ -136,7 +136,7 @@ Delivebool - Crea un nuovo account
 
                             <div class="form-group row">
                                 <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Conferma password') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
@@ -146,7 +146,7 @@ Delivebool - Crea un nuovo account
 
                             <div class="form-group row">
                                 <label for="address"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="address" type="text"
@@ -162,7 +162,7 @@ Delivebool - Crea un nuovo account
                             </div>
 
                             <div class="form-group row">
-                                <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('City') }}</label>
+                                <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('Città') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="city" type="text" class="form-control @error('city') is-invalid @enderror"
@@ -178,7 +178,7 @@ Delivebool - Crea un nuovo account
 
                             <div class="form-group row">
                                 <label for="p_iva"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('P.IVA') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Partita IVA') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="p_iva" type="text" class="form-control @error('p_iva') is-invalid @enderror"
@@ -194,7 +194,7 @@ Delivebool - Crea un nuovo account
 
                             <div class="form-group row">
                                 <label for="types"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Selezionare le tipologie del tuo Ristorante') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Selezionare le tipologie del tuo ristorante') }}</label>
 
                                 <div class="col-md-6">
                                     <ul>
@@ -223,7 +223,7 @@ Delivebool - Crea un nuovo account
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
+                                        {{ __('Registrati') }}
                                     </button>
                                 </div>
                             </div>
