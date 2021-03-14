@@ -1,17 +1,18 @@
 @extends('layouts.layout')
 
 @section('title')
-Deliveboo - Modifica un piatto
+Delivebool - Modifica un piatto
 @endsection
 
 @section('content')
 
-<div class="container dashboard">
-    <div class="row">
-        <div class="col-12">
-            <h1>Modifica il piatto</h1>
-        </div>
-        <div class="col-12">
+<div class="container">
+    <div class="registercard-box">
+        <div class="registercard">
+            <div class="card-header">
+                <h2>Modifica il piatto</h2>
+            </div>
+        <div class="card-body">
             <form action="{{ route('foods.update', $food) }}" method="POST" enctype='multipart\form-data'>
             @csrf
             @method('patch')
@@ -93,5 +94,6 @@ Deliveboo - Modifica un piatto
             </form>
         </div>
     </div>
+</div>
 </div>
 @endsection

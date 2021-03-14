@@ -136,6 +136,8 @@ footer .nav-social .copyright span {
     max-width: 1120px;
     margin: 0 auto;
     padding-top: 20px;
+    position: relative;
+    z-index: 3;
 }
 
 .debug {
@@ -393,7 +395,18 @@ p {
 }
 
 .btn.btn-primary {
-    padding: 10px;
+    width: 100px;
+    background-color: #00C2B3;
+    line-height: 30px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.btn.btn-primary:hover {
+    background-color: #14ccbe;
 }
 
 .table {

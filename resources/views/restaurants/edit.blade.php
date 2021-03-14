@@ -6,12 +6,11 @@ Delivebool - Modifica il tuo account
 
 @section('content')
 
-            <div class="container dashboard">
-
-
+        <div class="container">
+            <div class="registercard-box">
                 <div class="registercard">
                     <div class="card-header">
-                        <h2>Modifica le tue informazioni</h2>
+                        <h1>Modifica le tue informazioni</h1>
                     </div>
 
                     <div class="card-body">
@@ -142,5 +141,6 @@ Delivebool - Modifica il tuo account
                     </div>
                 </div>
             </div>
+        </div>
 
 @endsection

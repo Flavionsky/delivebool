@@ -1,21 +1,22 @@
 @extends('layouts.layout')
 
 @section('title')
-Deliveboo - Inserisci un nuovo piatto
+Delivebool - Inserisci un nuovo piatto
 @endsection
 
 @section('content')
 
-<div class="container dashboard">
-    <div class="row">
-        <div class="col-12">
-            <h1>Inserisci un nuovo piatto</h1>
-        </div>
-        <div class="col-12">
+<div class="container">
+    <div class="registercard-box">
+        <div class="registercard">
+            <div class="card-header">
+                <h2>Inserisci un nuovo piatto</h2>
+            </div>
+        <div class="card-body">
             <form action="{{ route('foods.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('post')
-            
+
             <div class="form-group">
                 <label>{{__('Nome')}}</label>
                 <input class="form-control" name="name" placeholder="Inserisci il nome del Piatto" type="text">
