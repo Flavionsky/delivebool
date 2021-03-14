@@ -205,7 +205,7 @@ Delivebool - Home
         </section>
 
 
-    <section id="novità-deliveroo">
+    <!-- <section id="novità-deliveroo">
         <div class="container">
             <h1>Novità dalla nostra cucina</h1>
             <div class="blocks flex">
@@ -260,7 +260,7 @@ Delivebool - Home
 
             </div>
         </div>
-    </section>
+    </section> -->
 
 
         <section id="work-with-us-5">
@@ -277,7 +277,7 @@ Delivebool - Home
                         <img src="{{'../img/restaurants.jpg'}}" alt="">
                             <h2>Ristoranti</h2>
                             <p>Diventa partner di Delivebool e raggiungi sempre più clienti. Ci occupiamo noi della consegna, così che la tua unica preoccupazione sia continuare a preparare il miglior cibo.</p>
-                        <button type="button" name="button">Diventa nostro partner</button>
+                        <a href="{{ route('register') }}"><button type="button" name="button">Diventa nostro partner</button></a>
                     </div>
 
 

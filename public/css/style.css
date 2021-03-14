@@ -1126,7 +1126,42 @@ div.nav-cart-border-bottom {
     .container {
         padding-left: 20px;
         padding-right: 20px;
+        text-align: center;
     }
+
+    .blocks.flex, #favorite-food-2 .blocks.flex-2 {
+        display: inline-block;
+    }
+
+    .comfort-food {
+        width: 100%;
+        padding-right: 0;
+        cursor: pointer;
+    }
+
+    .perfect-share {
+        width: 100%;
+    }
+
+    .dessert {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .exclusive {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    #selection-1 img {
+        width: 500px;
+        height: 150px;
+    }
+
+    .block p {
+        width: 550px;
+    }
+
 }
 
 @media screen and (max-width: 1120px) {
@@ -1163,5 +1198,21 @@ div.nav-cart-border-bottom {
         text-align: center;
     }
 }
+
+@media screen and (max-width: 760px) {
+    #work-with-us-5 .blocks.flex-2 {
+        display: inline-block;
+    }
+
+    .box-work {
+        width: 450px;
+        height: 100%;
+    }
+}
+
+
+@media screen and (max-width: 800px) X TABELLA DASHBOARD
+
+@media screen and (max-width: 716px)
 
 @media screen and (max-width: 640px)
