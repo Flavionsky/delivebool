@@ -32,11 +32,29 @@
 <body>
     <div class="container">
         <div class="col-md-6 offset-md-3">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome Portata</th>
+                        <th scope="col">Quantità</th>
+                        <th scope="col">Prezzo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($buyitems as $item)
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>{{$item->name}}</td>
+                            <td>{{$item->qty}}</td>
+                            <td>{{$item->price}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
             <h1>Pagamento ordine</h1>
             <div class="spacer"></div>
-            @foreach ($buyitems as $item)
-                <h2>{{$item->name}}</h2>
-            @endforeach
+
             @if (session()->has('success_message'))
                 <div class="alert alert-success">
                     {{ session()->get('success_message') }}
