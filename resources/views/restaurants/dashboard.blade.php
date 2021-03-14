@@ -1,32 +1,29 @@
 @extends('layouts.layout')
 
 @section('title')
-    Deliveboo Dashboard - Lista piatti
+    Delivebool Dashboard
 @endsection
 
 @section('content')
 
-
-
     <div class="container dashboard">
-        <h1>Lista piatti di {{ $restaurant->name }}</h1>
-        <h2>Le tue Tipologie: </h2>
+        <h1>Dashboard di {{ $restaurant->name }}</h1>
         <ul class="dashboard types">
-            @foreach ($restaurant->types as $type)
-                <li>
-                    <h3>{{ $type->name }}<h3>
-                </li>
-            @endforeach
+            <li><strong>Nome ristorante: </strong>{{ $restaurant->name }}</li>
+            <li><strong>Indirizzo e-mail: </strong>{{ $restaurant->email }}</li>
+            <li><strong>Immagine: </strong>{{ $restaurant->image }}</li>
+            <li><strong>Indirizzo: </strong>{{ $restaurant->address }}</li>
+            <li><strong>Città: </strong>{{ $restaurant->city }}</li>
+            <li><strong>Partita IVA: </strong>{{ $restaurant->p_iva }}</li>
         </ul>
-        <h2>In questa pagina puoi visualizzare una lista dei tuoi piatti e modificare le tue informazioni.<br>Per modificare i dettagli di un piatto, clicca
-            sul pulsante "Modifica" accanto al relativo piatto. Se vuoi eliminarlo dalla lista dei tuoi piatti, clicca su
-            "Elimina".<br>Se invece vuoi aggiungere un nuovo piatto, premi il pulsante "Crea un nuovo piatto".<br>Per cambiare le tue informazioni, premi "Modifica profilo".</h2>
+        <br>
+
         <div class="dashboard-box">
             <ul>
                 <li>
                     <a href="{{ route('foods.create') }}">
                         <div class="reg-button create">
-                            <h1>Crea un nuovo piatto</h1>
+                            <h1>Aggiungi piatto</h1>
                         </div>
                     </a>
                 </li>
@@ -37,9 +34,17 @@
                         </div>
                     </a>
                 </li>
+                <li>
+                    <a href="">
+                        <div class="reg-button create">
+                            <h1>Lista ordini</h1>
+                        </div>
+                    </a>
+                </li>
             </ul>
         </div>
         @if (!$restaurant->foods->isEmpty())
+
         <table class="table">
             <thead>
                 <tr>
@@ -48,8 +53,9 @@
                     <th scope="col">Immagine</th>
                     <th scope="col">Prezzo</th>
                     <th scope="col">Tipo di cibo</th>
-                    <th scope="col">Descrizione</th>
                     <th scope="col">Visibile</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -66,9 +72,6 @@
                         </td>
                         <td>
                             <p>{{ $food->kind_of_food }}</p>
-                        </td>
-                        <td>
-                            <p>{{ $food->description }}</p>
                         </td>
                         @if ($food->visibility == 1)
                             <td>

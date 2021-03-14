@@ -19,17 +19,17 @@
                     </div>
                     <div v-else class="categorie-box-main-2">
                         <div class="col-lg-4 col-md-6 mb-4" :key="restaurant.id" v-for="restaurant in restaurants">
-                            <div class="card h-100">
-                                <a :href="'/restaurants/'+ restaurant.id">
-                                    <img class="card-img-top" src="http://placehold.it/700x400" alt="">
-                                </a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <h1>{{restaurant.id}}</h1>
-                                        <a href="#">{{ restaurant.name }}</a>
-                                    </h4>
+                            <a :href="'/restaurants/'+ restaurant.id">
+                                <div class="card h-100">
+                                        <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+                                    <div class="card-body">
+                                        <h4 class="card-title">
+                                            <h1>{{restaurant.id}}</h1>
+                                            <a :href="'/restaurants/'+ restaurant.id">{{ restaurant.name }}</a>
+                                        </h4>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                         console.log(error);
                     });
             },
-            
+
         }
     }
 </script>

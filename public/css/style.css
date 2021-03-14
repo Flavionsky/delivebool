@@ -397,25 +397,25 @@ p {
 }
 
 .table {
+    border-collapse: collapse;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(196,241,227,1) 0%, rgba(216,234,255,1) 100%);
     width: 100%;
-}
-
-tr {
-    border: 1px solid blue;
+    margin-top: 20px;
 }
 
 .table th {
-    text-align: left;
     padding-left: 15px;
 }
 
 .table td {
-    width: 700px;
     padding-left: 15px;
+    text-align: center;
 }
 
 .table tr {
-    height: 50px;
+    height: 90px;
+    border: 1px solid white;
 }
 
 .container.dashboard h2 {
@@ -456,6 +456,10 @@ tr {
     text-decoration: none;
 }
 
+.dashboard.types {
+    margin-bottom: 5px;
+}
+
 .dashboard.types li {
     list-style-type: none;
 }
@@ -467,23 +471,30 @@ tr {
 /* FOODS.BLADE, ORDERS.BLADE */
 
 .reg-button.create {
-    width: 400px;
-    height: 80px;
+    width: 300px;
+    height: 60px;
     background-color: #00C2B3;
-    line-height: 80px;
+    line-height: 60px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
 .reg-button.create h1 {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
 }
 
 .table button {
     width: 100px;
     background-color: #00C2B3;
-    line-height: 20px;
+    line-height: 30px;
     color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+}
+
+.table button:hover {
+    background-color: #14ccbe;
 }
 
 
