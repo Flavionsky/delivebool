@@ -19,7 +19,7 @@ Delivebool - Inserisci un nuovo piatto
 
             <div class="form-group">
                 <label>{{__('Nome')}}</label>
-                <input class="form-control" name="name" placeholder="Inserisci il nome del Piatto" type="text">
+                <input class="form-control" name="name" placeholder="Inserisci il nome del piatto" type="text">
                 @error('name')
 
                 <span class="invalid-feedback" role="alert">

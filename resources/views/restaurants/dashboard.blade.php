@@ -45,6 +45,7 @@
         </div>
         @if (!$restaurant->foods->isEmpty())
 
+    <div class="table-wrapper">
         <table class="table">
             <thead>
                 <tr>
@@ -96,6 +97,8 @@
                 @endforeach
             </tbody>
         </table>
+
+        </div>
         @endif
     </div>
 

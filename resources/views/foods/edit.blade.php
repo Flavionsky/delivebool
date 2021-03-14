@@ -19,7 +19,7 @@ Delivebool - Modifica un piatto
 
             <div class="form-group">
                 <label>{{__('Nome')}}</label>
-                <input class="form-control" name="name" placeholder="Inserisci il nome del Piatto" type="text" value="{{ $food->name}}">
+                <input class="form-control" name="name" placeholder="Inserisci il nome del piatto" type="text" value="{{ $food->name}}">
                 @error('name')
 
                 <span class="invalid-feedback" role="alert">

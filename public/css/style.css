@@ -417,12 +417,19 @@ p {
     margin-top: 20px;
 }
 
+.table-wrapper {
+    min-width: 300px;
+    overflow-x: auto;
+}
+
 .table th {
-    padding-left: 15px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
 }
 
 .table td {
-    padding-left: 15px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
     text-align: center;
 }
 
@@ -534,7 +541,7 @@ p {
 }
 
 .header-cart {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
 }
@@ -639,7 +646,7 @@ p {
 
 .logincard-box {
     background-color: white;
-    width: 400px;
+    max-width: 400px;
     border-radius: 5px;
     margin: 0 auto;
 }
@@ -662,7 +669,7 @@ input[type="checkbox"] {
 
 .registercard-box {
     background-color: white;
-    width: 700px;
+    max-width: 700px;
     border-radius: 5px;
     margin: 0 auto;
 }
@@ -1119,6 +1126,12 @@ div.nav-cart-border-bottom {
         padding-right: 20px;
     }
 
+    .header.main, .header0height,
+    .headercalc, .header-cart {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     .header h1 {
         padding-left: 20px;
     }
@@ -1210,8 +1223,7 @@ div.nav-cart-border-bottom {
     }
 }
 
-
-@media screen and (max-width: 800px) X TABELLA DASHBOARD
+@media screen and (max-width: 810px) X TABELLA DASHBOARD
 
 @media screen and (max-width: 716px)
 
