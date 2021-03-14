@@ -81,8 +81,8 @@
                 </div>
                 @if(Route::is('welcomepage'))
                 <div class="box-indirizzo">
+                    <h1>I piatti che ami, a domicilio.</h1>
                     <div class="card">
-                        <h1>I piatti che ami, a domicilio.</h1>
                         <div class="text-box">
                             <p>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</p>
                             <input class="search-bar" type="text" placeholder="Inserisci il tuo indirizzo completo">
