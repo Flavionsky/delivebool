@@ -381,7 +381,8 @@ p {
 }
 
 .rest-dashboard-main h2 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 .form-group {
@@ -543,7 +544,7 @@ p {
 }
 
 .header-cart {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     position: relative;
 }
@@ -650,6 +651,7 @@ p {
     border-radius: 5px;
     text-align: center;
     padding: 50px;
+    margin-bottom: 50px;
 }
 
 .logincard-box {
@@ -973,18 +975,23 @@ div.nav-cart-border-bottom {
 }
 
 #app {
-    /* display: flex; */
+    display: flex;
     justify-content: space-between;
 }
 
+#app #product {
+    width: 75%;
+}
+
 #app #product .box {
-    width: 230px;
+    width: 300px;
     background-color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     display: inline-block;
     margin-right: 15px;
     margin-bottom: 15px;
     position: relative;
+    border-radius: 5px;
 }
 
 #app #product .box img {
@@ -1015,6 +1022,7 @@ div.nav-cart-border-bottom {
 #app #product .box h2,
 #app #product .box h3 {
     margin-left: 20px;
+    margin-right: 65px;
 }
 
 #app #product .box p {
@@ -1056,7 +1064,7 @@ div.nav-cart-border-bottom {
 #app #cart #head #total {
     display: inline-block;
     color: #777777;
-    margin-left: 100px;
+    float: right;
 }
 
 #app #cart .row {
@@ -1133,6 +1141,75 @@ div.nav-cart-border-bottom {
     color: #00ccbc;
     text-decoration: underline;
 }
+
+#app #cart input {
+    background-color: #00C2B3;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    width: 150px;
+    height: 30px;
+    float: right;
+    margin-top: 10px;
+    font-size: 1.0rem;
+}
+
+#app #cart input:hover {
+    background-color: #14ccbe;
+}
+
+marquee {
+    margin-top: 40px;
+}
+
+.shake1 {
+     -webkit-animation-name: shake;
+     -webkit-animation-duration: 0.8s;
+     -webkit-animation-iteration-count: infinite;
+     -webkit-animation-timing-function: linear;
+     -webkit-transform-origin: 5% 10%;
+}
+
+ @-webkit-keyframes shake {
+     0% {
+         -webkit-transform: translate(1px, 1px) rotate(0deg);
+    }
+     10% {
+         -webkit-transform: translate(-1px, -2px) rotate(-2deg);
+    }
+     20% {
+         -webkit-transform: translate(-2px, 0px) rotate(1deg);
+    }
+     30% {
+         -webkit-transform: translate(0px, 1px) rotate(0deg);
+    }
+     40% {
+         -webkit-transform: translate(1px, -1px) rotate(1deg);
+    }
+     50% {
+         -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+    }
+     60% {
+         -webkit-transform: translate(-2px, 1px) rotate(0deg);
+    }
+     70% {
+         -webkit-transform: translate(1px, 1px) rotate(-1deg);
+    }
+     80% {
+         -webkit-transform: translate(-1px, -1px) rotate(4deg);
+    }
+     90% {
+         -webkit-transform: translate(2px, 2px) rotate(0deg);
+    }
+     100% {
+         -webkit-transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+
+
+
 
 =======.unselectable {
     -webkit-touch-callout: none;

@@ -1,5 +1,5 @@
 @section('title')
-Delivebool - PAGINA DEL RISTORANTE (cambiare in modo dinamico)
+Delivebool - Ordina subito
 @endsection
 
 <!DOCTYPE html>

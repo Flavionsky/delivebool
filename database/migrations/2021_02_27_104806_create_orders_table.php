@@ -23,6 +23,7 @@ class CreateOrdersTable extends Migration
             $table->char('mobile_phone', 50);
             $table->dateTime('delivery_time');
             $table->decimal('total_price', 8, 2);
+            $table->foreignId('payment_id')->constrained('payments');
             $table->timestamps();
         });
     }

@@ -13,6 +13,6 @@ class Order extends Model
     }
 
     public function payment(){
-        return $this->hasOne('App\Payment', 'order_id' ,'id');
+        return $this->belongsTo('App\Payment');
     }
 }
