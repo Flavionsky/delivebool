@@ -257,6 +257,12 @@ h1 {
 .top-block-2 img {
     width: 353px;
     margin-right: 5px;
+    border: 2px solid transparent;
+
+}
+
+.top-block-2:hover img {
+    border: 2px solid black;
 }
 
 p {
