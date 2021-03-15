@@ -62,6 +62,15 @@ footer .box-container {
     text-align: left;
 }
 
+.app-store, .google-store {
+    opacity: 0.6;
+}
+
+.app-store:hover, 
+.google-store:hover {
+    opacity: 1;
+}
+
 .app-store a,
 .google-store a {
     color: #fff;
@@ -80,7 +89,7 @@ footer .box-container {
 }
 
 .nav-social {
-    margin-top: 20px;
+    margin: 20px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -169,6 +178,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     white-space: nowrap;
+    transition: transform 0.5s ease;
 }
 
 .block {
@@ -176,12 +186,27 @@ h1 {
 }
 
 .block .img {
-    cursor: pointer;
+    
     height: 150px;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     margin-bottom: 5px;
+    overflow: hidden;
+}
+.img img {
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.img:hover img {
+    transform: scale(1.5);
+    filter: blur(1px);
+}
+
+.img:hover h1 {
+    transform: translate(-50%, -50%) scale(1.2);
+    text-shadow: 3px 3px black;
 }
 
 .comfort-food {
@@ -241,6 +266,12 @@ h1 {
 .top-block-2 img {
     width: 353px;
     margin-right: 5px;
+    border: 2px solid transparent;
+
+}
+
+.top-block-2:hover img {
+    border: 2px solid black;
 }
 
 p {
@@ -307,6 +338,10 @@ p {
 
 .form-check-label {
     cursor: pointer;
+}
+
+.form-check:hover li {
+    background-color:hotpink;
 }
 
 .something-else-3 input:checked~label {
@@ -738,7 +773,7 @@ input[type="checkbox"] {
 
 .header h1 {
     position: absolute;
-    bottom: 200px;
+    bottom: 207px;
     left: 0;
     font-size: 40px;
     color: #440063;
@@ -881,11 +916,27 @@ a {
     margin-bottom: 50px;
     margin-right: 25px;
     color: white;
+    opacity: 0.6;
+    overflow: hidden;
 }
+
+.box-work:hover {
+    opacity:1;
+}
+
+
+.box-work:hover img,
+.box-work:hover p,
+.box-work:hover h2{
+    transform: scale(1.1);
+}
+
+
 
 .box-work img {
     width: 100%;
     clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+    transition: transform 0.5s ease;
 }
 
 .box-work button {
@@ -923,6 +974,7 @@ a {
     font-size: 40px;
     font-weight: bold;
     padding: 5px 25px;
+    transition: transform 0.5s ease;
 }
 
 .box-work p {
@@ -931,6 +983,7 @@ a {
     line-height: 22px;
     padding-left: 25px;
     padding-right: 25px;
+    transition: transform 0.5s ease;
 }
 
 .navorder-flex {
@@ -1259,7 +1312,7 @@ marquee {
 
 
 
-=======.unselectable {
+.unselectable {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

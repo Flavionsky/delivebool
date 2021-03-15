@@ -20,7 +20,7 @@ class TypeSeeder extends Seeder
             'Pizzeria',
             'Cucina di Pesce',
             'Gelateria',
-            'Yoghurteria',
+            'Yogurteria',
             'Indiano',
             'Siciliano',
             'Tunisino',
