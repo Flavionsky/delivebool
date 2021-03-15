@@ -8,6 +8,10 @@ use Braintree;
 
 use App\Order;
 
+use App\Payment;
+
+use Illuminate\Support\Facades\DB;
+
 use App\Food;
 
 class OrderController extends Controller
@@ -64,7 +68,8 @@ class OrderController extends Controller
 
             $data = $request->all();
 
-            $food = $data['itemid'];
+            $foodsid = $data['itemid'];
+            $foodsqty = $data['itemqty'];
 
             $order = new Order;
 
@@ -76,10 +81,24 @@ class OrderController extends Controller
             $order->mobile_phone = $data['mobile_phone'];
             $order->total_price = $data['amount'];
 
+            
+            $order->payment()->associate(
+                Payment::firstOrCreate(
+                    ['status' => 1],
+                    )
+                );
+                
             $order->save();
 
-            $order->foods()->sync($food);
-
+            for($i=0; $i < count($foodsid); $i++){
+                DB::table("food_order")->insert([
+                    "food_id" => $foodsid[$i],
+                    "order_id" => $order->id, 
+                    "quantity" =>  $foodsqty[$i],
+                    ]);
+                }
+                
+                
 
             return back()->with('success_message', 'Pagamento completato.Il tuo ID ordine è:' . $transaction->id);
         } else {

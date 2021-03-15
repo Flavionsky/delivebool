@@ -16,7 +16,6 @@ class CreatePaymentsTable extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->boolean('status');
-            $table->foreignId('order_id')->constrained('orders');
             $table->timestamps();
         });
     }
