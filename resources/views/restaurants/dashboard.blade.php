@@ -9,9 +9,9 @@
     <div class="container dashboard">
         <h1>Dashboard di {{ $restaurant->name }}</h1>
         <ul class="dashboard types">
+            <li><img src="{{ asset($restaurant->image) }}" alt="ristorante"></li>
             <li><strong>Nome ristorante: </strong>{{ $restaurant->name }}</li>
             <li><strong>Indirizzo e-mail: </strong>{{ $restaurant->email }}</li>
-            <li><strong>Immagine: </strong>{{ $restaurant->image }}</li>
             <li><strong>Indirizzo: </strong>{{ $restaurant->address }}</li>
             <li><strong>Città: </strong>{{ $restaurant->city }}</li>
             <li><strong>Partita IVA: </strong>{{ $restaurant->p_iva }}</li>
@@ -49,7 +49,6 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">ID Piatto</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Immagine</th>
                     <th scope="col">Prezzo</th>
@@ -62,14 +61,14 @@
             <tbody>
 
                 @foreach ($restaurant->foods as $food)
+                    @if($food->deleted == 0)
                     <tr>
-                        <th scope="row">{{ $food->id }}</th>
                         <td>
                             <p><strong>{{ $food->name }}</strong></p>
                         </td>
                         <td><img src="{{ asset($food->image) }}" alt="cibo"></td>
                         <td>
-                            <p>{{ $food->price }}</strong></p>
+                            <p>€ {{ $food->price }}</strong></p>
                         </td>
                         <td>
                             <p>{{ $food->kind_of_food }}</p>
@@ -90,10 +89,11 @@
                             <form action="{{ route('foods.destroy', $food) }}" method="POST">
                                 @CSRF
                                 @method('DELETE')
-                                <button type="submit">Cancella</button>
+                                <button onclick="return confirm('Sei sicuro di voler cancellare definitavemente questo cibo?')" type="submit">Cancella</button>
                             </form>
                         </td>
                     </tr>
+                    @endif
                 @endforeach
             </tbody>
         </table>

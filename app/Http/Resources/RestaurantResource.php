@@ -17,6 +17,7 @@ class RestaurantResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'image' => $this->image,
             'email' => $this->email,
             'address' => $this->address,
             'city' => $this->city    
