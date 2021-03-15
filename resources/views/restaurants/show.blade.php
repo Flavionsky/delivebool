@@ -67,6 +67,10 @@
             </div>
         </div>
 
+        <div class="d-flex justify-content-center align-item-center mb-3">
+            <marquee id="marquee-cart" class="p-2" style="font-weight: bold; font-size: 1.5rem; background-color: #00ccbc; color: rgb(255, 255, 255);" loop="-1" direction="left"> Con un ordine superiore ai 15€, la consegna è gratuita  <span> <i class="shake1 fas fa-truck"></i></span></marquee>
+        </div>
+
         <div class="rest-dashboard">
 
             <div class="rest-dashboard-header">
