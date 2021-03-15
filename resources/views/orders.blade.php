@@ -1,7 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 
 @section('content')
 
+
+<div class="container dashboard-orders">
     <table class="table">
         <thead class="thead-light">
             <tr>
@@ -20,8 +22,8 @@
         <tbody>
             @foreach ($orders as $order)
                 @if ($restaurant->id == $order->restaurant_id)
-                <tr>           
-                    
+                <tr>
+
                     <td>{{ $order->email }}</td>
                     <td>{{ $order->name }}</td>
                     <td>{{ $order->surname }}</td>
@@ -31,7 +33,7 @@
                     <td>{{ $order->delivery_time }}</td>
                     <td>{{ $order->total_price }}</td>
                     <td>{{ $order->payment->status }}</td>
-                    
+
                 </tr>
                 <table class="table">
                     <thead class="thead-light">
@@ -58,5 +60,7 @@
 
         </tbody>
     </table>
+
+    </div>
 
 @endsection
