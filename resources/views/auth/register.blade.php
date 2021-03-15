@@ -82,7 +82,7 @@ Delivebool - Crea un nuovo account
                         <h2>Diventa subito partner di Delivebool </h2>
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body form">
                         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                             @csrf
                             @method('post')
@@ -214,7 +214,7 @@ Delivebool - Crea un nuovo account
                                     class="col-md-4 col-form-label text-md-right">{{ __('Selezionare le tipologie del tuo ristorante') }}</label>
 
                                 <div class="col-md-6">
-                                    <ul>
+                                    <ul class="form-checkbox">
                                         <li><input type="checkbox" name="types[]" value="1">Cinese</li>
                                         <li><input type="checkbox" name="types[]" value="2">Giapponese</li>
                                         <li><input type="checkbox" name="types[]" value="3">Romano</li>
@@ -239,9 +239,11 @@ Delivebool - Crea un nuovo account
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
+                                    <div class='form-button-center'>
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Registrati') }}
                                     </button>
+                                </div>
                                 </div>
                             </div>
                         </form>
