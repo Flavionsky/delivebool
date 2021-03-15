@@ -33,6 +33,25 @@
                     <td>{{ $order->payment->status }}</td>
                     
                 </tr>
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <h2>Dati Cibi</h2>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Prezzo</th>
+                            <th scope="col">Descrizione</th>
+                            <th scope="col">Quantità</th>
+                        </tr>
+                    </thead>
+                    @foreach ($order->foods as $food)
+                    <tr>
+                        <td>{{$food->name}}</td>
+                        <td>{{$food->price}}</td>
+                        <td>{{$food->description}}</td>
+                        <td>{{$food->pivot->quantity}}</td>
+                    </tr>
+                    @endforeach
+                </table>
                 @endif
 
             @endforeach

@@ -9,7 +9,7 @@ class Order extends Model
     protected $table = 'orders';
 
     public function foods(){
-        return $this->belongsToMany('App\Food', 'food_order', 'order_id' , 'food_id');
+        return $this->belongsToMany('App\Food', 'food_order', 'order_id' , 'food_id')->withPivot('quantity');
     }
 
     public function payment(){
