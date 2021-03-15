@@ -169,6 +169,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     white-space: nowrap;
+    transition: transform 0.5s ease;
 }
 
 .block {
@@ -176,17 +177,27 @@ h1 {
 }
 
 .block .img {
-    cursor: pointer;
+    
     height: 150px;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     margin-bottom: 5px;
+    overflow: hidden;
+}
+.img img {
+    transition: transform 0.5s ease;
+    cursor: pointer;
 }
 
-.block .img:hover {
-    opacity: 0.7;
-    color:black;
+.img:hover img {
+    transform: scale(1.5);
+    filter: blur(1px);
+}
+
+.img:hover h1 {
+    transform: translate(-50%, -50%) scale(1.2);
+    text-shadow: 3px 3px black;
 }
 
 .comfort-food {
@@ -1255,7 +1266,7 @@ marquee {
 
 
 
-=======.unselectable {
+.unselectable {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
