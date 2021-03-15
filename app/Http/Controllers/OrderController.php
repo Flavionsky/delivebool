@@ -72,12 +72,14 @@ class OrderController extends Controller
             $order->name = $data['name_on_card'];
             $order->surname = $data['surname_on_card'];
             $order->city = $data['city'];
+            $order->address = $data['address'];
             $order->mobile_phone = $data['mobile_phone'];
             $order->total_price = $data['amount'];
 
+            $order->save();
+
             $order->foods()->sync($food);
 
-            $order->save();
 
             return back()->with('success_message', 'Pagamento completato.Il tuo ID ordine è:' . $transaction->id);
         } else {
