@@ -372,7 +372,6 @@ p {
     padding: 50px;
     position: relative;
     z-index: 3;
-    height: 500px;
 }
 
 .rest-dashboard {
@@ -497,6 +496,30 @@ p {
 
 .dashboard.types li {
     list-style-type: none;
+}
+
+.right-rest img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+
+}
+
+.table td img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.dashboard.types li img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
 
