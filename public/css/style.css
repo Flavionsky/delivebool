@@ -331,6 +331,10 @@ p {
     cursor: pointer;
 }
 
+.form-check:hover li {
+    background-color:hotpink;
+}
+
 .something-else-3 input:checked~label {
     border-radius: 3px;
     padding: 10px;
@@ -900,11 +904,27 @@ a {
     margin-bottom: 50px;
     margin-right: 25px;
     color: white;
+    opacity: 0.6;
+    overflow: hidden;
 }
+
+.box-work:hover {
+    opacity:1;
+}
+
+
+.box-work:hover img,
+.box-work:hover p,
+.box-work:hover h2{
+    transform: scale(1.1);
+}
+
+
 
 .box-work img {
     width: 100%;
     clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+    transition: transform 0.5s ease;
 }
 
 .box-work button {
@@ -942,6 +962,7 @@ a {
     font-size: 40px;
     font-weight: bold;
     padding: 5px 25px;
+    transition: transform 0.5s ease;
 }
 
 .box-work p {
@@ -950,6 +971,7 @@ a {
     line-height: 22px;
     padding-left: 25px;
     padding-right: 25px;
+    transition: transform 0.5s ease;
 }
 
 .navorder-flex {
