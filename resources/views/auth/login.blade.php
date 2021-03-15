@@ -35,8 +35,7 @@ Delivebool - Accedi al tuo account
                         <div class="registrati-o-accedi">
                             <span><a href="{{ route('register') }}">Crea un nuovo account</span></a>
                         </div>
-                        <div class="registrati-o-accedi">
-                            <span><a href="{{ route('home') }}">Accedi</span></a>
+                        <div class="registrati-o-accedi" style="display: none">
                             @else
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -51,17 +50,6 @@ Delivebool - Accedi al tuo account
                             </div>
                             @endif
                         </div>
-                        <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
-                            <i class="fas fa-chevron-down"></i>
-                            <span>Collabora con noi</span>
-                            <div id="drop-down-1" class="active">
-                                <ul>
-                                    <li><a href="{{ route('register') }}"></a><i class="fas fa-utensils"></i> Ristoranti</li>
-                                    <li><i class="fas fa-briefcase"></i> Lavora con noi</li>
-                                    <li><i class="far fa-building"></i> Delivebool per le Aziende</li>
-                                </ul>
-                            </div>
-                        </div>
                         @if(Auth::check())
                         <div class="menu">
                             <i class="fas fa-bars"></i>
@@ -70,8 +58,6 @@ Delivebool - Accedi al tuo account
                         @endif
                     </div>
                 </div>
-
-
                 <main class="py-4">
             <div class="container">
     <div class="row justify-content-center">
@@ -147,10 +133,6 @@ Delivebool - Accedi al tuo account
                         </div>
                     </form>
                 </div>
-
-
-
-
             </div>
             </div>
         </div>

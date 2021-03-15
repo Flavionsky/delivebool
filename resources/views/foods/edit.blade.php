@@ -7,7 +7,7 @@ Delivebool - Modifica un piatto
 @section('content')
 
 <div class="container">
-    <div class="registercard-box">
+    <div class="registercard-box form">
         <div class="registercard">
             <div class="card-header">
                 <h2>Modifica il piatto</h2>
@@ -88,7 +88,7 @@ Delivebool - Modifica un piatto
                     Disponibile
                 </label>
             </div>
-            <div class="form-group">
+            <div class="form-group form-button-center">
                 <input type="submit" class="btn btn-primary" value="Modifica"/>
             </div>
             </form>

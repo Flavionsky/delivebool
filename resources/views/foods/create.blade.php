@@ -7,7 +7,7 @@ Delivebool - Inserisci un nuovo piatto
 @section('content')
 
 <div class="container">
-    <div class="registercard-box">
+    <div class="registercard-box form">
         <div class="registercard">
             <div class="card-header">
                 <h2>Inserisci un nuovo piatto</h2>
@@ -89,7 +89,7 @@ Delivebool - Inserisci un nuovo piatto
             </div>
 
         </div>
-            <div class="form-group">
+            <div class="form-group form-button-center">
                 <input type="submit" class="btn btn-primary" value="Crea"/>
             </div>
             </form>

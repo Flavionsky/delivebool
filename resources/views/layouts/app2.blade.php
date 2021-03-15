@@ -30,7 +30,7 @@ Deliveboo - Registrati o accedi
                     <div class="buttons">
                         <div class="registrati-o-accedi">
                             @if(Auth::check())
-                            <span><a href="{{ route('dashboard') }}">La tua dashboard</span></a>
+                            <span><a href="{{ route('dashboard') }}">La tua dashboar</span></a>
                             @else
                             <i class="fas fa-shopping-cart"></i>
                             <span><a href="{{ route('ordina') }}">Ordina</span></a>
@@ -38,10 +38,10 @@ Deliveboo - Registrati o accedi
                         </div>
                         @if(!Auth::check())
                         <div class="registrati-o-accedi">
-                            <span><a href="{{ route('register') }}">Crea un nuovo account</span></a>
+                            <span class="registrati"><a href="{{ route('register') }}">Crea un nuovo account</span></a>
                         </div>
                         <div class="registrati-o-accedi">
-                            <span><a href="{{ route('home') }}">Accedi</span></a>
+                            <button class="accedi"><a href="{{ route('home') }}">Accedi</a></button>
                             @else
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"

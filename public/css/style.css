@@ -598,7 +598,8 @@ p {
 .homebutton,
 .collabora-con-noi,
 .registrati-o-accedi,
-.menu {
+.menu,
+.logout {
     display: flex;
     background-color: white;
     border-radius: 5px;
@@ -609,6 +610,11 @@ p {
     position: relative;
     margin-left: 10px;
     padding: 10px;
+}
+
+.registrati-o-accedi {
+    flex-direction: column;
+    cursor: unset;
 }
 
 .menu {
@@ -702,17 +708,6 @@ input[type="checkbox"] {
     text-decoration: none;
 }
 
-.text-box button {
-    background-color: #00ccbc;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-weight: 700;
-    font-size: 16px;
-    color: white;
-    cursor: pointer;
-}
-
 .search-bar {
     width: 400px;
     padding: 10px 20px;
@@ -779,9 +774,10 @@ input[type="checkbox"] {
     position: absolute;
     top: 3rem;
     left: 0;
-    width: 240px;
+    width: 100px;
     border-radius: 5px;
     z-index: 20;
+    height: 9rem;
 }
 
 #drop-down-1 ul {
@@ -899,6 +895,40 @@ a {
     display: flex;
     justify-content: space-between;
     list-style: none;
+}
+
+.text-box button,
+.accedi,
+.registrati {
+    background-color: #00ccbc;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.accedi a {
+    color: white;
+}
+
+.registrati {
+    background-color: white;
+    border: 1px solid #00ccbc;
+    margin-top: 100px;
+}
+
+.registrati a {
+    color: gray;
+}
+
+.logout {
+    color: white;
+    background-color: #d0eb99;
+    font-weight: 700;
 }
 
 
@@ -1121,7 +1151,9 @@ div.nav-cart-border-bottom {
     left: 0;
     width: 240px;
     border-radius: 5px;
-    z-index: 20;
+    z-index: 40;
+    border: 1px solid #00ccbc;
+    height: 100px;
 }
 
 #drop-down-1 ul,
@@ -1133,6 +1165,11 @@ div.nav-cart-border-bottom {
 #drop-down-1 ul>li,
 #drop-down-2 ul>li {
     padding: 5px 5px;
+}
+
+#drop-down-2 span {
+    display: flex;
+    justify-content: center;
 }
 
 .form input {
@@ -1156,6 +1193,10 @@ div.nav-cart-border-bottom {
 .form-button-center {
     display: flex;
     justify-content: center;
+}
+
+#drop-down-1 {
+    height: 9rem;
 }
 
 

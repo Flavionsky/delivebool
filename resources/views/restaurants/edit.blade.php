@@ -13,7 +13,7 @@ Delivebool - Modifica il tuo account
                         <h1>Modifica le tue informazioni</h1>
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body form">
                         <form method="POST" action="{{ route('restaurants.update', $restaurant) }}" enctype='multipart\form-data'>
                             @csrf
                             @method('patch')
@@ -116,7 +116,7 @@ Delivebool - Modifica il tuo account
 
                                 <div class="col-md-6">
 
-                                    <ul>
+                                    <ul class="form-checkbox">
                                         @foreach ($types as $type)
                                         <li><input type="checkbox" name="types[]" value="{{$type->id}}" {{ $restaurant->types->contains($type) ? 'checked' : '' }}>{{$type->name}}</li>
                                         @endforeach
@@ -131,7 +131,7 @@ Delivebool - Modifica il tuo account
                             </div>
 
                             <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
+                                <div class="col-md-6 offset-md-4 form-button-center">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Modifica') }}
                                     </button>
