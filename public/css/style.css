@@ -524,6 +524,9 @@ p {
     margin-bottom: 20px;
 }
 
+.hidden-el{
+    display: none;
+}
 
 /* FINE DASHBOARD.BLADE */
 
@@ -1019,6 +1022,8 @@ div.nav-cart-border-bottom {
 #app #product {
     width: 75%;
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 
@@ -1062,6 +1067,10 @@ div.nav-cart-border-bottom {
 #app #product .box h3 {
     margin-left: 20px;
     margin-right: 65px;
+}
+#app #product .box h3 {
+
+    height: 50px;
 }
 
 #app #product .box p {

@@ -20,7 +20,7 @@ class RestaurantResource extends JsonResource
             'image' => $this->image,
             'email' => $this->email,
             'address' => $this->address,
-            'city' => $this->city    
+            'city' => $this->city ,
         ];
         
         return parent::toArray($request);

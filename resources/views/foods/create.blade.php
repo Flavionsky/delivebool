@@ -64,16 +64,16 @@ Delivebool - Inserisci un nuovo piatto
             <div class="form-group">
                 <label>{{__('Tipo di portata')}}</label>
                 <select name="kind_of_food" id="kind_of_food" class="form-control @error('kind_of_food') is-invalid @enderror">
-                    <option value="appetizer">Appetizer</option>
-                    <option value="primi">Primi</option>
-                    <option value="secondi">Secondi</option>
-                    <option value="pizza">Pizza</option>
-                    <option value="sushi">Sushi</option>
-                    <option value="hamburger">Hamburger</option>
-                    <option value="kebab">Kebab</option>
-                    <option value="contorni">Contorni</option>
-                    <option value="dessert">Dessert</option>
-                    <option value="bevande">Bevande</option>
+                    <option value="Appetizer">Appetizer</option>
+                    <option value="Primi">Primi</option>
+                    <option value="Secondi">Secondi</option>
+                    <option value="Pizza">Pizza</option>
+                    <option value="Sushi">Sushi</option>
+                    <option value="Hamburger">Hamburger</option>
+                    <option value="Kebab">Kebab</option>
+                    <option value="Contorni">Contorni</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Bevande">Bevande</option>
                   </select>
                 @error('kind_of_food')
 

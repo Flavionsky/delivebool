@@ -13,7 +13,8 @@ use App\Http\Resources\RestaurantResource;
 class RestaurantController extends Controller
 {
     public function filter()
-    {
+    {   
+
         $attributes = request()->input('typesClick');
 
         $restaurants = Restaurant::whereHas('types', function ($query)

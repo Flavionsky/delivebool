@@ -68,7 +68,10 @@
         </div>
 
         <div class="d-flex justify-content-center align-item-center mb-3">
-            <marquee id="marquee-cart" class="p-2" style="font-weight: bold; font-size: 1.5rem; background-color: #00ccbc; color: rgb(255, 255, 255);" loop="-1" direction="left"> Con un ordine superiore ai 15€, la consegna è gratuita  <span> <i class="shake1 fas fa-truck"></i></span></marquee>
+            <marquee id="marquee-cart" class="p-2"
+                style="font-weight: bold; font-size: 1.5rem; background-color: #00ccbc; color: rgb(255, 255, 255);"
+                loop="-1" direction="left"> Con un ordine superiore ai 15€, la consegna è gratuita <span> <i
+                        class="shake1 fas fa-truck"></i></span></marquee>
         </div>
 
         <div class="rest-dashboard">
@@ -91,16 +94,211 @@
 
                 <div id="app">
                     <div id="product">
-                        @foreach ($restaurant->foods as $food)
-                        <div class="food-card">
-                            @if ($food->deleted == 0)
-                            <div class="food-card-img">
-                                <img src="{{ asset($food->image) }}" alt="">
-                            </div>
-                                <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
-                            @endif
+                        <div class="kind">
+                            <span class="hidden-el">{{ $counter = true }}</span>
+                            @foreach ($restaurant->foods as $food)
+                                @if ($food->kind_of_food == 'Appetizer')
+                                    @if ($counter)
+                                        <h1>Appetizer</h1>
+                                    @endif
+                                    {{ $counter = false }}
+                                    <div class="food-card">
+                                        @if ($food->deleted == 0)
+                                            <div class="food-card-img">
+                                                <img src="{{ asset($food->image) }}" alt="">
+                                            </div>
+                                            <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
+                                        @endif
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
-                        @endforeach
+                        <div class="kind">
+                            <span class="hidden-el">{{ $counter = true }}</span>
+                            @foreach ($restaurant->foods as $food)
+                                @if ($food->kind_of_food == 'Primi')
+    
+                                    @if ($counter)
+                                        <h1>Primi</h1>
+                                    @endif
+                                    {{ $counter = false }}
+    
+                                    <div class="food-card">
+                                        @if ($food->deleted == 0)
+                                            <div class="food-card-img">
+                                                <img src="{{ asset($food->image) }}" alt="">
+                                            </div>
+                                            <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
+                                        @endif
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="kind">
+                            <span class="hidden-el">{{ $counter = true }}</span>
+                            @foreach ($restaurant->foods as $food)
+                                @if ($food->kind_of_food == 'Secondi')
+    
+                                    @if ($counter)
+                                        <h1>Secondi</h1>
+                                    @endif
+                                    {{ $counter = false }}
+    
+                                    <div class="food-card">
+                                        @if ($food->deleted == 0)
+                                            <div class="food-card-img">
+                                                <img src="{{ asset($food->image) }}" alt="">
+                                            </div>
+                                            <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
+                                        @endif
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="kind">
+                            <span class="hidden-el">{{ $counter = true }}</span>
+                            @foreach ($restaurant->foods as $food)
+                                @if ($food->kind_of_food == 'Pizza')
+    
+                                    @if ($counter)
+                                        <h1>Pizza</h1>
+                                    @endif
+                                    {{ $counter = false }}
+    
+                                    <div class="food-card">
+                                        @if ($food->deleted == 0)
+                                            <div class="food-card-img">
+                                                <img src="{{ asset($food->image) }}" alt="">
+                                            </div>
+                                            <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
+                                        @endif
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+
+                        <div class="kind">
+                            <span class="hidden-el">{{ $counter = true }}</span>
+                            @foreach ($restaurant->foods as $food)
+                                @if ($food->kind_of_food == 'Sushi')
+                                    @if ($counter)
+                                        <h1>Sushi</h1>
+                                    @endif
+                                    {{ $counter = false }}
+    
+                                    <div class="food-card">
+                                        @if ($food->deleted == 0)
+                                            <div class="food-card-img">
+                                                <img src="{{ asset($food->image) }}" alt="">
+                                            </div>
+                                            <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
+                                        @endif
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="kind">
+                            <span class="hidden-el">{{ $counter = true }}</span>
+    
+                            @foreach ($restaurant->foods as $food)
+                                @if ($food->kind_of_food == 'Hamburger')
+                                    @if ($counter)
+                                        <h1>Hamburger</h1>
+                                    @endif
+                                    {{ $counter = false }}
+                                    <div class="food-card">
+                                        @if ($food->deleted == 0)
+                                            <div class="food-card-img">
+                                                <img src="{{ asset($food->image) }}" alt="">
+                                            </div>
+                                            <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
+                                        @endif
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="kind">
+                            <span class="hidden-el">{{ $counter = true }}</span>
+    
+                            @foreach ($restaurant->foods as $food)
+                                @if ($food->kind_of_food == 'Kebab')
+                                    @if ($counter)
+                                        <h1>Kebab</h1>
+                                    @endif
+                                    {{ $counter = false }}
+                                    <div class="food-card">
+                                        @if ($food->deleted == 0)
+                                            <div class="food-card-img">
+                                                <img src="{{ asset($food->image) }}" alt="">
+                                            </div>
+                                            <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
+                                        @endif
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="kind">
+                            <span class="hidden-el">{{ $counter = true }}</span>
+    
+                            @foreach ($restaurant->foods as $food)
+                                @if ($food->kind_of_food == 'Contorni')
+                                    @if ($counter)
+                                        <h1>Contorni</h1>
+                                    @endif
+                                    {{ $counter = false }}
+                                    <div class="food-card">
+                                        @if ($food->deleted == 0)
+                                            <div class="food-card-img">
+                                                <img src="{{ asset($food->image) }}" alt="">
+                                            </div>
+                                            <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
+                                        @endif
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+
+                        <div class="kind">
+                            <span class="hidden-el">{{ $counter = true }}</span>
+    
+                            @foreach ($restaurant->foods as $food)
+                                @if ($food->kind_of_food == 'Dessert')
+                                    @if ($counter)
+                                        <h1>Dessert</h1>
+                                    @endif
+                                    {{ $counter = false }}
+                                    <div class="food-card">
+                                        @if ($food->deleted == 0)
+                                            <div class="food-card-img">
+                                                <img src="{{ asset($food->image) }}" alt="">
+                                            </div>
+                                            <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
+                                        @endif
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+
+                        <div class="kind">
+                            <span class="hidden-el">{{ $counter = true }}</span>
+    
+                            @foreach ($restaurant->foods as $food)
+                                @if ($food->kind_of_food == 'Bevande')
+                                    @if ($counter)
+                                        <h1>Bevande</h1>
+                                    @endif
+                                    {{ $counter = false }}
+                                    <div class="food-card">
+                                        @if ($food->deleted == 0)
+                                            <div class="food-card-img">
+                                                <img src="{{ asset($food->image) }}" alt="">
+                                            </div>
+                                            <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
+                                        @endif
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
                     </div>
                     <div id="cart">
                         <div id="head">
@@ -110,8 +308,8 @@
                         <form method="GET" ACTION="{{ route('checkout') }}">
                             @csrf
                             <buyitem v-for="buyitem in buyitems" v-bind:buy_data="buyitem"></buyitem>
-                                <input type="hidden" id="pippobaudo" value="" name="orderData" v-model="orderData">
-                                <input type="hidden" id="pippobaudo" value="{{$restaurant->id}}" name="restaurant">
+                            <input type="hidden" id="pippobaudo" value="" name="orderData" v-model="orderData">
+                            <input type="hidden" id="pippobaudo" value="{{ $restaurant->id }}" name="restaurant">
 
                             <h5 v-if="total()">Totale carrello: € @{{ total() }}</h5>
                             <input type="hidden" name="total" v-model="finalTotal">
@@ -339,9 +537,9 @@
                             console.log(error);
                         });
                 },
-                loadBuyItems:function (){
+                loadBuyItems: function() {
 
-                   this.orderData = JSON.stringify(this.buyitems);
+                    this.orderData = JSON.stringify(this.buyitems);
 
 
                     console.log(this.orderData);
