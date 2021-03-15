@@ -85,7 +85,7 @@ Delivebool - Accedi al tuo account
                     <h2>Accedi al tuo account</h2>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body form">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -131,9 +131,11 @@ Delivebool - Accedi al tuo account
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
+                                <div class="form-button-center">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
+                            </div>
                                 <br>
 
                                 @if (Route::has('password.request'))
