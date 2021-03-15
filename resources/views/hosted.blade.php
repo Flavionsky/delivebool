@@ -43,9 +43,9 @@
                 <tbody>
                     @foreach ($buyitems as $item)
                         <tr>
-                            <th scope="row">{{$item->qty}}</th>
-                            <td>{{$item->name}}</td>
-                            <td>{{$item->price}}</td>
+                            <th scope="row">{{ $item->qty }}</th>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->price }}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -68,7 +68,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ url('/checkout') }}" method="POST" id="payment-form">
+            <form action="{{ route('success') }}" method="POST" id="payment-form">
                 @csrf
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -108,8 +108,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="mobile_phone">Cellulare</label>
-                            <input type="text" class="form-control" id="mobile_phone" name="mobile_phone"
-                                value="">
+                            <input type="text" class="form-control" id="mobile_phone" name="mobile_phone" value="">
                         </div>
                     </div>
                 </div>
@@ -118,7 +117,11 @@
                         <div class="form-group">
                             <label for="amount">Totale</label>
                             <input type="text" readonly="readonly" class="form-control" id="amount" name="amount"
-                                value="{{ $total }} €">
+                                value="{{ $total }}">
+                            @foreach ($buyitems as $item)
+                                <input type="hidden" name="itemid[]" value="{{ $item->id }}">
+                                <input type="hidden" name="itemqty[]" value="{{ $item->qty }}">
+                            @endforeach
                         </div>
                     </div>
                 </div>

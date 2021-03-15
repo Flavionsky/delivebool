@@ -54,40 +54,7 @@ Route::get('/nuovo', function () {
 
 Route::get('/hosted', 'RestaurantController@checkout')->name('checkout');
 
-Route::post('/checkout', function (Request $request){
-    $gateway = new Braintree\Gateway([
-        'environment' => config('services.braintree.environment'),
-        'merchantId' => config('services.braintree.merchantId'),
-        'publicKey' => config('services.braintree.publicKey'),
-        'privateKey' => config('services.braintree.privateKey')
-    ]);
-
-    $amount = $request->amount;
-    $nonce = $request->payment_method_nonce;
-
-    $result = $gateway->transaction()->sale([
-        'amount' => $amount,
-        'paymentMethodNonce' => $nonce,
-        'options' => [
-            'submitForSettlement' => true
-        ]
-    ]);
-
-    if ($result->success) {
-        $transaction = $result->transaction;
-        return back()->with('success_message', 'Pagamento completato.Il tuo ID ordine è:'. $transaction->id);
-    } else {
-        $errorString = "";
-
-        foreach($result->errors->deepAll() as $error) {
-            $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
-        }
-
-        return back()->withErrors('An error occurred with the message: '.$result->message);
-    }
-});
-
-
+Route::post('/checkout', 'OrderController@store')->name('success');
 
 Auth::routes();
 
