@@ -92,10 +92,14 @@
                 <div id="app">
                     <div id="product">
                         @foreach ($restaurant->foods as $food)
+                        <div class="food-card">
                             @if ($food->deleted == 0)
+                            <div class="food-card-img">
                                 <img src="{{ asset($food->image) }}" alt="">
+                            </div>
                                 <item v-for="item in 1" v-bind:item_data="{{ $food }}"></item>
                             @endif
+                        </div>
                         @endforeach
                     </div>
                     <div id="cart">

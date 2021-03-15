@@ -1019,7 +1019,7 @@ div.nav-cart-border-bottom {
 }
 
 #app #product .box {
-    width: 300px;
+    width: 200px;
     background-color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     display: inline-block;
@@ -1311,7 +1311,14 @@ marquee {
     height: 9rem;
 }
 
-
+.food-card{
+    height: 300px;
+    width: 200px;
+}
+.food-card-img img{
+    height: 160px;
+    width: 200px;
+}
 /* MEDIA QUERY */
 
 @media screen and (max-width: 1260px) {

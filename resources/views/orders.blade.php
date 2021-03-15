@@ -4,6 +4,8 @@
 
 
 <div class="container dashboard-orders">
+    @foreach ($orders as $order)
+        @if ($restaurant->id == $order->restaurant_id)
     <table class="table">
         <thead class="thead-light">
             <tr>
@@ -20,10 +22,8 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($orders as $order)
-                @if ($restaurant->id == $order->restaurant_id)
-                <tr>
-
+            <tr>
+                    <h5>Ordine {{$order->id}}</h5>
                     <td>{{ $order->email }}</td>
                     <td>{{ $order->name }}</td>
                     <td>{{ $order->surname }}</td>
@@ -38,7 +38,6 @@
                 <table class="table">
                     <thead class="thead-light">
                         <tr>
-                            <h2>Dati Cibi</h2>
                             <th scope="col">Nome</th>
                             <th scope="col">Prezzo</th>
                             <th scope="col">Descrizione</th>
@@ -56,10 +55,10 @@
                 </table>
                 @endif
 
-            @endforeach
-
-        </tbody>
-    </table>
+                
+            </tbody>
+        </table>
+        @endforeach
 
     </div>
 
