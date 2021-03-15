@@ -62,6 +62,15 @@ footer .box-container {
     text-align: left;
 }
 
+.app-store, .google-store {
+    opacity: 0.6;
+}
+
+.app-store:hover, 
+.google-store:hover {
+    opacity: 1;
+}
+
 .app-store a,
 .google-store a {
     color: #fff;
@@ -80,7 +89,7 @@ footer .box-container {
 }
 
 .nav-social {
-    margin-top: 20px;
+    margin: 20px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
