@@ -184,6 +184,11 @@ h1 {
     margin-bottom: 5px;
 }
 
+.block .img:hover {
+    opacity: 0.7;
+    color:black;
+}
+
 .comfort-food {
     width: 40%;
     padding-right: 30px;
