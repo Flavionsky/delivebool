@@ -105,6 +105,3 @@
 
 
 @endsection
-</body>
-
-</html>
