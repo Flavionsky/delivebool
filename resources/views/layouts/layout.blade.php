@@ -31,57 +31,39 @@
                             <span><a href="{{ route('ordina') }}">Ordina</span></a>
                             @endif
                         </div>
-                        @if(!Auth::check())
-                        <div class="registrati-o-accedi">
-                            <span><a href="{{ route('register') }}">Crea un nuovo account</span></a>
-                        </div>
-                        @endif
-                        <div class="registrati-o-accedi">
-                            @if(!Auth::check())
-                            <span><a href="{{ route('home') }}">Accedi</span></a>
-                            @else
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                            @endif
-                        </div>
+                       
                         @guest
                         <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
                             <i class="fas fa-chevron-down"></i>
                             <span class="unselectable">Collabora con noi</span>
                             <div id="drop-down-1" class="active unselectable">
-                                <ul class="unselectable">
-                                    <li class="unselectable"><a href="{{ route('register') }}"></a><i class="fas fa-utensils"></i> Ristoranti</li>
-                                    <li class="unselectable"><i class="fas fa-briefcase"></i> Lavora con noi</li>
-                                    <li class="unselectable"><i class="far fa-building"></i> Delivebool per le Aziende</li>
-                                </ul>
+                                    <div class="registrati-o-accedi">
+                                        @if(!Auth::check())
+                                        <span class="registrati"><a href="{{ route('register') }}">Crea un nuovo account</span></a>
+                                        <span class="accedi"><a href="{{ route('home') }}">Accedi</a></span>
+                                        @endif
+                                    </div>
                             </div>
                         </div>
                         @endguest
                         @if(Auth::check())
-                        <div class="menu unselectable" onclick="dropDown2()">
-                            <i class="fas fa-bars unselectable"></i>
-                            <span class="unselectable">Menu</span>
-                            <div id="drop-down-2" class="active">
-                                <ul class="unselectable">
-                                    <li><a href=""></a><i class="fas fa-utensils"></i>Modifica Ristorante</li>
-                                </ul>
-                            </div>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item logout" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </div>
                         @endif
                     </div>
                 </div>
                 @if(Route::is('welcomepage'))
                 <div class="box-indirizzo">
-                    <h1>I piatti che ami, a domicilio.</h1>
+                    <h1>I piatti che ami, a domicilio</h1>
                     <div class="card">
                         <div class="text-box">
                             <p>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</p>
