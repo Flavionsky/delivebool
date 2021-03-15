@@ -17,7 +17,7 @@ Delivebool - Accedi al tuo account
     </head>
     <body>
         <div class="bg">
-            <div class="headercalc">
+            <div class="header0height">
                 <div class="nav">
                     <div class="logo">
                         <a href="{{ route('welcomepage') }}"><img src="./img/delivebool-logo-white.png" alt="delivebool logo"></a>
