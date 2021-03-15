@@ -35,18 +35,16 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nome Portata</th>
                         <th scope="col">Quantità</th>
+                        <th scope="col">Nome Portata</th>
                         <th scope="col">Prezzo</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($buyitems as $item)
                         <tr>
-                            <th scope="row">1</th>
+                            <th scope="row">{{$item->qty}}</th>
                             <td>{{$item->name}}</td>
-                            <td>{{$item->qty}}</td>
                             <td>{{$item->price}}</td>
                         </tr>
                     @endforeach
@@ -107,9 +105,18 @@
 
                 </div>
                 <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="mobile_phone">Cellulare</label>
+                            <input type="text" class="form-control" id="mobile_phone" name="mobile_phone"
+                                value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="amount">Amount</label>
+                            <label for="amount">Totale</label>
                             <input type="text" readonly="readonly" class="form-control" id="amount" name="amount"
                                 value="{{ $total }} €">
                         </div>
