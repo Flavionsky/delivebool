@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\DB;
 
 use App\Food;
 
+use Illuminate\Support\Facades\Auth;
+
+use App\Restaurant;
+
 class OrderController extends Controller
 {
     /**
@@ -79,7 +83,9 @@ class OrderController extends Controller
             $order->city = $data['city'];
             $order->address = $data['address'];
             $order->mobile_phone = $data['mobile_phone'];
+            $order->delivery_time = now()->subHours(1);
             $order->total_price = $data['amount'];
+            $order->restaurant_id = $data['restaurantId'];
 
             
             $order->payment()->associate(
@@ -155,5 +161,15 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function orders()
+    {
+        $id = Auth::user()->id;
+
+        $restaurant = Restaurant::find($id);
+        
+        $orders = Order::all();
+
+        return view('orders', compact('restaurant', 'orders'));
     }
 }

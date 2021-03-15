@@ -118,6 +118,7 @@
                             <label for="amount">Totale</label>
                             <input type="text" readonly="readonly" class="form-control" id="amount" name="amount"
                                 value="{{ $total }}">
+                            <input type="hidden" name="restaurantId" value="{{$restaurantId}}">
                             @foreach ($buyitems as $item)
                                 <input type="hidden" name="itemid[]" value="{{ $item->id }}">
                                 <input type="hidden" name="itemqty[]" value="{{ $item->qty }}">

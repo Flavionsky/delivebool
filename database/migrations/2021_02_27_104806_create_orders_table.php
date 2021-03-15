@@ -24,6 +24,7 @@ class CreateOrdersTable extends Migration
             $table->dateTime('delivery_time');
             $table->decimal('total_price', 8, 2);
             $table->foreignId('payment_id')->constrained('payments');
+            $table->foreignId('restaurant_id')->constrained('restaurants');
             $table->timestamps();
         });
     }

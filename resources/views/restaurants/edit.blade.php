@@ -51,7 +51,7 @@ Delivebool - Modifica il tuo account
 
                             <div class="form-group">
                                 <label>{{__('Immagine')}}</label>
-                                <input class="form-control @error('image') is-invalid @enderror" name="image" placeholder="Inserisci un Immagine" type="file" value="{{$restaurant->image}}">
+                                <input class="form-control @error('image') is-invalid @enderror" name="image" type="file">
                                 <img src="{{asset($restaurant->image)}}" alt="immagine ristorante">
                                 @error('image')
 

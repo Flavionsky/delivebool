@@ -106,9 +106,9 @@
                         <form method="GET" ACTION="{{ route('checkout') }}">
                             @csrf
                             <buyitem v-for="buyitem in buyitems" v-bind:buy_data="buyitem"></buyitem>
-                            <div v-for="buyitem in buyitems">
                                 <input type="hidden" id="pippobaudo" value="" name="orderData" v-model="orderData">
-                            </div>
+                                <input type="hidden" id="pippobaudo" value="{{$restaurant->id}}" name="restaurant">
+
                             <h5 v-if="total()">Totale carrello: € @{{ total() }}</h5>
                             <input type="hidden" name="total" v-model="finalTotal">
                             <h3 v-if="total()"><input type="submit" value="Vai al checkout"

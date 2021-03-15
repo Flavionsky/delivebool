@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ route('orders') }}">
                         <div class="reg-button create">
                             <h1>Lista ordini</h1>
                         </div>

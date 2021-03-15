@@ -17,6 +17,6 @@ class Food extends Model
     }
 
     public function orders(){
-        return $this->belongsToMany('App\Order', 'foods_to_orders', 'food_id' , 'order_id');
+        return $this->belongsToMany('App\Order', 'food_order', 'food_id' , 'order_id');
     }
 }

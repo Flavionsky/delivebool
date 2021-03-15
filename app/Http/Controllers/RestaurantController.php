@@ -25,6 +25,8 @@ use App\Food;
 
 use App\Type;
 
+use App\Order;
+
 class RestaurantController extends Controller
 {
     /**
@@ -54,7 +56,6 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-
     }
 
     /**
@@ -65,7 +66,6 @@ class RestaurantController extends Controller
      */
     public function store()
     {
-
     }
 
     /**
@@ -93,15 +93,13 @@ class RestaurantController extends Controller
 
         if ($userLogged->id == $restaurant->id) {
 
-        $types = Type::all();
+            $types = Type::all();
 
-        return view('restaurants.edit', compact('restaurant', 'types'));
-
-        }else {
+            return view('restaurants.edit', compact('restaurant', 'types'));
+        } else {
             $errormessage = "L'Utente non è abilitato a modificare questo Ristorante!";
 
             return view('error', compact('errormessage'));
-        
         }
     }
 
@@ -120,25 +118,27 @@ class RestaurantController extends Controller
 
         if ($userLogged->id == $restaurant->id) {
 
-        $restaurant->update([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'email_verified_at' => now(),
-            'address' => $data['address'],
-            'city' => $data['city'],
-            'p_iva' => $data['p_iva']
-        ]);
+            $restaurant->name = $data['name'];
+            $restaurant->email = $data['email'];
+            if ($request->file('image') != null) {
+                $restaurant->image = $request->file('image')->storePublicly('images');
+            }
+            $restaurant->email_verified_at = now();
+            $restaurant->address = $data["address"];
+            $restaurant->city = $data['city'];
+            $restaurant->p_iva = $data['p_iva'];
 
-        $restaurant->types()->sync($data['types']);
 
-        return redirect()->route('home', $restaurant);
-        }else {
+            $restaurant->save();
+
+            $restaurant->types()->sync($data['types']);
+
+            return redirect()->route('home', $restaurant);
+        } else {
             $errormessage = "L'Utente non è abilitato a modificare questo Ristorante!";
 
             return view('error', compact('errormessage'));
-        
         }
-
     }
 
     /**
@@ -160,7 +160,8 @@ class RestaurantController extends Controller
 
         return view('restaurants.dashboard', compact('restaurant'));
     }
-    public function checkout(Request $request){
+    public function checkout(Request $request)
+    {
 
 
         $gateway = new Braintree\Gateway([
@@ -174,6 +175,7 @@ class RestaurantController extends Controller
 
         return view('hosted', [
             'token' => $token,
+            'restaurantId' => $request->input('restaurant'),
             'total' => $request->input('total'),
             'buyitems' => json_decode($request->input('orderData'))
         ]);

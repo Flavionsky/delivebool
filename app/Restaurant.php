@@ -47,4 +47,8 @@ class Restaurant extends Authenticatable
     public function foods(){
         return $this->hasMany('App\Food', 'restaurant_id' , 'id'); 
     }
+
+    public function order(){
+        return $this->hasOne('App\Order', 'restaurant_id', 'id');
+    }
 }

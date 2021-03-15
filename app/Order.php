@@ -15,4 +15,7 @@ class Order extends Model
     public function payment(){
         return $this->belongsTo('App\Payment');
     }
+    public function restaurant(){
+        return $this->belongsTo('App\Restaurant');
+    }
 }
