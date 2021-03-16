@@ -109,9 +109,9 @@ class OrderController extends Controller
                     ]);
                 }
                 
-                
+                $time = $order->delivery_time->hour.':'.$order->delivery_time->minute;
 
-            return redirect()->route('welcomepage')->with('success_message', 'Pagamento completato.Il tuo ID ordine è: ' . $transaction->id .'  Orario di arrivo previsto: ' . $order->delivery_time->hour.':'.$order->delivery_time->minute);
+            return redirect()->route('welcomepage')->with('success_message', 'Pagamento completato.Il tuo ID ordine è: ' . $transaction->id . 'Orario di arrivo previsto: ' . $time);
         } else {
             $errorString = "";
 

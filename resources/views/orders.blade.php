@@ -37,7 +37,15 @@
                     <td>{{ $order->mobile_phone }}</td>
                     <td>{{ $order->delivery_time }}</td>
                     <td>{{ $order->total_price }}</td>
-                    <td>{{ $order->payment->status }}</td>
+                    @if ($order->payment->status  == 1)
+                            <td>
+                                <p>{{ $order->payment->status  = 'Accettato' }}</p>
+                            </td>
+                        @else
+                            <td>
+                                <p>{{ $order->payment->status  = 'Rifiutato' }}</p>
+                            </td>
+                        @endif
                 </tr>
             </tbody>
         </table>
