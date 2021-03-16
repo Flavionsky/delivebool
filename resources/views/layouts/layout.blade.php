@@ -23,15 +23,12 @@
                         <a href="{{ route('welcomepage') }}"><img src="/img/delivebool-logo-white.png" alt="delivebool logo"></a>
                     </div>
                     <div class="buttons">
+                        @if(Auth::check())
                         <div class="registrati-o-accedi">
-                            @if(Auth::check())
                             <span><a href="{{ route('home') }}">La tua dashboard</span></a>
-                            @else
-                            <i class="fas fa-shopping-cart"></i>
-                            <span><a href="{{ route('ordina') }}">Ordina</span></a>
-                            @endif
                         </div>
-                       
+                        @endif
+
                         @guest
                         <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
                             <i class="fas fa-chevron-down"></i>

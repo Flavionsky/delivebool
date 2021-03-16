@@ -23,20 +23,27 @@ Delivebool - Crea un nuovo account
                         <a href="{{ route('welcomepage') }}"><img src="./img/delivebool-logo-white.png" alt="delivebool logo"></a>
                     </div>
                     <div class="buttons">
+                        @if(Auth::check())
                         <div class="registrati-o-accedi">
-                            @if(Auth::check())
                             <span><a href="{{ route('home') }}">La tua dashboard</span></a>
-                            @else
-                            <i class="fas fa-shopping-cart"></i>
-                            <span><a href="{{ route('ordina') }}">Ordina</span></a>
-                            @endif
                         </div>
+                        @endif
+                        @guest
+                        <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
+                            <i class="fas fa-chevron-down"></i>
+                            <span class="unselectable">Collabora con noi</span>
+                            <div id="drop-down-1" class="active unselectable">
+                                    <div class="registrati-o-accedi">
+                                        @if(!Auth::check())
+                                        <span class="registrati"><a href="{{ route('register') }}">Crea un nuovo account</span></a>
+                                        <span class="accedi"><a href="{{ route('home') }}">Accedi</a></span>
+                                        @endif
+                                    </div>
+                            </div>
+                        </div>
+                        @endguest
                         @if(!Auth::check())
-                        <div class="registrati-o-accedi">
-                            <span><a href="{{ route('register') }}">Crea un nuovo account</span></a>
-                        </div>
-                        <div class="registrati-o-accedi">
-                            <span><a href="{{ route('home') }}">Accedi</span></a>
+                        <div class="registrati-o-accedi" style="display: none">
                             @else
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -50,17 +57,6 @@ Delivebool - Crea un nuovo account
                                 </form>
                             </div>
                             @endif
-                        </div>
-                        <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
-                            <i class="fas fa-chevron-down"></i>
-                            <span>Collabora con noi</span>
-                            <div id="drop-down-1" class="active">
-                                <ul>
-                                    <li><a href="{{ route('register') }}"></a><i class="fas fa-utensils"></i> Ristoranti</li>
-                                    <li><i class="fas fa-briefcase"></i> Lavora con noi</li>
-                                    <li><i class="far fa-building"></i> Delivebool per le Aziende</li>
-                                </ul>
-                            </div>
                         </div>
                         @if(Auth::check())
                         <div class="menu">

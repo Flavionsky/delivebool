@@ -66,7 +66,7 @@ footer .box-container {
     opacity: 0.6;
 }
 
-.app-store:hover, 
+.app-store:hover,
 .google-store:hover {
     opacity: 1;
 }
@@ -186,7 +186,7 @@ h1 {
 }
 
 .block .img {
-    
+
     height: 150px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -207,6 +207,10 @@ h1 {
 .img:hover h1 {
     transform: translate(-50%, -50%) scale(1.2);
     text-shadow: 3px 3px black;
+}
+
+#selection-1 .comfort-food {
+    padding-right: 0;
 }
 
 .comfort-food {
@@ -265,7 +269,6 @@ h1 {
 
 .top-block-2 img {
     width: 353px;
-    margin-right: 5px;
     border: 2px solid transparent;
 
 }
@@ -436,6 +439,14 @@ p {
 .form-group {
     margin-bottom: 10px;
     text-align: left;
+}
+
+.form-group img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid black;
 }
 
 .form-control {
@@ -1135,7 +1146,7 @@ div.nav-cart-border-bottom {
     position: fixed;
     top: 100px;
     left: 0;
-    width: 100%; 
+    width: 100%;
 }
 
 #app #cart {
@@ -1272,53 +1283,6 @@ marquee {
     margin-top: 40px;
 }
 
-.shake1 {
-     -webkit-animation-name: shake;
-     -webkit-animation-duration: 0.8s;
-     -webkit-animation-iteration-count: infinite;
-     -webkit-animation-timing-function: linear;
-     -webkit-transform-origin: 5% 10%;
-}
-
- @-webkit-keyframes shake {
-     0% {
-         -webkit-transform: translate(1px, 1px) rotate(0deg);
-    }
-     10% {
-         -webkit-transform: translate(-1px, -2px) rotate(-2deg);
-    }
-     20% {
-         -webkit-transform: translate(-2px, 0px) rotate(1deg);
-    }
-     30% {
-         -webkit-transform: translate(0px, 1px) rotate(0deg);
-    }
-     40% {
-         -webkit-transform: translate(1px, -1px) rotate(1deg);
-    }
-     50% {
-         -webkit-transform: translate(-1px, 2px) rotate(-1deg);
-    }
-     60% {
-         -webkit-transform: translate(-2px, 1px) rotate(0deg);
-    }
-     70% {
-         -webkit-transform: translate(1px, 1px) rotate(-1deg);
-    }
-     80% {
-         -webkit-transform: translate(-1px, -1px) rotate(4deg);
-    }
-     90% {
-         -webkit-transform: translate(2px, 2px) rotate(0deg);
-    }
-     100% {
-         -webkit-transform: translate(1px, -2px) rotate(-1deg);
-    }
-}
-
-
-
-
 
 .unselectable {
     -webkit-touch-callout: none;
@@ -1397,6 +1361,11 @@ marquee {
     box-shadow: 0 0 10px 2px rgba(80, 80, 80, 0.1);
     border-radius: 3px;
 }
+
+.card-title h1 {
+    padding-bottom: 10px;
+}
+
 /* MEDIA QUERY */
 
 @media screen and (max-width: 1260px) {

@@ -23,18 +23,26 @@ Delivebool - Accedi al tuo account
                         <a href="{{ route('welcomepage') }}"><img src="./img/delivebool-logo-white.png" alt="delivebool logo"></a>
                     </div>
                     <div class="buttons">
+                        @if(Auth::check())
                         <div class="registrati-o-accedi">
-                            @if(Auth::check())
                             <span><a href="{{ route('dashboard') }}">La tua dashboard</span></a>
-                            @else
-                            <i class="fas fa-shopping-cart"></i>
-                            <span><a href="{{ route('ordina') }}">Ordina</span></a>
-                            @endif
                         </div>
+                        @endif
+                        @guest
+                        <div class="collabora-con-noi" id="prova" onclick="dropDown1()">
+                            <i class="fas fa-chevron-down"></i>
+                            <span class="unselectable">Collabora con noi</span>
+                            <div id="drop-down-1" class="active unselectable">
+                                    <div class="registrati-o-accedi">
+                                        @if(!Auth::check())
+                                        <span class="registrati"><a href="{{ route('register') }}">Crea un nuovo account</span></a>
+                                        <span class="accedi"><a href="{{ route('home') }}">Accedi</a></span>
+                                        @endif
+                                    </div>
+                            </div>
+                        </div>
+                        @endguest
                         @if(!Auth::check())
-                        <div class="registrati-o-accedi">
-                            <span><a href="{{ route('register') }}">Crea un nuovo account</span></a>
-                        </div>
                         <div class="registrati-o-accedi" style="display: none">
                             @else
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -124,11 +132,7 @@ Delivebool - Accedi al tuo account
                             </div>
                                 <br>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Hai dimenticato la password?') }}
-                                    </a>
-                                @endif
+
                             </div>
                         </div>
                     </form>

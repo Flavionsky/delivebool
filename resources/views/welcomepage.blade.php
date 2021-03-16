@@ -7,7 +7,7 @@ Delivebool - Home
 @section('content')
 
 <main>
-
+    @guest
     <section class="something-else-3">
         <div class="container">
             <h1>Di cosa hai voglia oggi?</h1>
@@ -22,6 +22,7 @@ Delivebool - Home
           <script src={{ mix('js/app.js') }}></script>
         </div>
     </section>
+    @endguest
 
 
     <section id="selection-1">
