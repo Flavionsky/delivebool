@@ -1306,6 +1306,10 @@ marquee {
     height: 100px;
 }
 
+#drop-down-1 .registrati-o-accedi {
+    margin-left: 0;
+}
+
 #drop-down-1 ul,
 #drop-down-2 ul {
     list-style: none;
@@ -1360,6 +1364,7 @@ marquee {
     width: 200px;
     box-shadow: 0 0 10px 2px rgba(80, 80, 80, 0.1);
     border-radius: 3px;
+    object-fit: cover;
 }
 
 .card-title h1 {
