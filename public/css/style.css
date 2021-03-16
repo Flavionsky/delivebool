@@ -1119,7 +1119,7 @@ div.nav-cart-border-bottom {
 }
 
 #app #product {
-    width: 75%;
+    width: 70%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -1185,12 +1185,19 @@ div.nav-cart-border-bottom {
 }
 
 #app #cart {
+    -webkit-box-shadow: 0px 0px 10px 0px #000000;
+    -moz-box-shadow: 0px 0px 10px 0px #000000;
+    -o-box-shadow: 0px 0px 10px 0px #000000;
+    box-shadow: 0px 0px 10px 0px #000000;
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 5px;
     margin-top: 50px;
     overflow: hidden;
     position: absolute;
     right: 50px;
     margin-left: 30px;
-    width: 37%;
+    width: 30%;
 }
 
 #app #cart #head {
@@ -1219,7 +1226,6 @@ div.nav-cart-border-bottom {
 #app #cart #head #total {
     display: inline-block;
     color: #777777;
-    float: right;
 }
 
 #app #cart .row {

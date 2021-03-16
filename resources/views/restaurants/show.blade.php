@@ -548,11 +548,17 @@
                 },
                 scroll() {
                     window.onscroll = () => {
-                        if (document.documentElement.scrollTop > 350) {
-                            this.pageDown = document.documentElement.scrollTop + 50;
+                        if (document.documentElement.scrollTop > 350 && document.documentElement.scrollTop < (document.documentElement.scrollHeight-1080)) {
+                            this.pageDown = document.documentElement.scrollTop;
+                        }else if(document.documentElement.scrollTop == 350){
+                            this.pageDown = 350;
+                        }else if(document.documentElement.scrollTop == (document.documentElement.scrollHeight-1080)){
+                            this.pageDown = (document.documentElement.scrollHeight-1080);
                         }
-                        console.log("offsetHeight" + document.documentElement.offsetHeight);
+
                         console.log("scrolltop" + document.documentElement.scrollTop);
+                        console.log("scrollheight" + document.documentElement.scrollHeight);
+
 
 
 
