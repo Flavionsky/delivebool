@@ -414,6 +414,17 @@ p {
     z-index: 3;
 }
 
+.payment.container.dashboard {
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 50px;
+    position: relative;
+    z-index: 3;
+}
+
 .rest-dashboard {
     width: 100%;
     background-color: white;
@@ -467,7 +478,22 @@ p {
     font-size: 16px;
 }
 
-.btn.btn-primary:hover {
+.btn.btn-success {
+    width: 200px;
+    height: 50px;
+    background-color: #00C2B3;
+    line-height: 30px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-success:hover {
     background-color: #14ccbe;
 }
 
@@ -759,12 +785,21 @@ p {
     padding: 50px;
 }
 
+.payment.registercard {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .registercard h2 {
     margin-bottom: 50px;
 }
 
 .registercard button {
     margin-top: 30px;
+}
+
+#payment-section .registercard button {
+    margin-top: 0px;
 }
 
 .form-group ul {
@@ -1369,6 +1404,71 @@ marquee {
 
 .card-title h1 {
     padding-bottom: 10px;
+}
+
+.spacer {
+    margin-bottom: 24px;
+}
+
+#card-number,
+#cvv,
+#expiration-date {
+    background: white;
+    height: 30px;
+    border: 1px solid rgb(59, 59, 59);
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+}
+
+.paymentcard {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+#payment-form {
+    margin-right: 90px;
+}
+
+.left-payment {
+    width: 65%;
+    text-align: left;
+}
+
+.right-payment {
+    text-align: right;
+}
+
+.table-payment {
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(196, 241, 227, 1) 0%, rgba(216, 234, 255, 1) 100%);
+}
+
+.table-payment th {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+}
+
+.table-payment td {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    text-align: center;
+}
+
+.table-payment tr {
+    height: 40px;
+    border: 1px solid grey;
+}
+
+.table-payment .table-total {
+    text-align: right;
+}
+
+.form-control.payment {
+    background-color: lightgrey;
+    border: 1px solid rgb(59, 59, 59);
 }
 
 /* MEDIA QUERY */

@@ -1,56 +1,24 @@
-<!doctype html>
-<html>
+@extends('layouts.layout')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('title')
+    Checkout
+@endsection
 
-    <title>Laravel</title>
-    <link rel="stylesheet" href="/css/app.css">
-    <style>
-        body {
-            margin: 24px 0;
-        }
+@section('content')
 
-        .spacer {
-            margin-bottom: 24px;
-        }
 
-        #card-number,
-        #cvv,
-        #expiration-date {
-            background: white;
-            height: 38px;
-            border: 1px solid #CED4DA;
-            padding: .375rem .75rem;
-            border-radius: .25rem;
-        }
 
-    </style>
-</head>
+<div id="payment-section">
 
-<body>
-    <div class="container">
-        <div class="col-md-6 offset-md-3">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col">Quantità</th>
-                        <th scope="col">Nome Portata</th>
-                        <th scope="col">Prezzo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($buyitems as $item)
-                        <tr>
-                            <th scope="row">{{ $item->qty }}</th>
-                            <td>{{ $item->name }}</td>
-                            <td>{{ $item->price }}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+
+    <div class="payment container dashboard">
+        <div class="payment registercard">
             <h1>Pagamento ordine</h1>
+
+            <div class="paymentcard">
+                  <div class="left-payment">
+                      <h2>Dati del pagamento</h2>
+
             <div class="spacer"></div>
 
             @if (session()->has('success_message'))
@@ -116,7 +84,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="amount">Totale</label>
-                            <input type="text" readonly="readonly" class="form-control" id="amount" name="amount"
+                            <input type="text" readonly="readonly" class="form-control payment" id="amount" name="amount"
                                 value="{{ $total }}">
                             <input type="hidden" name="restaurantId" value="{{$restaurantId}}">
                             @foreach ($buyitems as $item)
@@ -162,8 +130,39 @@
                 <input id="nonce" name="payment_method_nonce" type="hidden" />
                 <button type="submit" class="btn btn-success">Paga ora</button>
             </form>
+            </div>
+            <div class="right-payment">
+                <h2>Il tuo ordine:</h2>
+
+
+                <table class="table-payment">
+                    <thead>
+                        <tr>
+                            <th scope="col">Quantità</th>
+                            <th scope="col">Nome Portata</th>
+                            <th scope="col">Prezzo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($buyitems as $item)
+                        <tr>
+                            <th scope="row">{{ $item->qty }}</th>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->price }}</td>
+                        </tr>
+                        @endforeach
+                        <tr><td class="table-total" colspan="3"><strong>Totale: </strong>€ {{$total}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
         </div>
     </div>
+    </div>
+    </div>
+
+
     <script src="https://js.braintreegateway.com/web/3.38.1/js/client.min.js"></script>
     <script src="https://js.braintreegateway.com/web/3.38.1/js/hosted-fields.min.js"></script>
     <script src="{{ asset('js/script.js') }}" charset="utf-8"></script>
@@ -268,6 +267,4 @@
         });
 
     </script>
-</body>
-
-</html>
+@endsection
