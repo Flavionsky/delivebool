@@ -51,15 +51,8 @@ Delivebool - Modifica il tuo account
 
                             <div class="form-group">
                                 <label>{{__('Immagine')}}</label>
-                                <input class="form-control @error('image') is-invalid @enderror" name="image" type="file">
+                                <input class="form-control" name="image" type="file">
                                 <img src="{{asset($restaurant->image)}}" alt="immagine ristorante">
-                                @error('image')
-
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-
-                                @enderror
                             </div>
 
                             <div class="form-group row">

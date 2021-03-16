@@ -121,8 +121,9 @@ class FoodController extends Controller
                 $data = $request->validated();
                 $food->name = $data['name'];
                 $food->price = $data['price'];
-                if ($request->file('image') != null) {
-                    $food->image = $request->file('image')->storePublicly('images');
+                if ($request->hasfile('image')) {
+                    $restaurant->image = $request->file('image')->storePublicly('images');
+                    dd($restaurant->image);
                 }
                 $food->description = $data['description'];
                 $food->visibility = $data["visibility"];
