@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Restaurant;
 use Illuminate\Queue\RedisQueue;
 
+use Illuminate\Support\Carbon;
+
 class OrderController extends Controller
 {
     /**
@@ -76,6 +78,8 @@ class OrderController extends Controller
             $foodsid = $data['itemid'];
             $foodsqty = $data['itemqty'];
 
+            $current = Carbon::now();
+
             $order = new Order;
 
             $order->email = $data['email'];
@@ -84,7 +88,7 @@ class OrderController extends Controller
             $order->city = $data['city'];
             $order->address = $data['address'];
             $order->mobile_phone = $data['mobile_phone'];
-            $order->delivery_time = now()->addHours(1);
+            $order->delivery_time = $current->addHours(2);
             $order->total_price = $data['amount'];
             $order->restaurant_id = $data['restaurantId'];
 
@@ -107,7 +111,7 @@ class OrderController extends Controller
                 
                 
 
-            return redirect()->route('welcomepage')->with('success_message', 'Pagamento completato.Il tuo ID ordine è:' . $transaction->id);
+            return redirect()->route('welcomepage')->with('success_message', 'Pagamento completato.Il tuo ID ordine è: ' . $transaction->id .'  Orario di arrivo previsto: ' . $order->delivery_time->hour.':'.$order->delivery_time->minute);
         } else {
             $errorString = "";
 

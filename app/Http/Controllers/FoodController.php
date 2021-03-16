@@ -160,8 +160,6 @@ class FoodController extends Controller
 
         $food->save();
 
-        $message = "Piatto eliminato";
-
-        return view("message", compact("message"));
+        return back();
     }
 }
