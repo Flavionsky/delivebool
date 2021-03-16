@@ -83,7 +83,7 @@ class OrderController extends Controller
             $order->city = $data['city'];
             $order->address = $data['address'];
             $order->mobile_phone = $data['mobile_phone'];
-            $order->delivery_time = now()->subHours(1);
+            $order->delivery_time = now()->addHour();
             $order->total_price = $data['amount'];
             $order->restaurant_id = $data['restaurantId'];
 
