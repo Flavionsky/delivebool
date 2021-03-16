@@ -1131,10 +1131,18 @@ div.nav-cart-border-bottom {
     margin-bottom: 10px;
 }
 
+.fixed-cart {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%; 
+}
+
 #app #cart {
     margin-top: 50px;
     overflow: hidden;
-    align-self: flex-end;
+    position: absolute;
+    right: 50px;
     margin-left: 30px;
     width: 37%;
 }

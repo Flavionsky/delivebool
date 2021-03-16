@@ -117,12 +117,12 @@
                             <span class="hidden-el">{{ $counter = true }}</span>
                             @foreach ($restaurant->foods as $food)
                                 @if ($food->kind_of_food == 'Primi')
-    
+
                                     @if ($counter)
                                         <h1>Primi</h1>
                                     @endif
                                     {{ $counter = false }}
-    
+
                                     <div class="food-card">
                                         @if ($food->deleted == 0)
                                             <div class="food-card-img">
@@ -138,12 +138,12 @@
                             <span class="hidden-el">{{ $counter = true }}</span>
                             @foreach ($restaurant->foods as $food)
                                 @if ($food->kind_of_food == 'Secondi')
-    
+
                                     @if ($counter)
                                         <h1>Secondi</h1>
                                     @endif
                                     {{ $counter = false }}
-    
+
                                     <div class="food-card">
                                         @if ($food->deleted == 0)
                                             <div class="food-card-img">
@@ -159,12 +159,12 @@
                             <span class="hidden-el">{{ $counter = true }}</span>
                             @foreach ($restaurant->foods as $food)
                                 @if ($food->kind_of_food == 'Pizza')
-    
+
                                     @if ($counter)
                                         <h1>Pizza</h1>
                                     @endif
                                     {{ $counter = false }}
-    
+
                                     <div class="food-card">
                                         @if ($food->deleted == 0)
                                             <div class="food-card-img">
@@ -185,7 +185,7 @@
                                         <h1>Sushi</h1>
                                     @endif
                                     {{ $counter = false }}
-    
+
                                     <div class="food-card">
                                         @if ($food->deleted == 0)
                                             <div class="food-card-img">
@@ -199,7 +199,7 @@
                         </div>
                         <div class="kind">
                             <span class="hidden-el">{{ $counter = true }}</span>
-    
+
                             @foreach ($restaurant->foods as $food)
                                 @if ($food->kind_of_food == 'Hamburger')
                                     @if ($counter)
@@ -219,7 +219,7 @@
                         </div>
                         <div class="kind">
                             <span class="hidden-el">{{ $counter = true }}</span>
-    
+
                             @foreach ($restaurant->foods as $food)
                                 @if ($food->kind_of_food == 'Kebab')
                                     @if ($counter)
@@ -239,7 +239,7 @@
                         </div>
                         <div class="kind">
                             <span class="hidden-el">{{ $counter = true }}</span>
-    
+
                             @foreach ($restaurant->foods as $food)
                                 @if ($food->kind_of_food == 'Contorni')
                                     @if ($counter)
@@ -260,7 +260,7 @@
 
                         <div class="kind">
                             <span class="hidden-el">{{ $counter = true }}</span>
-    
+
                             @foreach ($restaurant->foods as $food)
                                 @if ($food->kind_of_food == 'Dessert')
                                     @if ($counter)
@@ -281,7 +281,7 @@
 
                         <div class="kind">
                             <span class="hidden-el">{{ $counter = true }}</span>
-    
+
                             @foreach ($restaurant->foods as $food)
                                 @if ($food->kind_of_food == 'Bevande')
                                     @if ($counter)
@@ -300,7 +300,7 @@
                             @endforeach
                         </div>
                     </div>
-                    <div id="cart">
+                    <div id="cart" :style="{top: pageDown + 'px'}">
                         <div id="head">
                             <span id="quantity">Quantità</span>
                             <span id="total">Prezzo</span>
@@ -516,9 +516,11 @@
                 finalTotal: 0,
                 buyitems: [],
                 orderData: '',
+                pageDown: 350
             },
             mounted() {
                 this.loadFoods();
+                this.scroll();
             },
             methods: {
                 total: function() {
@@ -543,6 +545,18 @@
 
 
                     console.log(this.orderData);
+                },
+                scroll() {
+                    window.onscroll = () => {
+                        if (document.documentElement.scrollTop > 350) {
+                            this.pageDown = document.documentElement.scrollTop + 50;
+                        }
+                        console.log("offsetHeight" + document.documentElement.offsetHeight);
+                        console.log("scrolltop" + document.documentElement.scrollTop);
+
+
+
+                    };
                 }
             }
         });
