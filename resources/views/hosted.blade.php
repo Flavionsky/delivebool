@@ -35,19 +35,19 @@
                 @csrf
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name_on_card">Nome</label>
-                            <input type="text" class="form-control" id="name_on_card" name="name_on_card">
+                            <input type="text" class="form-control" id="name_on_card" name="name_on_card" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name_on_card">Cognome</label>
-                            <input type="text" class="form-control" id="surname_on_card" name="surname_on_card">
+                            <input type="text" class="form-control" id="surname_on_card" name="surname_on_card" required>
                         </div>
                     </div>
 
@@ -56,13 +56,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="address">Indirizzo</label>
-                            <input type="text" class="form-control" id="address" name="address">
+                            <input type="text" class="form-control" id="address" name="address" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="city">Città</label>
-                            <input type="text" class="form-control" id="city" name="city">
+                            <input type="text" class="form-control" id="city" name="city" required>
                         </div>
                     </div>
 
@@ -71,7 +71,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="mobile_phone">Cellulare</label>
-                            <input type="text" class="form-control" id="mobile_phone" name="mobile_phone" value="">
+                            <input type="text" class="form-control" id="mobile_phone" name="mobile_phone" value="" required>
                         </div>
                     </div>
                 </div>

@@ -13,8 +13,11 @@
                     <h1>Di cosa hai voglia oggi?</h1>
                     <div class="categories">
                         @if (session()->has('success_message'))
-                            <div class="alert alert-success">
+                            <div id="alert-cancel-payment" class="alert alert-success">
                                 {{ session()->get('success_message') }}
+                                <div class="cancel-x" onclick="deleteX()">
+                                    X
+                                </div>
                             </div>
                         @endif
 
@@ -317,5 +320,12 @@
 
 
     </main>
+
+    <script type="text/javascript">
+    function deleteX() {
+        var element = document.getElementById("alert-cancel-payment");
+        element.classList.add("display-none-x");
+    }
+    </script>
 
 @endsection
