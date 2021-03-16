@@ -17,6 +17,7 @@ use App\Food;
 use Illuminate\Support\Facades\Auth;
 
 use App\Restaurant;
+use Illuminate\Queue\RedisQueue;
 
 class OrderController extends Controller
 {
@@ -83,7 +84,7 @@ class OrderController extends Controller
             $order->city = $data['city'];
             $order->address = $data['address'];
             $order->mobile_phone = $data['mobile_phone'];
-            $order->delivery_time = now()->addHour();
+            $order->delivery_time = now()->addHours(1);
             $order->total_price = $data['amount'];
             $order->restaurant_id = $data['restaurantId'];
 
@@ -106,7 +107,7 @@ class OrderController extends Controller
                 
                 
 
-            return back()->with('success_message', 'Pagamento completato.Il tuo ID ordine è:' . $transaction->id);
+            return redirect()->route('welcomepage')->with('success_message', 'Pagamento completato.Il tuo ID ordine è:' . $transaction->id);
         } else {
             $errorString = "";
 
