@@ -64,7 +64,18 @@ Delivebool - Modifica un piatto
             </div>
             <div class="form-group">
                 <label>{{__('Tipo di portata')}}</label>
-                <input name="kind_of_food" class="form-control @error('kind_of_food') is-invalid @enderror" type="text" placeholder="Appetizer, primi, secondi, ecc.." value="{{ $food->kind_of_food}}"></input>
+                <select name="kind_of_food" id="kind_of_food" class="form-control @error('kind_of_food') is-invalid @enderror">
+                    <option {{ $food->kind_of_food == 'Appetizer' ? 'selected' : '' }} value="Appetizer">Appetizer</option>
+                    <option {{ $food->kind_of_food == 'Primi' ? 'selected' : '' }} value="Primi">Primi</option>
+                    <option {{ $food->kind_of_food == 'Secondi' ? 'selected' : '' }} value="Secondi">Secondi</option>
+                    <option {{ $food->kind_of_food == 'Pizza' ? 'selected' : '' }} value="Pizza">Pizza</option>
+                    <option {{ $food->kind_of_food == 'Sushi' ? 'selected' : '' }} value="Sushi">Sushi</option>
+                    <option {{ $food->kind_of_food == 'Hamburger' ? 'selected' : '' }} value="Hamburger">Hamburger</option>
+                    <option {{ $food->kind_of_food == 'Kebab' ? 'selected' : '' }} value="Kebab">Kebab</option>
+                    <option {{ $food->kind_of_food == 'Contorni' ? 'selected' : '' }} value="Contorni">Contorni</option>
+                    <option {{ $food->kind_of_food == 'Dessert' ? 'selected' : '' }} value="Dessert">Dessert</option>
+                    <option {{ $food->kind_of_food == 'Bevande' ? 'selected' : '' }} value="Bevande">Bevande</option>
+                  </select>
                 @error('kind_of_food')
 
                 <span class="invalid-feedback" role="alert">

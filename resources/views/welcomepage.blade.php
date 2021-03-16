@@ -14,7 +14,7 @@
                     <div class="categories">
                         @if (session()->has('success_message'))
                             <div id="alert-cancel-payment" class="alert alert-success">
-                                {{ session()->get('success_message') }}
+                                <h3>Ordine accettato! Numero ordine: {{session()->get('success_message')}}<br>Il tuo ordine arriverà per le : {!! session()->get('time')!!}</h3>
                                 <div class="cancel-x" onclick="deleteX()">
                                     X
                                 </div>

@@ -92,26 +92,26 @@ class OrderController extends Controller
             $order->total_price = $data['amount'];
             $order->restaurant_id = $data['restaurantId'];
 
-            
+
             $order->payment()->associate(
                 Payment::firstOrCreate(
                     ['status' => 1],
-                    )
-                );
-                
+                )
+            );
+
             $order->save();
 
-            for($i=0; $i < count($foodsid); $i++){
+            for ($i = 0; $i < count($foodsid); $i++) {
                 DB::table("food_order")->insert([
                     "food_id" => $foodsid[$i],
-                    "order_id" => $order->id, 
+                    "order_id" => $order->id,
                     "quantity" =>  $foodsqty[$i],
-                    ]);
-                }
-                
-                $time = $order->delivery_time->hour.':'.$order->delivery_time->minute;
+                ]);
+            }
 
-            return redirect()->route('welcomepage')->with('success_message', 'Pagamento completato.Il tuo ID ordine è: ' . $transaction->id . 'Orario di arrivo previsto: ' . $time);
+            $time = $order->delivery_time->hour . ':' . $order->delivery_time->minute;
+            $parameters = ['success_message' => $transaction->id, 'time' => $time];
+            return redirect()->route('welcomepage')->with($parameters);
         } else {
             $errorString = "";
 
@@ -172,7 +172,7 @@ class OrderController extends Controller
         $id = Auth::user()->id;
 
         $restaurant = Restaurant::find($id);
-        
+
         $orders = Order::all();
 
         return view('orders', compact('restaurant', 'orders'));

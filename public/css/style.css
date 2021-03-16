@@ -1123,7 +1123,7 @@ div.nav-cart-border-bottom {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
 }
 
 #app #product .box {
@@ -1175,13 +1175,6 @@ div.nav-cart-border-bottom {
 #app #product .box p {
     margin-left: 20px;
     margin-bottom: 10px;
-}
-
-.fixed-cart {
-    position: fixed;
-    top: 100px;
-    left: 0;
-    width: 100%;
 }
 
 #app #cart {
@@ -1490,7 +1483,10 @@ marquee {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
+.alert-success h3{
+    margin-top: 50px;
+    line-height: 2;
+}
 .cancel-x {
     position: absolute;
     top: -40%;

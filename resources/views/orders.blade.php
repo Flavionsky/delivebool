@@ -14,7 +14,7 @@
         <table class="table">
             <thead class="thead-light">
                 <tr>
-                    <h2>Dati Cliente</h2>
+                    <h2>Ordine numero {{$order->id}}</h2>
                     <th scope="col">Email</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Cognome</th>
@@ -28,7 +28,6 @@
             </thead>
             <tbody>
                 <tr>
-                    <h5>Ordine {{$order->id}}</h5>
                     <td>{{ $order->email }}</td>
                     <td>{{ $order->name }}</td>
                     <td>{{ $order->surname }}</td>
