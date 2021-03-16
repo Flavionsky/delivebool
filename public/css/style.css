@@ -1478,6 +1478,33 @@ marquee {
     border: 1px solid rgb(59, 59, 59);
 }
 
+.alert-success {
+    width: 500px;
+    background-color: rgba(255,255,255, 0.9);
+    position: absolute;
+    border-radius: 5px;
+    height: 200px;
+    line-height: 200px;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cancel-x {
+    position: absolute;
+    top: -40%;
+    color: red;
+    right: 2%;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.display-none-x {
+    display: none;
+}
+
+
 /* MEDIA QUERY */
 
 @media screen and (max-width: 1260px) {
