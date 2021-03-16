@@ -1185,10 +1185,10 @@ div.nav-cart-border-bottom {
 }
 
 #app #cart {
-    -webkit-box-shadow: 0px 0px 10px 0px #000000;
-    -moz-box-shadow: 0px 0px 10px 0px #000000;
-    -o-box-shadow: 0px 0px 10px 0px #000000;
-    box-shadow: 0px 0px 10px 0px #000000;
+    -webkit-box-shadow: 0px 0px 10px 0px grey;
+    -moz-box-shadow: 0px 0px 10px 0px grey;
+    -o-box-shadow: 0px 0px 10px 0px grey;
+    box-shadow: 0px 0px 10px 0px grey;
     padding: 10px;
     background-color: whitesmoke;
     border-radius: 5px;
@@ -1226,6 +1226,7 @@ div.nav-cart-border-bottom {
 #app #cart #head #total {
     display: inline-block;
     color: #777777;
+    float: right;
 }
 
 #app #cart .row {
@@ -1448,8 +1449,8 @@ marquee {
 .table-payment {
     border-collapse: collapse;
     margin-top: 20px;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(196, 241, 227, 1) 0%, rgba(216, 234, 255, 1) 100%);
+    background: whitesmoke;
+    box-shadow: 0px 0px 10px 0px grey;
 }
 
 .table-payment th {
