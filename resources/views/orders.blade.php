@@ -12,6 +12,7 @@
         @if ($restaurant->id == $order->restaurant_id)
     <div class="table-wrapper">
         <table class="table">
+            <br>
             <thead class="thead-light">
                 <tr>
                     <h2>Ordine numero {{$order->id}}</h2>
@@ -71,7 +72,6 @@
     </div>
         @endif
     @endforeach
-
 
 </div>
 

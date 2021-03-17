@@ -378,6 +378,8 @@ p {
 
 .card-img-top {
     width: 300px;
+    height: 220px;
+    object-fit: cover;
     border-radius: 5px;
 }
 
@@ -1123,7 +1125,7 @@ div.nav-cart-border-bottom {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-wrap: no-wrap;
+    flex-wrap: wrap;
 }
 
 #app #product .box {
